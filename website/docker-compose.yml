@@ -1,0 +1,46 @@
+# To run do "docker compose up --build"
+services:
+  setup:
+    build: .
+    image: task-mgmt-setup
+    pull_policy: never
+    volumes:
+      - ./backend/prisma:/home/user/backend/prisma
+  backend:
+    network_mode: "host"
+    restart: always
+    pull_policy: never
+    image: task-mgmt-setup
+    working_dir: /home/user/backend
+    volumes:
+      - ./backend/prisma:/home/user/backend/prisma
+    command: >
+      /bin/sh -c "
+      echo Checking dependencies ... &&
+      npm ci &&
+      echo Checking database ... &&
+      npx prisma migrate deploy &&
+      echo Running backend ... &&
+      npm run start"
+    depends_on:
+      - setup
+    env_file:
+      - ./backend/.env
+  frontend:
+    network_mode: "host"
+    restart: always
+    pull_policy: never
+    image: task-mgmt-setup
+    working_dir: /home/user/frontend/dist
+    command: >
+      /bin/sh -c "
+      echo Checking dependencies ... &&
+      npm ci &&
+      echo Building ui ... &&
+      npm run build &&
+      echo Serving ui ... &&
+      npm run preview -- --host"
+    depends_on:
+      - setup
+    env_file:
+      - ./frontend/.env

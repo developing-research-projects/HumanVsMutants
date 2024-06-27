@@ -1,0 +1,1251 @@
+user_id,mutant_id,time_taken,status,decision,explanation,created_at,updated_at,maybe,no,yes,label_count,majority_decision,Maybe/No/Yes
+120,3,5,SUBMITTED,no,same thing as an if statement,1.71856E+12,1.71856E+12,0,2,0,2,no,0/2/0
+97,3,2,SUBMITTED,no,both work the same. the mutant is just a longer version,1.71929E+12,1.71929E+12,0,2,0,2,no,0/2/0
+14,9,2,SUBMITTED,yes,product is not same as number,1.71898E+12,1.71898E+12,0,0,2,2,yes,0/0/2
+125,9,10,SUBMITTED,yes,The mutated code on the right will be buggy due to a compile-time error. Since there is a * there is going to be an issue with the code.,1.71901E+12,1.71901E+12,0,0,2,2,yes,0/0/2
+17,10,2,SUBMITTED,yes,Changes function output,1.71891E+12,1.71891E+12,0,0,2,2,yes,0/0/2
+105,10,20,SUBMITTED,yes,"Using the 'if (obj == this)' condition, the original 'equals' method first determines whether the object 'obj' and 'this' are the same instance. It yields 'true' if they are the same instance. Next, it determines whether ""obj"" is a ""StandardEntityCollection"" instance. If so, it uses 'Objects.equals' to compare the lists of 'entities' and casts 'obj' to 'StandardEntityCollection'.
+
+The method has been changed in the mutant version to use ""if (obj == null)"" to determine whether ""obj"" is ""null"" first. It returns 'false' if 'obj' is 'null'. This version removes the check to see if 'obj' and 'this' are the same instance. 'obj' is cast to 'StandardEntityCollection' and the 'entities' lists are compared if 'obj' is not 'null'.
+
+This modification creates a problem because it omits the first identity check ('if (obj == this)'). Eliminating this check could cause the method to carry out pointless actions and possibly raise a ""ClassCastException"" if ""obj"" isn't an instance of ""StandardEntityCollection.""",1.71918E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+97,11,5,SUBMITTED,yes,this wont work correctly because a boolean is expected,1.71919E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+120,11,1,SUBMITTED,yes,null is error value,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+11,13,3,SUBMITTED,yes,Initializing new CountingLongPredicate with null instead of bitMap will change the output,1.71931E+12,1.71931E+12,0,0,3,3,yes,0/0/3
+97,13,1,SUBMITTED,yes,its buggy because 'bitMap' would input the array address while null won't,1.71881E+12,1.71881E+12,0,0,3,3,yes,0/0/3
+14,13,1,SUBMITTED,yes,null instead of object,1.71898E+12,1.71898E+12,0,0,3,3,yes,0/0/3
+14,18,1,SUBMITTED,yes,mutant fails for maxSize = -1,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+126,18,1,SUBMITTED,yes,"Code snippet 1:
+It checks if maxSize < 0 while 
+Code snippet 2:
+It checks if if maxSize < -1
+
+The range of values will vary slightly in both code snippets.",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+129,31,2,SUBMITTED,yes,Mutant code passes a different value in the second argument when calling constructor of the superclass. ,1.71925E+12,1.71925E+12,0,0,2,2,yes,0/0/2
+132,31,12,SUBMITTED,yes,"the indexing is different , NOTE THAT THERE IS A COMMENT THAT SAYS THIS IS A BUGGY VERSION",1.71916E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+97,32,3,SUBMITTED,yes,size() does not always equal 0,1.71941E+12,1.71941E+12,0,0,2,2,yes,0/0/2
+17,32,2,SUBMITTED,yes,Changes the code significantly,1.71881E+12,1.71881E+12,0,0,2,2,yes,0/0/2
+120,50,5,SUBMITTED,yes,getting nonexistent value,1.71899E+12,1.71899E+12,0,0,2,2,yes,0/0/2
+14,50,5,SUBMITTED,yes,"values associated with the key already removed, so get will return null.",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+63,52,10,SUBMITTED,yes,"The mutant catches validation exceptions and returns false, indicating failure. The original might continue execution regardless, potentially adding invalid elements.",1.71896E+12,1.71898E+12,0,0,2,2,yes,0/0/2
+125,52,3,SUBMITTED,yes,"Mutant code is buggy because instead of throwing an Exception, it catches the exception and returns false, which is different from the original code since it does not have a try-catch.",1.71922E+12,1.71922E+12,0,0,2,2,yes,0/0/2
+66,56,5,SUBMITTED,yes,operator is changed in buggy code,1.71896E+12,1.71896E+12,0,0,2,2,yes,0/0/2
+97,56,1,SUBMITTED,yes,"when bitIndex is less than OUT_OF_BOUNDS_BIT_KEY, the mutant does not work the same",1.71903E+12,1.71903E+12,0,0,2,2,yes,0/0/2
+17,60,1,SUBMITTED,yes,Mutant changes the logic,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+14,60,10,SUBMITTED,yes,False is returned when count < 1 but false should be returned if object already in the collection,1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+11,62,4,SUBMITTED,no,"both tailMap(fromKey).headMap(toKey) and subMap(fromKey, toKey) return the same result.",1.71917E+12,1.71917E+12,0,2,0,2,no,0/2/0
+14,62,1,SUBMITTED,no,returns same slice of map.,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+120,63,15,SUBMITTED,yes,"it corrected an error, but its different so",1.71902E+12,1.71902E+12,0,1,2,3,yes,0/1/2
+97,63,1,SUBMITTED,no,they both do the same thing,1.71916E+12,1.71917E+12,0,1,2,3,yes,0/1/2
+126,63,2,SUBMITTED,yes,"Code snippet 1:
+The value of getLongValue(bytes, 0) is simply returned.
+Code snippet 2:
+We have a tenary operation where we check if  bytes.length > 0 and if this is true, only then does it go ahead to return the value of getLongValue(bytes, 0)",1.71927E+12,1.71927E+12,0,1,2,3,yes,0/1/2
+116,64,10,SUBMITTED,no,"it is not necessarily buggy, it introduces a behavior that differs from the original code. ",1.71927E+12,1.71927E+12,0,2,1,3,no,0/2/1
+105,64,10,SUBMITTED,yes,"The mutant adds a check to see whether any bytes are null, returning 0 otherwise. This patch produces an issue since it quietly returns 0 without informing the caller that the input is null, even though it could seem to handle a probable null value smoothly. It's possible that this conduct is not the intended functionality. The method hides the fact that a null value was supplied by returning 0 when bytes is null, which could cause unexpected behavior elsewhere in the application. It's possible that the caller did not realize the bytes array was null, leading to the incorrect interpretation of 0 as a legitimate value. When attempting to send a null array to getLongValue(bytes, 0), the original method would usually produce a NullPointerException since it was not designed to handle null inputs. This exception lets the caller know that something went wrong, enabling them to address the issue appropriately. Moreover, returning 0 might not be the best choice, given the program's logical constraints. If 0 is a significant number in the given context, this could lead to erroneous presumptions and other logical mistakes.",1.71823E+12,1.71824E+12,0,2,1,3,no,0/2/1
+97,64,1,SUBMITTED,no,it works the same. it just stops a null value from being used as a parameter,1.71904E+12,1.71904E+12,0,2,1,3,no,0/2/1
+122,70,1,SUBMITTED,no,"This is not a bug, as it simply introduces a new variable for storing the intermediate value computed before comparison within a ternary operator and returns the result. ",1.71927E+12,1.71927E+12,0,2,0,2,no,0/2/0
+23,70,2,SUBMITTED,no,"In mutant code, the length is stored in a variable but in Original its not, rather it was written in the return statement direcly. So it doesn’t make any change to the final outcome. Hence the mutant is not buggy",1.71903E+12,1.71903E+12,0,2,0,2,no,0/2/0
+17,71,1,SUBMITTED,yes,Mutant changes the logic,1.71932E+12,1.71932E+12,0,0,2,2,yes,0/0/2
+11,71,1,SUBMITTED,yes,The mutant return DYNAMIC_POINTER_FACTORY_ORDER with extra addition of 1 so it will always return the value of the main code with addition 1,1.71914E+12,1.71915E+12,0,0,2,2,yes,0/0/2
+14,74,1,SUBMITTED,no,added expression has no impact,1.71932E+12,1.71932E+12,0,2,0,2,no,0/2/0
+126,74,1,SUBMITTED,no,"In code snippet 2, a local variable x is declared inside the code block and assigned a value, but this variable is not used and does not affect he method's return value. Code snippet 1 also returns an output of true without necessarily declaring a local variable in its code block.",1.71897E+12,1.71897E+12,0,2,0,2,no,0/2/0
+97,75,1,SUBMITTED,yes,the mutant does not work the same because 'DEFAULT_PROPERTY_COUNT' is changed from 16 to 0,1.71903E+12,1.71903E+12,0,0,2,2,yes,0/0/2
+17,75,1,SUBMITTED,yes,Mutant changes code logic,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+11,79,5,SUBMITTED,yes,The mutant always return True doesn't check if the index != WHOLE_COLLECTION is true or not ,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+17,79,4,SUBMITTED,yes,Changes the output of the code,1.71881E+12,1.71881E+12,0,0,2,2,yes,0/0/2
+58,81,10,SUBMITTED,yes,"The mutant changes the last segment to process only the lower 2 bits (by using (ch >> 0) & 1), leading to an incorrect hexadecimal representation.",1.71862E+12,1.71862E+12,0,2,1,3,no,0/2/1
+17,81,4,SUBMITTED,no,Expressions evaluate to same value,1.71917E+12,1.71917E+12,0,2,1,3,no,0/2/1
+106,81,10,SUBMITTED,no,they are equvelinet because the bitwise basically equates to the same thing,1.7192E+12,1.7192E+12,0,2,1,3,no,0/2/1
+126,84,2,SUBMITTED,yes,Code snippet 1 returns the dynamic result of the super.isUseShortClassName() method while code snippet 2 returns a constant value of false.,1.71857E+12,1.71857E+12,0,0,2,2,yes,0/0/2
+125,84,3,SUBMITTED,yes,"The code is different because the code on the right will always return false, while the code on the left could return true or false, depending on the function, which isUseShortClassName().",1.71886E+12,1.71886E+12,0,0,2,2,yes,0/0/2
+66,86,2,SUBMITTED,yes,buggy always return false so yes the mutant is buggy,1.71896E+12,1.71896E+12,0,0,2,2,yes,0/0/2
+11,86,1,SUBMITTED,yes,The mutant will always return false ,1.71915E+12,1.71915E+12,0,0,2,2,yes,0/0/2
+17,90,1,SUBMITTED,yes,Mutant changes behaviour of the class,1.71932E+12,1.71932E+12,0,0,2,2,yes,0/0/2
+14,90,1,SUBMITTED,yes,2 is returned instead of 1,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+133,94,10,SUBMITTED,yes,"In the mutated case, the ordering of the range has been changed from the original. This alters the expected behavior of the code and thus introduces a bug.",1.71937E+12,1.71937E+12,1,0,2,3,yes,1/0/2
+106,94,20,SUBMITTED,maybe,"Depends on wjhat this method is supposed to do, because if it is finding the range then both do that",1.71919E+12,1.71919E+12,1,0,2,3,yes,1/0/2
+123,94,3,SUBMITTED,yes,"the parameters are swapped, so the DoubleRange is initialized with toInclusive as the starting point and fromInclusive as the ending point. This can lead to unexpected behaviors ",1.71838E+12,1.71838E+12,1,0,2,3,yes,1/0/2
+97,96,1,SUBMITTED,no,both are the same,1.71903E+12,1.71903E+12,0,2,0,2,no,0/2/0
+52,96,2,SUBMITTED,no,"The code will not be buggy as they do the same function but in different ways, one uses logical operator (OR) and one uses explicit if condition which will produce the same output.",1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+109,98,1,SUBMITTED,no,Different phrasing,1.71811E+12,1.71812E+12,0,2,0,2,no,0/2/0
+97,98,1,SUBMITTED,no,both return the same value in all cases,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+132,99,7,SUBMITTED,yes,"1 / value isnt equal to value in any meaning, although i have noticed that this method and other like it should convert the value variable which is a byte before returning it like said in the comments descripting the methods.",1.71913E+12,1.71913E+12,0,0,2,2,yes,0/0/2
+120,99,1,SUBMITTED,yes,reciprocal taken,1.71861E+12,1.71861E+12,0,0,2,2,yes,0/0/2
+105,101,5,SUBMITTED,no,"The original 'getAndIncrement' method initially uses a local variable called 'last' to hold the current value of 'value.' The 'last' value is then returned after the 'value' has been increased by one. This guarantees that prior to the increment operation, the method returns the value of 'value.' The method makes a change in the mutant version by explicitly employing the assignment operator to set 'value' to 'value + 1'. The distinction has no difference in functioning because ‘value’ is effectively increased by one in both cases.",1.71926E+12,1.71926E+12,0,2,0,2,no,0/2/0
+17,101,1,SUBMITTED,no,Expressions are identical,1.7194E+12,1.71941E+12,0,2,0,2,no,0/2/0
+14,106,1,SUBMITTED,no,"Redundant assignment done, nothing changed",1.71821E+12,1.71821E+12,0,2,0,2,no,0/2/0
+17,106,1,SUBMITTED,no,Expressions are equivalent,1.71934E+12,1.71934E+12,0,2,0,2,no,0/2/0
+23,108,5,SUBMITTED,no,Both of the decrement operator impose the similar effect,1.71903E+12,1.71903E+12,0,2,0,2,no,0/2/0
+113,108,1,SUBMITTED,no,"they both return current value of ""value""",1.71811E+12,1.7193E+12,0,2,0,2,no,0/2/0
+17,109,2,SUBMITTED,yes,Changes the output of the code,1.71881E+12,1.71881E+12,0,0,2,2,yes,0/0/2
+53,109,6,SUBMITTED,yes,"In the initial snippet, the value of 'value' can be other things, including null while in the mutant snippet, the value of 'value' is always null. ",1.71919E+12,1.71924E+12,0,0,2,2,yes,0/0/2
+14,112,3,SUBMITTED,yes,mutant will not force access the field,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+106,112,10,SUBMITTED,yes,the object constructed has a different boolean value so therefore they don't return the same object,1.71918E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+17,122,1,SUBMITTED,yes,Mutation changes function logic,1.71932E+12,1.71932E+12,0,0,3,3,yes,0/0/3
+132,122,13,SUBMITTED,yes,"If obj and this are not the same , there is a possibility to return true despite that.",1.71924E+12,1.71924E+12,0,0,3,3,yes,0/0/3
+120,122,1,SUBMITTED,yes,condition changed,1.71895E+12,1.71896E+12,0,0,3,3,yes,0/0/3
+14,133,2,SUBMITTED,no,Typecasting and Recasting back does not change value,1.71839E+12,1.71839E+12,0,2,0,2,no,0/2/0
+11,133,3,SUBMITTED,no,casting just ensures the return type ,1.71926E+12,1.71926E+12,0,2,0,2,no,0/2/0
+11,136,4,SUBMITTED,no,The mutant added System.gc(); which is a garbage collector use to clean up memory space wont affect the output,1.71923E+12,1.71923E+12,0,3,0,3,no,0/3/0
+14,136,1,SUBMITTED,no,calling garbage collector will not change execution,1.71916E+12,1.71916E+12,0,3,0,3,no,0/3/0
+120,136,5,SUBMITTED,no,"from my knowledge, this only destroys unreachable objects, so wont affect code",1.71926E+12,1.71926E+12,0,3,0,3,no,0/3/0
+123,140,20,SUBMITTED,no,Using an empty string instead of stringutils.empty will serve the same purpose as it also represents an empty string ,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+11,140,2,SUBMITTED,no,"StringUtils.EMPTY is equivalent to """"",1.71931E+12,1.71931E+12,0,2,0,2,no,0/2/0
+97,143,1,SUBMITTED,no,it works the same as the code always runs the while loop,1.71904E+12,1.71904E+12,0,2,0,2,no,0/2/0
+11,143,2,SUBMITTED,no,The mutant will enter the loop then exit it when it execute the return line,1.7193E+12,1.71931E+12,0,2,0,2,no,0/2/0
+11,145,3,SUBMITTED,yes,"The mutant returns """" while the main code returns PATH_SEPARATOR = ""path.separator""",1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+126,145,1,SUBMITTED,yes,"Code snippet 1:
+It returns the value of getProperty(PATH_SEPARATOR)
+Code snippet 2:
+It simply returns an empty string.
+This leads to difference in output.",1.71924E+12,1.71924E+12,0,0,2,2,yes,0/0/2
+97,147,1,SUBMITTED,yes,"the mutant does not check if its 64 bits, rather if its not 32 bits",1.7191E+12,1.7191E+12,0,0,2,2,yes,0/0/2
+123,147,4,SUBMITTED,yes,"the mutant return Arch.BIT_32 != arch doesnt necessarily mean that its 64bit if it's not 32, it can always be unknown as defined in the ARCH class",1.71899E+12,1.71899E+12,0,0,2,2,yes,0/0/2
+11,151,3,SUBMITTED,yes,"The mutant set the argument for the object to null while the main set the arguments to getRule(laguerre, numberOfPoints)",1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+120,151,1,SUBMITTED,yes,parameter input changed,1.71861E+12,1.71861E+12,0,0,2,2,yes,0/0/2
+126,152,1,SUBMITTED,yes,"Code snippet 1:
+Directly returns the value of relativeAccuracy.
+Code snippet 2: 
+0.5 is added to the value of return relativeAccuracy and the resulting value is then returned. 
+We have difference in output that gets returned in both code snippet.",1.71928E+12,1.71928E+12,0,0,2,2,yes,0/0/2
+97,152,2,SUBMITTED,yes,this will return a different number because it is a double,1.719E+12,1.719E+12,0,0,2,2,yes,0/0/2
+105,154,5,SUBMITTED,yes,"The original'setElitismRate' method checks to see if the instance variable 'elitismRate' value is within the valid range '[0, 1]' before assigning the 'elitismRate' argument to it.
+
+Even though the 'elitismRate' is within the acceptable range, the method in the mutant version assigns twice the 'elitismRate' value ('2 * elitismRate') to the instance variable. This modifies the code's behavior by erroneously setting the 'elitismRate' to a value that may be beyond the acceptable range, which may cause the population creation logic to behave incorrectly or result in incorrect calculations.",1.71926E+12,1.71926E+12,0,0,2,2,yes,0/0/2
+126,154,1,SUBMITTED,yes,"There is difference in output in both codes as this is why:
+In code snippet 1, the value of  elitismRate is directly assigned to this.elitismRate while in code snippet 2, the value of elitismRate is multiplied by the number 2 and the result is then assigned to 
+this.elitismRate.",1.71928E+12,1.71928E+12,0,0,2,2,yes,0/0/2
+47,155,1,SUBMITTED,yes,The behavior of the function is inversed as the logic of the boolean is inversed using the '!' expression.,1.71825E+12,1.71825E+12,0,0,2,2,yes,0/0/2
+23,155,2,SUBMITTED,yes,We are altering the value of the randomStart variable which doesn't satisfy the purpose of the particular method. Hence it's Buggy.,1.71921E+12,1.71921E+12,0,0,2,2,yes,0/0/2
+120,158,1,SUBMITTED,yes,value changed,1.71902E+12,1.71902E+12,0,0,3,3,yes,0/0/3
+126,158,1,SUBMITTED,yes,The value assigned the variable d differs in both code snippets. This shows difference in behavior and output. ,1.71919E+12,1.71919E+12,0,0,3,3,yes,0/0/3
+127,158,1,SUBMITTED,yes,"In the original code, it directly assigns ""val"" to ""d"", while the mutant multiplies ""val"" by 0.8 before assigning it to ""d"". So, the mutant is a bug.",1.71877E+12,1.71877E+12,0,0,3,3,yes,0/0/3
+126,159,2,SUBMITTED,yes,"Code snippet to the left performs a subtraction operation, resulting in a BigReal object that represents the difference between d and a.d.
+Code snippet to the right performs an addition operation, resulting in a BigReal object that represents the sum of d and a.d.",1.71848E+12,1.71848E+12,0,0,3,3,yes,0/0/3
+97,159,1,SUBMITTED,yes,Its wrong because It returns different outputs,1.71876E+12,1.71876E+12,0,0,3,3,yes,0/0/3
+116,159,12,SUBMITTED,yes,The mutant code performs an addition operation instead of the intended subtraction.,1.71937E+12,1.71937E+12,0,0,3,3,yes,0/0/3
+126,167,1,SUBMITTED,yes,"Code snippet 1:
+It calls the evaluate method on the VARIANCE object, passing in an array values and a mean.
+Code snippet 2:
+It calls the evaluate method on the VARIANCE object, passing in an empty array new double[]{} and a mean.
+
+In both code snippet, mean is passed as second argument, however, the first argument differ leading to an overall difference in output on both ends.",1.71902E+12,1.71902E+12,0,0,2,2,yes,0/0/2
+97,167,1,SUBMITTED,yes,the mutant sends in a new double array list instead of the parameter of the 'variance' method,1.71898E+12,1.71898E+12,0,0,2,2,yes,0/0/2
+105,170,10,SUBMITTED,yes,"The original 'decrementAndGet' method returns the updated 'value' after correctly decrementing the 'value' by 1. This guarantees that the decremented value is appropriately represented and returned and that the 'value' field is updated correctly.
+
+The method in the mutant version writes the value to a new variable called ""newValue"" and decreases it by 1. Instead of changing the 'value' field directly, it returns the casted value of 'newValue.' Because the new decremented value is not updated in the 'value' field, this change produces an issue. There is a contradiction between the state of the field and the returned value as a result of the method returning the decremented value while the 'value' field stays unchanged. This mutation results in potential issues when the 'value' field is accessed later since it does not update the 'value' field, which causes improper behavior. ",1.71909E+12,1.71909E+12,0,0,2,2,yes,0/0/2
+131,170,15,SUBMITTED,yes,"It changes the behavior of the code output since it changes the way it computes the covariance between the two arrays. Changing the return value covariance(xArray, yArray, true) that uses the bias-corrected formula to covariance(xArray, yArray, false) makes the computation unbiased. ",1.71918E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+123,174,5,SUBMITTED,yes,"In the mutant code, despite iterating in reverse order, both snippets accumulate the same values in correction. However, the mutant code subtracts instead of adds the xbarw to (correction / sumw);",1.71931E+12,1.71931E+12,0,0,2,2,yes,0/0/2
+97,174,5,SUBMITTED,yes,when i = begin both codes dont work the same as the code will multiply stuff before the index value 'begin',1.71941E+12,1.71941E+12,0,0,2,2,yes,0/0/2
+105,177,7,SUBMITTED,yes,"SynchronizedSummaryStatistics class's getVariance method has undergone a substantial behavioral change in the mutant version. The variance that the superclass SummaryStatistics computed is returned by the synchronized getVariance function of the original class. The estimated variance of the dataset is accurately returned by this procedure. The method is changed in the mutant version so that it always returns 0.0.
+
+The class's functionality is directly impacted by this modification. One important statistical metric for determining how dispersed a set of values is variance. The mutant version's constant return of 0.0 results in an inaccurate measure of variance and ignores the real data, which could lead to possibly wrong inferences or decisions based on this statistic.",1.71874E+12,1.71874E+12,0,0,2,2,yes,0/0/2
+97,177,1,SUBMITTED,yes,they both dont return the same thing,1.71886E+12,1.71886E+12,0,0,2,2,yes,0/0/2
+125,178,3,SUBMITTED,yes,"The mutant code is buggy because you are multiplying the double by -1. super.getVariance() can get 50; in the original code, it will return 50, while in the mutant code, it will return -50, which is not the same.",1.71922E+12,1.71922E+12,0,0,2,2,yes,0/0/2
+14,178,1,SUBMITTED,yes,changes the variance to negative value,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+126,180,1,SUBMITTED,yes,"Snippet 1:
+It simply returns the value of the variable called identifier;
+Snippet 2:
+It multipliers the identifier variable by 2 before returning.",1.71902E+12,1.71902E+12,0,0,2,2,yes,0/0/2
+12,180,2,SUBMITTED,yes,Multiplying the value of the value which is to be returned by 2 changes desired execution,1.71895E+12,1.71895E+12,0,0,2,2,yes,0/0/2
+116,182,15,SUBMITTED,yes,"The mutant always sets matchRawType to true, which can lead to incorrect type matching and potential issues.",1.71929E+12,1.71929E+12,0,0,2,2,yes,0/0/2
+97,182,3,SUBMITTED,yes,this is because I think 'exactType.getType() == exactType.getRawType()' is not true. 'exactType.getType()' would give us 'TypeToken<?>' and 'exactType.getRawType()' would give us 'TypeToken',1.71902E+12,1.71902E+12,0,0,2,2,yes,0/0/2
+129,185,2,SUBMITTED,no,"In the mutant code, _base64Buffer is set as null, but then changed to _bufferRecycler.allocByteBuffer(BufferRecycler.BYTE_BASE64_CODEC_BUFFER) before it's returned just like in the original code, so the behavior and functionality of the mutant is the same as the original.",1.71934E+12,1.71934E+12,0,2,0,2,no,0/2/0
+126,185,2,SUBMITTED,no,"Both code snippets do same thing I.e
+They'll store the result of _bufferRecycler.allocByteBuffer(BufferRecycler.BYTE_BASE64_CODEC_BUFFER) to _base64Buffer before it returns. However,  code snippet 2 does the redundant step of assigning _base64Buffer before doing the above mentioned. This does not in any way impact the output.",1.71902E+12,1.71902E+12,0,2,0,2,no,0/2/0
+63,187,5,SUBMITTED,yes,"Both return quoted characters from a value but the mutant appends ""Invalid Value"" to the quoted value, potentially altering the intended output if the result character array is null.
+
+",1.71898E+12,1.71898E+12,0,0,2,2,yes,0/0/2
+11,187,2,SUBMITTED,yes,"The mutant concatenate ""Invalid Value"" to the variable result",1.71914E+12,1.71914E+12,0,0,2,2,yes,0/0/2
+125,189,6,SUBMITTED,yes,"The mutant code uses the same indenter value as the current instance, while in the original code, it is setting a new array indenter with ""i"" which might not be the same as the indenter value within the current instance.",1.71922E+12,1.71926E+12,0,0,3,3,yes,0/0/3
+105,189,10,SUBMITTED,yes,"To set the '_arrayIndenter' property, the original 'withArrayIndenter' method required a 'Indenter' object as an argument. It defaults to 'NopIndenter.instance' if the supplied 'Indenter' is null. It returns 'this' if the supplied '_arrayIndenter' and the current one are already the same. If not, it generates a new instance of the 'DefaultPrettyPrinter' object, assigns the supplied 'Indenter' to the '_arrayIndenter' field, and then returns the instance of the new 'DefaultPrettyPrinter' object.
+
+The line 'pp._arrayIndenter = i;' is changed to 'pp._arrayIndenter = this._arrayIndenter;' in the mutant version. This alteration creates a bug since it sets the new '_arrayIndenter' to the current '_arrayIndenter' improperly rather than to the supplied 'Indenter.' The 'withArrayIndenter' method will, therefore, fail to update the '_arrayIndenter' as intended, and the 'DefaultPrettyPrinter' object that is produced will retain the original '_arrayIndenter' while disregarding the 'Indenter' that was supplied.",1.71909E+12,1.71909E+12,0,0,3,3,yes,0/0/3
+131,189,20,SUBMITTED,yes,"The mutant version of the code (pp._arrayIndenter = this._arrayIndenter) does not update the indenter to the new one (i); so, the method returns a new instance, but with the old _arrayIndenter. Therefore, it is buggy.",1.71924E+12,1.71925E+12,0,0,3,3,yes,0/0/3
+53,198,3,SUBMITTED,yes,"|= is used for bitwise OR while ^= is used for bitwise XOR.
+They will not return the same result when used on a mask",1.71899E+12,1.71899E+12,0,0,2,2,yes,0/0/2
+14,198,1,SUBMITTED,yes,or and xor are not similar,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+23,200,2,SUBMITTED,no,"in mutant code, the value is stored in a boolean variable which has not been done in the actual snippet. So it's NOT a buggy code.",1.71911E+12,1.71916E+12,0,2,0,2,no,0/2/0
+11,200,3,SUBMITTED,no,same return value with different variable,1.7193E+12,1.7193E+12,0,2,0,2,no,0/2/0
+17,210,1,SUBMITTED,no,Both logics are equivalent,1.71933E+12,1.71933E+12,0,2,0,2,no,0/2/0
+97,210,1,SUBMITTED,no,both work the same,1.71902E+12,1.71902E+12,0,2,0,2,no,0/2/0
+23,212,2,SUBMITTED,no,"In mutant code, the `_item = ob;` shifted to another line which doesn't have logical changes. So this mutant is not buggy.",1.71921E+12,1.71921E+12,0,2,0,2,no,0/2/0
+127,212,1,SUBMITTED,no,"The mutant changes the order of two lines of code that do not depend on each other, so it is not a bug.",1.71933E+12,1.71933E+12,0,2,0,2,no,0/2/0
+17,220,1,SUBMITTED,no,Mutant expression is equivalent,1.71921E+12,1.71921E+12,0,2,0,2,no,0/2/0
+11,220,2,SUBMITTED,no,The mutant will enter the loop if the result is true and then return true else it will return false as the main code,1.71931E+12,1.71931E+12,0,2,0,2,no,0/2/0
+53,227,5,SUBMITTED,yes,"The type of _value that is checked in the first snippet is 'Number' while the type that is checked in the second snippet is 'Integer' hence the conditionals will trigger differently for the two snippets
+",1.71917E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+105,227,15,SUBMITTED,yes,"The original 'asInt' method verifies if '_value' is an instance of 'Number' and, if so, returns its integer value. This method enables the accurate conversion of various numeric types—such as ""Integer,"" ""Float,"" and ""Double""—to integers.
+
+The mutatn limits the check to only 'Integer' instances. It returns the default value in the event that '_value' is not an instance of 'Integer.' Because it disregards other numeric types that can also be converted to integers, this update produces a bug. The mutant version will not convert '_value,' for instance, if it is a 'Double' or 'Float.' Instead, it will return the default value. In situations where '_value' is a numeric type other than 'Integer,' it may lead to unexpected outcomes or failures.",1.71909E+12,1.71909E+12,0,0,2,2,yes,0/0/2
+127,231,1,SUBMITTED,yes,"The mutant simply changes ""OR"" to ""AND"", so it is a bug.",1.71879E+12,1.71879E+12,0,0,2,2,yes,0/0/2
+106,231,3,SUBMITTED,yes,the original only returns true if one of the statements divided by the or operator while the mutant returns true only if both statements are true,1.7191E+12,1.7191E+12,0,0,2,2,yes,0/0/2
+97,232,9,SUBMITTED,yes,"A wrong value is passed though, causing an logic error",1.7192E+12,1.7192E+12,0,0,2,2,yes,0/0/2
+17,232,1,SUBMITTED,yes,Alters the expression,1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+97,233,1,SUBMITTED,yes,if the value of 'value' is null true is returned,1.71903E+12,1.71903E+12,0,0,2,2,yes,0/0/2
+129,233,3,SUBMITTED,yes,"If you pass a null value as the second parameter in the isEmpty function, you will get a NullPointerException in the original code but not in the mutant code. The difference in behavior means the mutant is buggy.",1.71934E+12,1.71934E+12,0,0,2,2,yes,0/0/2
+129,236,4,SUBMITTED,yes,"If (_objectIdWriter != null) is true, then _serializeWithObjectId method is called with 4th parameter set as 'true' in original code, and 'false' in mutant code, this makes the mutant buggy. In the original code, after _serializeWithObjectId is called, it exits serialize method with a return statement, but the mutant code has this statement removed. The mutant code fits rest of the code of the serialize method into an else block (if (_objectIdWriter != null) is false), this achieves the purpose of the return statement in the original code, meaning the functionality of the else block in the mutant is the same as the return statement in the original.",1.71926E+12,1.71926E+12,0,0,2,2,yes,0/0/2
+17,236,3,SUBMITTED,yes,Changes function logic,1.71934E+12,1.71934E+12,0,0,2,2,yes,0/0/2
+127,244,1,SUBMITTED,yes,"The mutant simply changes one possible return value from ""true"" to ""false"", which is a bug.",1.71907E+12,1.71907E+12,0,0,2,2,yes,0/0/2
+120,244,1,SUBMITTED,yes,true turned to false,1.7186E+12,1.71861E+12,0,0,2,2,yes,0/0/2
+12,250,2,SUBMITTED,yes,Original code clones a list while mutant code deletes the list,1.71895E+12,1.71895E+12,0,0,2,2,yes,0/0/2
+14,250,4,SUBMITTED,yes,"removes all the keys, instead of assigning the keys to new list",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+123,251,15,SUBMITTED,no,The code behavior doesn't change when starting from columns then iterating through each row ,1.7191E+12,1.71915E+12,0,2,0,2,no,0/2/0
+105,251,5,SUBMITTED,no,"The equals method in its original form iterates through the rows and columns in a nested loop, beginning at the first row and first column, and compares each element in the matrix. The iteration sequence is altered in the mutant version by iterating backward, beginning in the final row and column.
+
+The equality check inside the code still checks every element of the matrix in both versions despite this shift in iteration order. As long as all items are appropriately compared, the equality check's result is unaffected by the sequence in which they are compared. As a result, in both versions, the equals method behaves and produces the same results.",1.71894E+12,1.71894E+12,0,2,0,2,no,0/2/0
+126,253,2,SUBMITTED,yes,"The first code snippet to the right, the area of interest is empty and as such there is no conditional check on the minute argument which is to be passed to the super class method underneath it. For code snippet 2 to the right, there's a conditional check for minutes arguments to check if it is greater than 60 and if this is true, the minute argument is set to 60 before passing it on to the super class method underneath it. ",1.71863E+12,1.71863E+12,1,0,2,3,yes,1/0/2
+14,253,8,SUBMITTED,maybe,Depends on whether prior bound check has performed,1.71925E+12,1.71926E+12,1,0,2,3,yes,1/0/2
+17,253,2,SUBMITTED,yes,Minutes must not be limited to 60,1.71933E+12,1.71933E+12,1,0,2,3,yes,1/0/2
+23,262,5,SUBMITTED,no,"The equal sign check (<=) is not problematic. The method correctly handles cases where the difference is zero, returning 0 as expected. As long as the iChronology.getYearDifference method behaves as expected (returns a positive difference regardless of order), there should be no issues with this implementation.",1.71903E+12,1.71903E+12,0,3,0,3,no,0/3/0
+11,262,3,SUBMITTED,no,If the difference was 0  it wont matter whether we subtract minuendInstant from subtrahendInstant or vice versa,1.71914E+12,1.71914E+12,0,3,0,3,no,0/3/0
+131,262,6,SUBMITTED,no,Including '=' sign in the if statement does not lead to any error since both the original and the mutant code return 0 when minuendInstant is equal to subtrahendInstant. ,1.71935E+12,1.71935E+12,0,3,0,3,no,0/3/0
+126,271,1,SUBMITTED,yes,"Code snippet 1 returns the result of the isLenient() method called on the iField object
+While code snippet 2 only returns the boolean value of false.",1.71916E+12,1.71916E+12,0,0,3,3,yes,0/0/3
+11,271,1,SUBMITTED,yes,The mutant will always return false ,1.719E+12,1.719E+12,0,0,3,3,yes,0/0/3
+14,271,1,SUBMITTED,yes,Gives wrong answer when iField.isLenient() is true,1.71855E+12,1.71855E+12,0,0,3,3,yes,0/0/3
+14,272,5,SUBMITTED,yes,wrong value is sent to the method,1.71914E+12,1.71914E+12,0,0,2,2,yes,0/0/2
+126,272,3,SUBMITTED,yes,"Code snippet 1:
+Retrieves the maximum value for a specific field (e.g., year, month, day) directly from the current state of getMillis().
+Code snippet 2:
+It will  return the maximum value for the day of the year after rounding getMillis() to the next day and then considering the day of the year.
+",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+11,277,2,SUBMITTED,yes,The mutant added extra 1000 to the super method get that will change the output value ,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+120,277,1,SUBMITTED,yes,time value changed,1.71861E+12,1.71861E+12,0,0,2,2,yes,0/0/2
+120,279,2,SUBMITTED,yes,called function parameter changed,1.7187E+12,1.71877E+12,0,0,2,2,yes,0/0/2
+97,279,2,SUBMITTED,yes,They both don't have identical results since there is nothing subtracting 1 from iDivisor.,1.71876E+12,1.71876E+12,0,0,2,2,yes,0/0/2
+14,280,1,SUBMITTED,yes,"when value is 0, 0 is sent instead of time",1.71898E+12,1.71898E+12,0,0,2,2,yes,0/0/2
+17,280,2,SUBMITTED,yes,"If value is zero, the function should return the existing  duration field value",1.71932E+12,1.71932E+12,0,0,2,2,yes,0/0/2
+17,282,1,SUBMITTED,yes,Mutant changes code logic,1.7194E+12,1.7194E+12,0,0,2,2,yes,0/0/2
+125,282,2,SUBMITTED,yes,"The behavior is different within the mutant code since it will return this when seconds = 3, while if seconds = 3 in the original code, it will not return this, making the two codes return different DateTime objects.",1.71922E+12,1.71922E+12,0,0,2,2,yes,0/0/2
+105,283,10,SUBMITTED,yes,"Even in cases where the multiplicity of seconds is negative, the original 'plusSeconds' method creates a new 'DateTime' instance and adds the required number of seconds. The intended behavior of adding or subtracting seconds from the current instance is provided, ensuring that the method appropriately handles both positive and negative inputs.
+
+If the input is positive ('seconds > 0'), the technique in the mutant version just adds seconds. It just returns the existing instance of 'DateTime' in the event that the input is 0 or negative. Due to its incorrect handling of negative values, this patch produces a bug. Negative inputs should allow the original method to remove seconds; however, the mutant version completely ignores them.",1.71909E+12,1.71909E+12,0,1,2,3,yes,0/1/2
+17,283,1,SUBMITTED,yes,seconds can be negative,1.71891E+12,1.71891E+12,0,1,2,3,yes,0/1/2
+58,283,5,SUBMITTED,no,The code eventhough changes the conditions a bit that the values less than 0 are considered in the seconds == 0 case however the overall logic of the code is to plus seconds I believe we can just return this pointer if seconds is less than equals to 0 so the mutant is not buggy,1.7182E+12,1.7182E+12,0,1,2,3,yes,0/1/2
+17,293,2,SUBMITTED,no,Same logic written in a different way,1.71881E+12,1.71881E+12,0,2,0,2,no,0/2/0
+14,293,1,SUBMITTED,no,both are same code.,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+120,299,3,SUBMITTED,yes,return and class variable different,1.71856E+12,1.71856E+12,0,0,2,2,yes,0/0/2
+14,299,1,SUBMITTED,yes,only false will be returned instead  of both true and false.,1.71822E+12,1.71822E+12,0,0,2,2,yes,0/0/2
+14,304,2,SUBMITTED,yes,"changes value of hash. First bit of hash can be 1, which will be changed to zero. It will give wrong answer",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+17,304,4,SUBMITTED,yes,Mutant changes the function logic,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+126,306,2,SUBMITTED,yes,"Both code snippets  get 3 arguments. 
+In code snippet 1, the arguments are inputStream, doEncode, false and non of the arguments is directly  dependent on the other. 
+Code snippet 2, the arguments are inputStream, doEncode, !doEncode. The third argument is dependent on the value of the second arhument. 
+For code snippet 1, the third argument is strictly false and does not change while in code snippet 2, the value of the third argument can be true or false depending on its second argument.
+Given the conditions of the above, there will be difference in the output on both ends.",1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+105,306,10,SUBMITTED,yes,"The 'doEncode' argument in the original 'Base16InputStream' constructor tells us whether the data we read is 'Base16' encoded or 'Base16' decoded. The default behavior does not employ a lower-case 'Base16' alphabet because the 'lowerCase' argument is set to 'false' by default.
+
+The 'lowerCase' argument in the mutant version is set to '!doEncode,' which is the opposite of 'doEncode'. This modification results in ""lowerCase"" being ""false,"" which is the same as the original behavior if ""doEncode"" is ""true,"" signifying encoding. In contrast to the original behavior, 'lowerCase' will be 'true' if 'doEncode' is 'false.'",1.71935E+12,1.71935E+12,0,0,2,2,yes,0/0/2
+123,310,2,SUBMITTED,yes,"In the mutant code, the p object is set to null, which may raise some nullpointer exceptions. Therefore, the code behavior may change",1.71918E+12,1.71918E+12,0,0,2,2,yes,0/0/2
+120,310,3,SUBMITTED,yes,many changes that affect functionality,1.7191E+12,1.7191E+12,0,0,2,2,yes,0/0/2
+97,311,11,SUBMITTED,yes,Only when both are equal true should be returned,1.71941E+12,1.71941E+12,0,0,2,2,yes,0/0/2
+123,311,2,SUBMITTED,yes,The code behavior may change by changing the condition from AND to OR,1.7191E+12,1.7191E+12,0,0,2,2,yes,0/0/2
+97,317,2,SUBMITTED,no,they both return index greater that 0,1.71893E+12,1.71893E+12,0,2,0,2,no,0/2/0
+123,317,15,SUBMITTED,no,The code behavior doesnt necessarily change as the nextindex would never return a negative value. The nextindex function returns the size of the list subsequent to approaching the last index,1.71918E+12,1.71918E+12,0,2,0,2,no,0/2/0
+97,318,1,SUBMITTED,no,its just making variable for the return statement,1.71894E+12,1.71894E+12,0,2,0,2,no,0/2/0
+66,318,2,SUBMITTED,no,it will give same result only extra variables added in buggy mutant,1.71896E+12,1.71896E+12,0,2,0,2,no,0/2/0
+120,320,1,SUBMITTED,no,OR statement has same result,1.71853E+12,1.71853E+12,0,2,0,2,no,0/2/0
+66,320,7,SUBMITTED,no,the mutant is not buggy both are giving same outcome only styling and implementation is different,1.71896E+12,1.71896E+12,0,2,0,2,no,0/2/0
+66,323,4,SUBMITTED,yes,correct code has decreeent and buggy has post decreement of this.index so output will change,1.71896E+12,1.71896E+12,0,0,2,2,yes,0/0/2
+17,323,1,SUBMITTED,yes,"In the mutant, lastItemIndex will be equal to index instead of one less than index",1.7194E+12,1.7194E+12,0,0,2,2,yes,0/0/2
+11,326,3,SUBMITTED,yes,The mutant handles the null cases and wont throw NullPointerException while main might throw if the iterable was null,1.71917E+12,1.71917E+12,0,1,2,3,yes,0/1/2
+97,326,1,SUBMITTED,no,Both return the same values,1.71876E+12,1.71876E+12,0,1,2,3,yes,0/1/2
+17,326,2,SUBMITTED,yes,"The function does not expect a null response, an empty list should be returned instead",1.71932E+12,1.71932E+12,0,1,2,3,yes,0/1/2
+58,328,5,SUBMITTED,yes,"the logic of the code snippet is completely changed in the mutant. Instead of returning true if the object is equal to this pointer, the mutant checks for object being null and returns false",1.7182E+12,1.7182E+12,0,0,2,2,yes,0/0/2
+126,328,1,SUBMITTED,yes,Both codes checks for different conditions and return different values. Hence they are different in terms of behavior and output.,1.71918E+12,1.71918E+12,0,0,2,2,yes,0/0/2
+126,330,2,SUBMITTED,yes,"whilst both code snippets are identical, the comment after each code snippet suggests the context in which the code is being used and that will overall result in difference in behavior and output of the code snippets.",1.71858E+12,1.71858E+12,0,2,1,3,no,0/2/1
+125,330,1,SUBMITTED,no,The code is the same; there are only changes in the spacing and the format between both sides of the code.,1.71886E+12,1.71886E+12,0,2,1,3,no,0/2/1
+11,330,1,SUBMITTED,no,Adding new line doesn't change the code,1.71931E+12,1.71931E+12,0,2,1,3,no,0/2/1
+11,333,2,SUBMITTED,yes,The mutant calls the super method super(initialCapacity + 1) but with extra +1 ,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+126,333,2,SUBMITTED,yes,"Super() gets an argument called initialCapacity. Whatever the value passed into it will impact the result of super(). In code snippet 2, the value of initialCapacity is incremented by 1which then impacts the result of super() leading to difference in output.",1.71933E+12,1.71933E+12,0,0,2,2,yes,0/0/2
+11,336,1,SUBMITTED,no,By default if there is no next it will return null ,1.71931E+12,1.71931E+12,0,2,0,2,no,0/2/0
+120,336,5,SUBMITTED,no,"return written out, but not changed",1.71822E+12,1.71848E+12,0,2,0,2,no,0/2/0
+97,337,1,SUBMITTED,yes,the mutant removes the wrong key,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+23,337,5,SUBMITTED,yes,"If we observe the other functions of that code, we can see they have been used now() for `expired entries`. But in that particular change, we are adding +1 with the current value, which is not the same as the code's actual logic. Hense its buggy.",1.71921E+12,1.71921E+12,0,0,2,2,yes,0/0/2
+11,340,3,SUBMITTED,no,Swapping the operand before or after xor doesn't change the value,1.71926E+12,1.71926E+12,0,2,0,2,no,0/2/0
+17,340,6,SUBMITTED,no,"Operation is an XOR, so the order does not matter",1.71881E+12,1.71881E+12,0,2,0,2,no,0/2/0
+17,351,1,SUBMITTED,yes,Changes function logic,1.71891E+12,1.71891E+12,0,0,2,2,yes,0/0/2
+11,351,3,SUBMITTED,yes,The mutant return the output of the function isBitSet but passes the lengthInBits + 1 not just lengthInBits like the main cide ,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+11,357,1,SUBMITTED,no,Both return the same object,1.71917E+12,1.71917E+12,0,3,0,3,no,0/3/0
+105,357,5,SUBMITTED,no,"Before returning the cast result, the mutant adds another local variable map to hold it. The method's logic and behavior are unaffected by this syntactic alteration. In the end, the same value is returned by both variants. Therefore, the mutant's behavior matches that of the original code.",1.71834E+12,1.7184E+12,0,3,0,3,no,0/3/0
+97,357,1,SUBMITTED,no,its the same code. The mutant is just using a variable for the retun statement,1.71912E+12,1.71912E+12,0,3,0,3,no,0/3/0
+24,362,4,SUBMITTED,yes,Mutated code always return 0 regardless of the value of r,1.71836E+12,1.71836E+12,0,0,2,2,yes,0/0/2
+97,362,2,SUBMITTED,yes,they both dont work the same ,1.7191E+12,1.7191E+12,0,0,2,2,yes,0/0/2
+97,367,1,SUBMITTED,yes,"String[]{""age"", ""gender""} is not an empty string",1.71941E+12,1.71941E+12,0,0,3,3,yes,0/0/3
+113,367,1,SUBMITTED,yes,will provide different arrays,1.7193E+12,1.7193E+12,0,0,3,3,yes,0/0/3
+126,367,2,SUBMITTED,yes,Code snippet one  to the left returns an empty array while mutant code to the right returns a n array with predetermined set of properties. ,1.71848E+12,1.71848E+12,0,0,3,3,yes,0/0/3
+113,369,1,SUBMITTED,yes,different outputs,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+126,369,2,SUBMITTED,yes,"In code snippet 1:
+The value of DYNAMIC_POINTER_FACTORY_ORDER is simply returned.
+In code snippet 2:
+1 is subtracted from the value of return DYNAMIC_POINTER_FACTORY_ORDER before the resulting value is returned. 
+The value returned in both snippets are not the same. ",1.71924E+12,1.71924E+12,0,0,2,2,yes,0/0/2
+97,375,1,SUBMITTED,yes,when 'index' is greater than 'WHOLE_COLLECTION' both codes don't work the same,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+11,375,2,SUBMITTED,yes,Changing != to > is not equivalent as there is the < case ,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+17,383,1,SUBMITTED,yes,Mutant changes function logic,1.71932E+12,1.71932E+12,0,0,2,2,yes,0/0/2
+14,383,1,SUBMITTED,yes,return value changed,1.71925E+12,1.71925E+12,0,0,2,2,yes,0/0/2
+17,389,1,SUBMITTED,yes,Changes the function output,1.71882E+12,1.71882E+12,0,0,2,2,yes,0/0/2
+12,389,2,SUBMITTED,yes,Subtracting the value which is to be returned by 1 leads to change in execution,1.71895E+12,1.71895E+12,0,0,2,2,yes,0/0/2
+97,393,2,SUBMITTED,no,the mutant just transfers the value of 'value' to 'b' then returned !b. This give the same result as the initial code,1.71831E+12,1.71831E+12,0,2,0,2,no,0/2/0
+126,393,1,SUBMITTED,no,"In code 1, it directly returns the negation of the value variable.
+While in code snippet 2, it assigns value to variable b before returning the negation of b.
+The output for both code snippet will be same.",1.71915E+12,1.71915E+12,0,2,0,2,no,0/2/0
+17,401,1,SUBMITTED,yes,Operation should be performed only once,1.7194E+12,1.7194E+12,0,0,2,2,yes,0/0/2
+97,401,1,SUBMITTED,yes,the mutant subtracts the same variable twice,1.7191E+12,1.7191E+12,0,0,2,2,yes,0/0/2
+123,402,20,SUBMITTED,no,"Both codes suceed in converting the input into a double, albeit in different ways. In the mutant code, it converts the input string to a long and then interprets the long value as the bit pattern of a double. Whereas in the original code, it directly converts the string to a double",1.71926E+12,1.71931E+12,0,2,0,2,no,0/2/0
+97,402,2,SUBMITTED,no,It gives the same value as the 'longBitsToDouble()' method does not effect the double,1.71831E+12,1.71831E+12,0,2,0,2,no,0/2/0
+126,404,1,SUBMITTED,yes,"Code snippet to the left first casts the value to an int, removing any fractional part if value is a floating-point number. It then adds 1 to the result of the cast and returns the new integer value. In contras, the code snippet to the left only cast the value to an int without adding any numerical whole number leading to an overall change in out on both ends.",1.71856E+12,1.71856E+12,0,0,2,2,yes,0/0/2
+105,404,10,SUBMITTED,yes,"MutableDouble class's mutant version of the intValue method brings a notable behavioral change. The intValue function in the original class merely casts the value to an int while maintaining the numerical value as much as possible.
+
+As is typical when casting a double to an int, this method should return the integer portion of the double value while discarding any fractional part.
+
+However, the technique in the mutant version increases the cast result by 1. With this modification, the returned integer value is now increased by 1 each time intValue is called. Casting a double to an int is not the expected standard procedure, therefore this behavior is improper. Anywhere the intValue method is used, it will produce inaccurate results since the integer representation of the value is always off by 1.
+For example, if value is 5.8, the original intValue would return 5, but the mutant would return 6. Also, if value is -3.1, the original intValue would return -3, but the mutant would return -2.",1.71875E+12,1.71875E+12,0,0,2,2,yes,0/0/2
+14,410,2,SUBMITTED,yes,operand is assigned instead of being added,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+116,410,10,SUBMITTED,yes,"the mutant code assigns the operand value to value, which is incorrect.",1.71927E+12,1.71927E+12,0,0,2,2,yes,0/0/2
+133,413,9,SUBMITTED,yes,"changing value to null in the mutated case is a bug because given an instance when the value of the parameter ""value""  passed is not null, the overall behavior of the code changes.",1.71932E+12,1.71932E+12,0,0,2,2,yes,0/0/2
+126,413,2,SUBMITTED,yes,"writeDeclaredStaticField() receives 4 argument in both code snippet. However, there's  difference  in the 3rd argument received on both ends. The 3rd argument for snippet 1 is value while for snippet 2 is null. These arguments significantly impacts the overall output of the code snippets leading to difference in output.",1.71919E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+11,421,7,SUBMITTED,yes,Adding the condition can make the function return false even the 2 arrays were equal and of length ==1,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+120,421,2,SUBMITTED,yes,new conditional,1.71895E+12,1.71895E+12,0,0,2,2,yes,0/0/2
+106,423,2,SUBMITTED,maybe,"This depends on whether the getSplitNanoTime() and/ or NANO_2_MILLIS is a double or int, cause if they are both integers then their quotient would result in an int with makes the mutant not buggy, but if one of them is a double then the result would differ from the original and mutant. making it buggy",1.71892E+12,1.71892E+12,2,0,0,2,maybe,2/0/0
+127,423,3,SUBMITTED,maybe,"For the original code, the division result is first narrowed to an 'int', which could lead to truncation if the result exceeds the range of 'int' depending on the operating system.",1.71905E+12,1.71907E+12,2,0,0,2,maybe,2/0/0
+120,425,1,SUBMITTED,yes,return changed,1.71902E+12,1.71902E+12,0,1,2,3,yes,0/1/2
+105,425,5,SUBMITTED,no,"The pre-initialized constant 'EMPTY_ARRAY' is returned by the original 'emptyArray' method for the 'MutablePair' class. Because it avoids building a new array each time the method is invoked, this solution is efficient.
+
+Each time the method is invoked in the mutant version,  return (MutablePair[]) new MutablePair[0];' is what is returned. This degrades efficiency since an unneeded array is created, but it has no effect on the method's accuracy or functionality. Therefore, there is no bug introduced by the mutation; the mutant version does not change the method's behavior or logical conclusion.",1.71926E+12,1.71926E+12,0,1,2,3,yes,0/1/2
+14,425,2,SUBMITTED,yes,Returns new object each time instead of singleton,1.71888E+12,1.71888E+12,0,1,2,3,yes,0/1/2
+126,426,3,SUBMITTED,yes,"Code snippet 1:
+This statement casts EMPTY_ARRAY to an array of type MutablePair<L, R>[] and returns it
+
+Code snippet 2:
+Directly initializes a new array of MutablePair<L, R>[], ensuring type safety at compile time.
+",1.71916E+12,1.71916E+12,0,1,2,3,yes,0/1/2
+14,426,1,SUBMITTED,yes,Differant objects are returned,1.71925E+12,1.71925E+12,0,1,2,3,yes,0/1/2
+97,426,1,SUBMITTED,no,both return an empty array,1.71825E+12,1.71829E+12,0,1,2,3,yes,0/1/2
+66,427,15,SUBMITTED,no,output will be same of both mutnts,1.71896E+12,1.71897E+12,0,2,0,2,no,0/2/0
+126,427,4,SUBMITTED,no,Both code snippets will produce an empty array those they do it slightly different.,1.71917E+12,1.71918E+12,0,2,0,2,no,0/2/0
+12,429,2,SUBMITTED,no,Mutant code handles error (null value) while preserving original functionality as well,1.71895E+12,1.71895E+12,0,1,2,3,yes,0/1/2
+125,429,6,SUBMITTED,yes,"The mutant code is buggy because it addresses the case where the pair is null and will return null, while in the original code, it relies on the ImmutablePair.of(pair) to handle the null case. Depending on the implementation it will handle the null or will throw a NullPointerException when pair is null while the mutant code will return null when pair is null.",1.71922E+12,1.71922E+12,0,1,2,3,yes,0/1/2
+17,429,2,SUBMITTED,yes,Function expects a nullPair when pair is null not a null object,1.7192E+12,1.7192E+12,0,1,2,3,yes,0/1/2
+11,434,2,SUBMITTED,yes,The mutant sets only the fromIndex and value,1.71915E+12,1.71915E+12,0,0,2,2,yes,0/0/2
+17,434,1,SUBMITTED,yes,Second value in set overload should be toIndex not value,1.7194E+12,1.7194E+12,0,0,2,2,yes,0/0/2
+23,440,2,SUBMITTED,yes,"According to the docstring, the range is 0 - Float.MAX_VALUE. But in mutant code the lower value is Float.MIN_Value which is incorrect. Hence the mutant is Buggy",1.71938E+12,1.71938E+12,0,0,3,3,yes,0/0/3
+120,440,1,SUBMITTED,yes,function call value changed,1.71902E+12,1.71902E+12,0,0,3,3,yes,0/0/3
+123,440,4,SUBMITTED,yes,"The mutant code uses MIN VALUE instead of 0, and the min value is the smallest positive nonzero value of type float, 2-149
+So both codes aren't equivalent ",1.71857E+12,1.71857E+12,0,0,3,3,yes,0/0/3
+97,441,1,SUBMITTED,yes,The mutant is buggy because 'Float.MIN_VALUE' does not equal 0,1.7192E+12,1.7192E+12,0,0,2,2,yes,0/0/2
+126,441,1,SUBMITTED,yes,"The nextFloat() method receives two arguments in both code snippets. The second argument is same for both, however, the first argument is different and this will impact the output value that gets returned.",1.71918E+12,1.71918E+12,0,0,2,2,yes,0/0/2
+126,447,1,SUBMITTED,yes,"The key difference lies in the  value assigned to sampleSize in both code snippets.
+In code snippet 1, sampleSize <= 0 and in code snippet 2, sampleSize < 0. 
+Hence the range of values that satisfy the condition in snippet 1 will slightly differ from that in snippet 2.",1.71919E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+14,447,1,SUBMITTED,yes,"when samplesize == 0, code should throw an error, mutant returns object",1.71883E+12,1.71883E+12,0,0,2,2,yes,0/0/2
+116,448,8,SUBMITTED,yes,"the mutant code is changing the value of ""isSingular"", this can introduce bugs if the method is expected to return the actual value of ""isSingular""",1.71864E+12,1.71864E+12,0,0,2,2,yes,0/0/2
+17,448,1,SUBMITTED,yes,Changes code logic,1.71881E+12,1.71881E+12,0,0,2,2,yes,0/0/2
+14,451,2,SUBMITTED,yes,secondary and temp are not same,1.71914E+12,1.71914E+12,0,0,3,3,yes,0/0/3
+97,451,1,SUBMITTED,yes,they both dont work the same because 'temp' is null all the time ,1.71898E+12,1.71898E+12,0,0,3,3,yes,0/0/3
+63,451,3,SUBMITTED,yes,"The original code method returns the double array variable ""secondary"". The mutant always returns null, therefore it is buggy for the cases in which the array is not null.",1.71909E+12,1.71909E+12,0,0,3,3,yes,0/0/3
+11,455,3,SUBMITTED,yes,Changing the order of the method arguments will change the output of the method and also might cause error,1.71922E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+127,455,5,SUBMITTED,yes,"“theTa”, ""oneMinusThetaH"", and ""theta"" are three different variables, so changing their positions as function inputs will likely end up with different return results. So, the mutant is a bug",1.71904E+12,1.71905E+12,0,0,2,2,yes,0/0/2
+17,472,1,SUBMITTED,yes,Mutant changes code logic,1.71921E+12,1.71921E+12,0,0,2,2,yes,0/0/2
+97,472,2,SUBMITTED,yes,the mutant cant be right because it does not return the same number,1.71941E+12,1.71941E+12,0,0,2,2,yes,0/0/2
+66,473,4,SUBMITTED,yes,index is completely changed from e to e-1,1.71896E+12,1.71896E+12,0,0,3,3,yes,0/0/3
+17,473,1,SUBMITTED,yes,Changes output of function,1.71891E+12,1.71891E+12,0,0,3,3,yes,0/0/3
+126,473,1,SUBMITTED,yes,"There's difference in output as
+Code snippet 1 returns the element at index e in the pow10 array while
+Code snippet 2 returns the element at index e-1 in the pow10 array.",1.71897E+12,1.71897E+12,0,0,3,3,yes,0/0/3
+97,474,2,SUBMITTED,yes,they both test different things,1.71909E+12,1.71909E+12,0,0,2,2,yes,0/0/2
+14,474,1,SUBMITTED,yes,& and | changes result,1.71888E+12,1.71888E+12,0,0,2,2,yes,0/0/2
+116,477,15,SUBMITTED,yes,"The mutant code does not return the current value and instead always returns a new, empty Object",1.71937E+12,1.71937E+12,0,0,2,2,yes,0/0/2
+23,477,2,SUBMITTED,yes,"According to function name, it should return _current value. Hence its a buggy code",1.71919E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+116,492,15,SUBMITTED,maybe,"It is not clear, negating _allowJDKTypeCtors could introduce a bug if its original value is crucial for the correct behavior of the ConstructorDetector object",1.71926E+12,1.71926E+12,1,0,2,3,yes,1/0/2
+14,492,1,SUBMITTED,yes,"value of _allowJDKTypeCtors is changed during object construction, it will change the objcet",1.71914E+12,1.71914E+12,1,0,2,3,yes,1/0/2
+126,492,1,SUBMITTED,yes,"The key difference is in the argument _allowJDKTypeCtors. 
+In code snippet 1, it is simply _allowJDKTypeCtors
+In code snippet 2, it is !_allowJDKTypeCtors which is the negation of _allowJDKTypeCtors.
+Basically if _allowJDKTypeCtors is true then !_allowJDKTypeCtors will be false and vice versa.",1.71919E+12,1.71919E+12,1,0,2,3,yes,1/0/2
+97,494,1,SUBMITTED,yes,the mutant only applies '_mapper.disable' to the first insdex,1.71894E+12,1.71894E+12,0,0,2,2,yes,0/0/2
+113,494,1,SUBMITTED,yes,outputs will be different,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+123,495,5,SUBMITTED,yes,Changing the parameter from type to null may cause some behavioral changes in the mutant code,1.71915E+12,1.71915E+12,0,0,2,2,yes,0/0/2
+125,495,7,SUBMITTED,yes,You are getting the BeanDescription for a certain JavaType on the left whereas on the right you are getting the BeanDescription for null which would not return the same thing since could is a JavaType and the other is a null which are not the same thing.,1.71832E+12,1.71843E+12,0,0,2,2,yes,0/0/2
+11,509,1,SUBMITTED,yes,The mutant changed the != to == ,1.71923E+12,1.71923E+12,0,0,3,3,yes,0/0/3
+17,509,1,SUBMITTED,yes,Changes function logic,1.71891E+12,1.71891E+12,0,0,3,3,yes,0/0/3
+127,509,1,SUBMITTED,yes,"The mutant has the exact opposite logic of the original code ""=="" vs ""!="", so the mutant is a bug.",1.71878E+12,1.71878E+12,0,0,3,3,yes,0/0/3
+12,510,2,SUBMITTED,yes,Original code will return false when _fromBooleanCreator is null but mutant code will always return true,1.71896E+12,1.71896E+12,0,0,2,2,yes,0/0/2
+97,510,2,SUBMITTED,yes,(_fromBooleanCreator != null) does not always evauvate to 'true',1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+120,515,1,SUBMITTED,yes,>= to >,1.71899E+12,1.71899E+12,0,0,2,2,yes,0/0/2
+97,515,2,SUBMITTED,yes,the output is not the same when 'index' = 'types.length',1.71894E+12,1.71895E+12,0,0,2,2,yes,0/0/2
+125,520,2,SUBMITTED,no,defaultState || defaultState will always be defaultState. Adding the || will not change the functionality and is redundant. ,1.71926E+12,1.71926E+12,0,2,0,2,no,0/2/0
+11,520,1,SUBMITTED,no,x || x is equivalent to x,1.71931E+12,1.71931E+12,0,2,0,2,no,0/2/0
+126,528,1,SUBMITTED,no,"Both code snippets checks two exact conditions with the AND logical operator but does so in different order.  Ultimately, A AND B = B AND A. Same situation applies to both code snippets.
+",1.71917E+12,1.71917E+12,0,3,0,3,no,0/3/0
+123,528,3,SUBMITTED,no,The code retains the same functionality,1.7191E+12,1.7191E+12,0,3,0,3,no,0/3/0
+97,528,1,SUBMITTED,no,they are just written in different order,1.71886E+12,1.71886E+12,0,3,0,3,no,0/3/0
+14,529,1,SUBMITTED,yes,!= and > is not same,1.71839E+12,1.71839E+12,0,0,2,2,yes,0/0/2
+17,529,1,SUBMITTED,yes,Mutant changes function logic,1.7194E+12,1.7194E+12,0,0,2,2,yes,0/0/2
+123,531,10,SUBMITTED,no,"The code maintains its functionality, as the order of the primitive types in the map won't matter",1.7191E+12,1.7191E+12,0,2,0,2,no,0/2/0
+17,531,1,SUBMITTED,no,"The mutant only moved codes around, without any significant changes",1.71919E+12,1.71919E+12,0,2,0,2,no,0/2/0
+125,538,2,SUBMITTED,no,"Adding parentheses doesn't do anything since the compiler will simplify the code, and the mutant code will still have the same functionality as the original code.",1.7191E+12,1.7191E+12,0,2,0,2,no,0/2/0
+97,538,1,SUBMITTED,no,in this case the order does not affect anything,1.71909E+12,1.71909E+12,0,2,0,2,no,0/2/0
+17,541,1,SUBMITTED,no,Mutant expression is identical,1.71932E+12,1.71932E+12,0,2,1,3,no,0/2/1
+11,541,3,SUBMITTED,no,The mutant code assign the result to the variable then return the variable value which is the same as returning the result  immediately,1.7193E+12,1.7193E+12,0,2,1,3,no,0/2/1
+97,541,1,SUBMITTED,yes,the mutant does not return an int,1.71912E+12,1.71912E+12,0,2,1,3,no,0/2/1
+127,544,1,SUBMITTED,no,"""&&(AND) True"" does not affect the result of any logic expression.",1.71907E+12,1.71907E+12,0,2,0,2,no,0/2/0
+14,544,1,SUBMITTED,no,&& true is always equivalent,1.71898E+12,1.71898E+12,0,2,0,2,no,0/2/0
+125,548,2,SUBMITTED,no,"The mutant code is styled better and much easier to reader than the original code. They have the same functionality. The only difference is the style of the code,.",1.71913E+12,1.71913E+12,0,2,0,2,no,0/2/0
+126,548,1,SUBMITTED,no,Both code snippets are perfectly identical and hence will behave the same and produce same output. ,1.71919E+12,1.71919E+12,0,2,0,2,no,0/2/0
+17,555,1,SUBMITTED,yes,Mutant changes code logic,1.7192E+12,1.7192E+12,0,0,2,2,yes,0/0/2
+97,555,1,SUBMITTED,yes,returns wrong value,1.71912E+12,1.71912E+12,0,0,2,2,yes,0/0/2
+97,568,1,SUBMITTED,yes,they both return different values,1.71909E+12,1.71909E+12,0,0,3,3,yes,0/0/3
+126,568,1,SUBMITTED,yes,"Code snippet 1 simply returns the value of  MAX_YEAR while in code snippet 2, 1 is added to the value of return MAX_YEAR and the resulting outcome gets returned.  Code snippet 1 and 2 return different values.",1.71928E+12,1.71928E+12,0,0,3,3,yes,0/0/3
+14,568,1,SUBMITTED,yes,+3 added to output,1.71884E+12,1.71884E+12,0,0,3,3,yes,0/0/3
+11,569,2,SUBMITTED,yes,The mutant added + 1 that change the return value,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+126,569,1,SUBMITTED,yes,"The difference lies in the division aspect in both code snippets. 
+Code snippet 2 takes the result of the division and adds 1 to it making its output different from that of code snippet 1.",1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+131,572,5,SUBMITTED,yes,Adding 1 to the returning value would change the outcome of the code. ,1.71918E+12,1.71918E+12,0,0,2,2,yes,0/0/2
+126,572,2,SUBMITTED,yes,"In code snippet 2, after the division with two, 1 is added to the result. This leads to difference in output for both code snippets.",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+66,574,7,SUBMITTED,no,increases unnecessary complexity which does not change output,1.71896E+12,1.71896E+12,0,2,1,3,no,0/2/1
+126,574,2,SUBMITTED,yes,"Code snippet 1:
+private ISOChronology(Chronology base) {
+    super(base, null);
+}
+All this does is call the supercass constructor having parameters base and null.
+
+Code snippet 2:
+Just like the code in snippet 1 except for the if conditional check introduced to check if the arguments in the superclass are the same and if so it exits the parent constructor.",1.71901E+12,1.71901E+12,0,2,1,3,no,0/2/1
+97,574,3,SUBMITTED,no,they both work the same,1.71903E+12,1.71903E+12,0,2,1,3,no,0/2/1
+14,577,2,SUBMITTED,yes,mutant returns wrong value ,1.71914E+12,1.71914E+12,0,0,3,3,yes,0/0/3
+126,577,1,SUBMITTED,yes,"when we observe the mutant code to the right, the line of code in its code block adds on to getMillis() method the value of 1 which consequently leads to a difference in output for both codes on consideration.",1.71842E+12,1.71842E+12,0,0,3,3,yes,0/0/3
+63,577,1,SUBMITTED,yes,"The mutant adds 1 to the value returned by getMillis(), thereby altering the result as compared to the original code.",1.71909E+12,1.71909E+12,0,0,3,3,yes,0/0/3
+122,581,1,SUBMITTED,yes,"This is a clear bug, as it always adds a 1 to the value retrieved, instead of returning the actual value.",1.71927E+12,1.71927E+12,0,0,2,2,yes,0/0/2
+125,581,1,SUBMITTED,yes,They return different things since the code on the right is always going to be bigger by one since they add one to the code on the right so its always different(getMaximumValue function is always going to be one less than the code on the right),1.71893E+12,1.71893E+12,0,0,2,2,yes,0/0/2
+11,582,3,SUBMITTED,no,Will always return true but might print the inturpt error if the thread was intturpted,1.71917E+12,1.71917E+12,0,2,0,2,no,0/2/0
+14,582,2,SUBMITTED,no,only slows down execution.,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+123,585,1,SUBMITTED,no,Mutant displays Same behavior,1.71849E+12,1.71849E+12,0,2,0,2,no,0/2/0
+14,585,2,SUBMITTED,no,"""&& true"" does not affect e boolean expression",1.71822E+12,1.71822E+12,0,2,0,2,no,0/2/0
+126,591,1,SUBMITTED,yes,The addition of condition depth > 0 in code snippet 2 to the right introduces a stricter requirement for the if statement to be true which when compared to code snippet 1 will have a difference in behavior and output.,1.71858E+12,1.71858E+12,0,0,3,3,yes,0/0/3
+14,591,3,SUBMITTED,yes,value of depth can change the execution,1.71884E+12,1.71884E+12,0,0,3,3,yes,0/0/3
+120,591,5,SUBMITTED,yes,"new condition added, changes value",1.71856E+12,1.71856E+12,0,0,3,3,yes,0/0/3
+11,596,3,SUBMITTED,yes,In the mutant if the expression (size() > index) was false it will return null while main code returns new Elements() object,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+17,596,1,SUBMITTED,yes,Constructor should not return null,1.71933E+12,1.71933E+12,0,0,2,2,yes,0/0/2
+17,598,1,SUBMITTED,yes,Changes function logic,1.71933E+12,1.71934E+12,0,0,2,2,yes,0/0/2
+126,598,1,SUBMITTED,yes,"What is being returned in code snippet I.e element.elementSiblingIndex()+1; is different from that which is returned in code snippet 2 I.e element.siblingIndex()+1;
+",1.71918E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+97,600,5,SUBMITTED,yes,It is buggy because they both have different outputs,1.71878E+12,1.71881E+12,0,0,2,2,yes,0/0/2
+11,600,6,SUBMITTED,yes,The mutant just append the value in the accum,1.71931E+12,1.71931E+12,0,0,2,2,yes,0/0/2
+97,606,2,SUBMITTED,yes,different values are entered so different output anr eoutputed,1.71895E+12,1.71895E+12,0,0,2,2,yes,0/0/2
+11,606,3,SUBMITTED,yes,changing the arguments to !doEncode will change the code,1.71931E+12,1.71931E+12,0,0,2,2,yes,0/0/2
+132,608,6,SUBMITTED,no,"It works the same ,since its written in the class discription that <input. However, an Object array that contains a {@code null} element may throw an exception.>so having a null in the array is not really acceptable , therefor when the original condition results True , AND True would stay True ",1.71923E+12,1.71923E+12,0,3,0,3,no,0/3/0
+125,608,30,SUBMITTED,no,"Both sides will return the same thing; it is just that the code on the right where they added (objectToFind != null) is an extra check. When objectToFind is null, they both return false on both sides.",1.71843E+12,1.71875E+12,0,3,0,3,no,0/3/0
+17,608,2,SUBMITTED,no,The expressions are equivalent,1.71919E+12,1.71919E+12,0,3,0,3,no,0/3/0
+126,611,2,SUBMITTED,yes,"Code snippet 2:
+Firstly,  calls Objects.equals(chain.comparatorChain, comparatorChain), but does nothing with the result.
+Secondly, it returns the result of Objects.equals(orderingBits, chain.orderingBits)
+Code snippet 1:
+It does AND logical operator on the two Objects.equals methods and returns the result.",1.71901E+12,1.71901E+12,0,0,3,3,yes,0/0/3
+97,611,1,SUBMITTED,yes,"Objects.equals(chain.comparatorChain, comparatorChain); is not checked for in the second mutant",1.71908E+12,1.71908E+12,0,0,3,3,yes,0/0/3
+53,611,8,SUBMITTED,yes,"In the first snippet, for the funtion to return true, both Objects.equals(orderingBits, chain.orderingBits) and Objects.equals(comparatorChain, chain.comparatorChain) need to be true, while in the second snippet (mutant), only Objects.equals(orderingBits, chain.orderingBits) needs to be true",1.71924E+12,1.71924E+12,0,0,3,3,yes,0/0/3
+11,616,1,SUBMITTED,no,Same functionality but changed the order of the conditions,1.719E+12,1.719E+12,0,2,0,2,no,0/2/0
+97,616,1,SUBMITTED,no,both work the same,1.71942E+12,1.71942E+12,0,2,0,2,no,0/2/0
+105,620,5,SUBMITTED,no,"The MultiMapUtils class's mutant version of the isEmpty method adds a small syntactic modification that has no effect on the method's functionality. The method in the original class returns the value after determining whether the supplied MultiValuedMap is null or empty.
+Although it is declared and initialized to 1, an extra integer variable called i is not utilized in any part of the procedure in the mutant version.
+This modification adds an unnecessary local variable, I, which has no bearing on the method's logic or result. There is no change to the main functionality, which is to determine whether the map is null or empty.",1.71875E+12,1.71875E+12,0,3,0,3,no,0/3/0
+97,620,2,SUBMITTED,no,'i' does not affect the mutant because its a local variable and is not used anywhere,1.71908E+12,1.71908E+12,0,3,0,3,no,0/3/0
+11,620,1,SUBMITTED,no,The line int i = 1;doesnt affect the code,1.71916E+12,1.71917E+12,0,3,0,3,no,0/3/0
+23,627,7,SUBMITTED,no,"The removed condition is not included in the logic, as the comment does not indicate that removals should affect whether there is a previous object. Hence the mutant is not buggy. ",1.71903E+12,1.71903E+12,0,1,2,3,yes,0/1/2
+14,627,1,SUBMITTED,yes,&& and || are not equivalent,1.71847E+12,1.71847E+12,0,1,2,3,yes,0/1/2
+127,627,1,SUBMITTED,yes,"The mutant changes ""AND"" to ""OR"" without changing any other expression. So, it is a bug.",1.71878E+12,1.71879E+12,0,1,2,3,yes,0/1/2
+97,628,2,SUBMITTED,no,This is not buggy because bot check for null values and don't work as intended when 'entry' is null,1.71859E+12,1.71859E+12,0,2,0,2,no,0/2/0
+123,628,12,SUBMITTED,no,"In terms of behavior, it doesnt change as both snippets throw a null pointer exception if entry is null. The requirenonnull allows the code to detect the exception early and fail fast, which in this context wont make much difference",1.71918E+12,1.71918E+12,0,2,0,2,no,0/2/0
+14,631,2,SUBMITTED,yes,size comparison in the last line will give wrong result for the mutant,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+11,631,2,SUBMITTED,yes,The mutant sets the variable sizeBefore to size()-1 while main set it by size() so the return values differ,1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+125,633,16,SUBMITTED,yes,"If the object is null, it will not validate the object but will add the index and object within the mutant code. In the original code, it would validate the object and then add the index and object if the object was null as well, which behaves differently from the mutant code.",1.71926E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+122,633,2,SUBMITTED,yes,"The proposed modification should cause a problem, as the decorated list must not contain any null entries as mentioned in the code comments/specifications. The change adds the null entries to the list as well, hence it is buggy. ",1.71927E+12,1.71927E+12,0,0,2,2,yes,0/0/2
+52,635,1,SUBMITTED,no,"The code will do the same function and return the same results, there is an addition to the local variable but this will not cause a problem.",1.71934E+12,1.71934E+12,0,2,0,2,no,0/2/0
+14,635,1,SUBMITTED,no,same code,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+120,638,3,SUBMITTED,yes,changes return value,1.71864E+12,1.71865E+12,0,0,2,2,yes,0/0/2
+125,638,10,SUBMITTED,yes,"The code is buggy because the code on the left would return 0 if key == null and value == null, while if key == null and value == null, then it would return 1, which returns two different things.",1.71901E+12,1.71904E+12,0,0,2,2,yes,0/0/2
+97,643,1,SUBMITTED,yes,"the mutant is buggy because, while return breaks out of a while loop, it does not enter the the loop with the same requirements",1.71883E+12,1.71883E+12,0,0,2,2,yes,0/0/2
+14,643,3,SUBMITTED,yes,if containsKey(key) is true mutant returns EmptyIterator.<V>emptyIterator() instead of new ValuesIterator(key) and vice versa,1.71914E+12,1.71914E+12,0,0,2,2,yes,0/0/2
+126,646,2,SUBMITTED,yes,"Code snippet 1:
+It calls the validate(object) method directly and if this method returns can error,  the offer method will not execute.
+Code snippet 2:
+The validate method is called inside of a try catch block to handle exceptions if any which allows for execution of the offer method regardless.",1.71901E+12,1.71901E+12,1,0,2,3,yes,1/0/2
+106,646,10,SUBMITTED,maybe,"the mutant does a try catch with allows the exception to be felt with without crashing the code, but the original and the mutant do the same thing besides the catching of the exception ",1.7192E+12,1.7192E+12,1,0,2,3,yes,1/0/2
+17,646,2,SUBMITTED,yes,Function should be allowed to throw exception,1.7194E+12,1.7194E+12,1,0,2,3,yes,1/0/2
+11,652,3,SUBMITTED,yes,"The mutant neglect the validation of the object and focus on the parameter count and this condition if(count < 1) {
+    return false;
+    }
+ might change the output of the method ",1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+125,652,5,SUBMITTED,yes,"The code on the left is going to return true or false depending on the validity of the object, while the code on the right checks the validity of the count, which are different, and depending on the parameters, there are going to be different outputs from the two bodies of code.",1.71893E+12,1.71893E+12,0,0,2,2,yes,0/0/2
+17,659,1,SUBMITTED,no,Mutant will give the same output,1.7194E+12,1.7194E+12,0,3,0,3,no,0/3/0
+14,659,1,SUBMITTED,no,Single line in original is broken into two equivalent line in mutant,1.7182E+12,1.7182E+12,0,3,0,3,no,0/3/0
+125,659,4,SUBMITTED,no,"The mutant code returns the same thing, except it sets the return statement to a variable first and returns that variable, which makes the mutant code redundant compared to the original code, but they have the same behavior.",1.7192E+12,1.7192E+12,0,3,0,3,no,0/3/0
+105,661,5,SUBMITTED,no,"A ternary operator is used in the original getLength function to determine whether baseValue is null. It returns 1 if baseValue is null; otherwise, it returns the length of baseValue that ValueUtils was able to retrieve.getLength using baseValue. This succinct strategy guarantees that, depending on whether baseValue is present or not, the method swiftly ascertains the length.
+
+To do the same check, the if-else statement is used in place of the ternary operator in the mutant version. It yields 1 if baseValue is null. If not, ValueUtils is used to return baseValue's length.getLength using baseValue.
+
+Both versions carry out the same checks and give the same results.",1.71909E+12,1.71909E+12,0,2,0,2,no,0/2/0
+132,661,1,SUBMITTED,no,"its the same logic written in a different syntax , both of them return the same values",1.71906E+12,1.71906E+12,0,2,0,2,no,0/2/0
+125,666,7,SUBMITTED,yes,"If dynamicPropertyHandlerClass is null, then the code on the left is going to return false, and then the code on the right is going to return true, so both sides of the code return different things.",1.71887E+12,1.71887E+12,0,0,2,2,yes,0/0/2
+17,666,1,SUBMITTED,yes,Mutation makes the function always return true irrespective of dynamicPropertyHandlerClass's value,1.71932E+12,1.71933E+12,0,0,2,2,yes,0/0/2
+14,667,1,SUBMITTED,yes,compare > 0 and compare < 0 does not give identical results.,1.71812E+12,1.71812E+12,0,0,2,2,yes,0/0/2
+63,667,1,SUBMITTED,yes,The mutant (less than 0) is the complete opposite of the original code's functionality (greater than 0).,1.71896E+12,1.71896E+12,0,0,2,2,yes,0/0/2
+131,673,5,SUBMITTED,yes,"In the mutant code, removing the i++ from the loop causes an infinite loop because the variable i is never incremented. As a result, the condition i < steps.length will always be true. ",1.71933E+12,1.71934E+12,0,0,2,2,yes,0/0/2
+11,673,2,SUBMITTED,yes,The mutant will create infinite loop  as the value of i is not increamented and will always return true for the condition,1.71915E+12,1.71915E+12,0,0,2,2,yes,0/0/2
+97,675,1,SUBMITTED,no,both are the same. The parentheses are added so it does not matter when printed,1.71929E+12,1.71929E+12,0,2,0,2,no,0/2/0
+14,675,1,SUBMITTED,no,returns same result,1.71914E+12,1.71914E+12,0,2,0,2,no,0/2/0
+132,678,7,SUBMITTED,yes,"Even if beaninfo is null , i should not return a null object , i may return a BeanPropertyPointer object that has its beaninfo attribute set to null.",1.71924E+12,1.71924E+12,0,0,2,2,yes,0/0/2
+17,678,1,SUBMITTED,yes,"Function does not return null.
+
+Expects PropertyPointer property",1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+132,679,11,SUBMITTED,yes,"if bean is null , then it should not return null , in `commons-jxpath/src/main/java/org/apache/commons/jxpath/JXPathIntrospector.java` 
+you can see that the method getBeanInfo wont return a null , it might return beanInfo = new JXPathBasicBeanInfo(beanClass); wich will have a null in its clazz attribute , but wont be equall to null",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+63,679,7,SUBMITTED,yes,"If bean is null, the original code will throw a NullPointerException due to a getClass() call on a null object. But the mutant is handling this case by assigning the JXPathBeanInfo bi variable to null before returning a BeanPointer object, which in my opinion won't throw a NullPointerException. Therefore, both their functionalities are different.",1.71896E+12,1.71896E+12,0,0,2,2,yes,0/0/2
+126,682,1,SUBMITTED,yes,"Both code snippets will returns the result of parent.getNamespaceURI(prefix) when prefix == null is false. However, if prefix == null is true there will be a difference in output. For code snippet 1, the output is null while for code snippet 2, the output is an empty string.
+",1.71919E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+11,682,1,SUBMITTED,yes,"null in not equivalent to """"",1.71931E+12,1.71931E+12,0,0,2,2,yes,0/0/2
+126,683,2,SUBMITTED,yes,Code snippet 1 is empty while code snippet 2  appends the character '/' to StringBuffer object named buffer ,1.71916E+12,1.71916E+12,0,0,3,3,yes,0/0/3
+116,683,12,SUBMITTED,yes,the behavior of the mutant code is inconsistent and could lead to unexpected outcomes,1.71927E+12,1.71927E+12,0,0,3,3,yes,0/0/3
+14,683,2,SUBMITTED,yes,"if buffer has lenght of zero, mutant removes the / which is wrong",1.71916E+12,1.71916E+12,0,0,3,3,yes,0/0/3
+105,685,10,SUBMITTED,yes,"The initial 'appendDetail' function for managing 'Object' values first verifies that the value is allowed by the 'accept' method and isn't a primitive wrapper, a 'String.' If these criteria are satisfied, the indentation's spaces are increased, the indent is reset, the ""value"" is appended to the buffer using ""ReflectionToStringBuilder.toString,"" and the indent is then decreased and reset once more. It invokes the 'super.appendDetail' method to handle the value if the conditions are not met.
+
+The logic of the 'appendDetail' method is changed in the mutant version. It initially determines whether the value is a String or a basic wrapper. If so, the value is handled by calling 'super.appendDetail' directly. Alternatively, the 'accept' method uses the same indentation logic as the original method if it approves the value's class. With this modification, the 'appendDetail' method no longer calls the'super.appendDetail' function; instead, it only handles non-primitive, non-string values that 'accept' allows.
+
+In other words, this change introduces a bug because it alters the intended behavior of the method. Specifically, the mutant version does not handle non-primitive, non-string values that are not acceptable by the accept method. In contrast, the original method correctly delegates such values to the super.appendDetail method. ",1.71925E+12,1.71925E+12,0,0,2,2,yes,0/0/2
+14,685,5,SUBMITTED,yes,fails when ClassUtils.isPrimitiveWrapper(value.getClass()) and tring.class.equals(value.getClass()) and accept(value.getClass()) all are false,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+120,690,1,SUBMITTED,yes,variables swapped,1.71899E+12,1.71899E+12,0,0,3,3,yes,0/0/3
+126,690,1,SUBMITTED,yes,The values of b and c are interchanged in the two conditions of both code snippets and this will significantly impact the outcome on both ends.,1.71916E+12,1.71916E+12,0,0,3,3,yes,0/0/3
+17,690,1,SUBMITTED,yes,Mutation changes the logic of the function and introduces an error,1.71933E+12,1.71933E+12,0,0,3,3,yes,0/0/3
+11,691,1,SUBMITTED,no,Add && true doesn't affect the code as the result still depends on the  super.isFieldSeparatorAtStart() output,1.71931E+12,1.71931E+12,0,3,0,3,no,0/3/0
+17,691,1,SUBMITTED,no,Expressions are identical,1.71881E+12,1.71881E+12,0,3,0,3,no,0/3/0
+105,691,5,SUBMITTED,no,"The original 'isFieldSeparatorAtStart' method only returns'super.isFieldSeparatorAtStart()', which tells us whether or not to add the field separator at the beginning of each buffer. On the other hand, 'return (super.isFieldSeparatorAtStart() && true);' is an extraneous logical '&&' operation with 'true' added to the method in the mutant version. Since every boolean value 'x' that is logically ANDed with 'true' yields 'x,' this modification has no effect on the logical conclusion.",1.71918E+12,1.71918E+12,0,3,0,3,no,0/3/0
+11,698,1,SUBMITTED,no,Both return the value of the variable openingThreshold,1.719E+12,1.719E+12,0,2,0,2,no,0/2/0
+123,698,2,SUBMITTED,no,Code behavior doesn't change,1.71898E+12,1.71898E+12,0,2,0,2,no,0/2/0
+23,699,2,SUBMITTED,yes,"As the docstring says `@return the range object, not null.`, we can't return null. Hense the mutant is buggy",1.71921E+12,1.71921E+12,0,0,2,2,yes,0/0/2
+120,699,3,SUBMITTED,yes,if statement changes function,1.7191E+12,1.71911E+12,0,0,2,2,yes,0/0/2
+17,703,4,SUBMITTED,yes,"Changes the behaviour of the code, should throw an exception when error is encountered",1.71881E+12,1.71881E+12,0,0,2,2,yes,0/0/2
+14,703,2,SUBMITTED,yes,catching all exception hampers the exception mechanism of the system,1.71906E+12,1.71906E+12,0,0,2,2,yes,0/0/2
+106,707,1,SUBMITTED,no,the original is the short hand version of the mutant they will always result in the same ,1.71919E+12,1.71919E+12,0,3,0,3,no,0/3/0
+11,707,1,SUBMITTED,no,Both return the same boolean for any case ,1.71915E+12,1.71915E+12,0,3,0,3,no,0/3/0
+120,707,1,SUBMITTED,no,"code changed, same result",1.71853E+12,1.71853E+12,0,3,0,3,no,0/3/0
+17,709,3,SUBMITTED,no,Converting the string to upper case has no effect on the expression.,1.71934E+12,1.71934E+12,0,2,0,2,no,0/2/0
+132,709,9,SUBMITTED,no,"Since the value string only have floating point numbers , then it does not matter if you uppercaes",1.71924E+12,1.71924E+12,0,2,0,2,no,0/2/0
+14,710,2,SUBMITTED,no,"Error should not occur in subtracting, so code never reaches exception",1.71855E+12,1.71855E+12,1,2,0,3,no,1/2/2000
+123,710,10,SUBMITTED,no,"Since value and operand are the same primitve types, primitive arithmetic operations in Java do not throw exceptions for overflow or underflow. So the code functionality doesnt change when encapsulating it ina try catch block",1.71918E+12,1.71918E+12,1,2,0,3,no,1/2/2000
+11,710,3,SUBMITTED,maybe,The mutant will throw an exception,1.71931E+12,1.71931E+12,1,2,0,3,no,1/2/2000
+11,713,3,SUBMITTED,yes,The mutant return the value - 2 for even values while the main code always return the value - 1,1.71906E+12,1.71906E+12,0,0,2,2,yes,0/0/2
+133,713,3,SUBMITTED,yes,The mutated case decrements by two for all even numbers and decrement by one for others. This changes the behavior of the code and thus introducing a bug. ,1.71936E+12,1.71936E+12,0,0,2,2,yes,0/0/2
+133,716,24,SUBMITTED,yes,The mutated case pre decrements the variable value and the original case post decrements the variable value. This changes the behavior of the code and thus a bug is introduced.,1.71941E+12,1.71941E+12,0,2,1,3,no,0/2/1
+116,716,8,SUBMITTED,no,The mutant code functions the same way as the original code,1.71937E+12,1.71937E+12,0,2,1,3,no,0/2/1
+126,716,2,SUBMITTED,no,"Code snippet 1 does post-decrement on the value variable before return the result of the variable value. This involves 2 steps. Code snippet 2 returns the pre-decreament value of the value variable in one step. The number of steps differ in both snippets, however,  the resulting outcome will be same.
+",1.71917E+12,1.71917E+12,0,2,1,3,no,0/2/1
+63,720,5,SUBMITTED,yes,"The mutant does not modify the value field for MutableLong class object if the incoming parameter value is larger than the stored value. However, the original code stores the incoming long value without comparison.",1.71896E+12,1.71896E+12,0,0,3,3,yes,0/0/3
+11,720,1,SUBMITTED,yes,The mutant set the value if the new value is less than or equal the old value ,1.71916E+12,1.71916E+12,0,0,3,3,yes,0/0/3
+116,720,8,SUBMITTED,yes,The mutant code is buggy because it introduces a conditional check that restricts the assignment of this.value to cases where the new value is less than or equal to the current value. If the intention is to unconditionally update this.value to the provided value,1.71864E+12,1.71864E+12,0,0,3,3,yes,0/0/3
+17,723,1,SUBMITTED,yes,Alters expressions,1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+97,723,2,SUBMITTED,yes,the mutant is buggy because 'last' gets decreased my 2 and 'value' gets increased by 2 compared to the correct version,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+106,725,5,SUBMITTED,maybe,"it depends on the value of this.value and temp because there can have an input where the original and mutant result in the same value, while there can be an output while the original and mutant would differ from the illegal argument exception ",1.71919E+12,1.71919E+12,1,0,2,3,yes,1/0/2
+123,725,5,SUBMITTED,yes,"The long type in Java is a 64-bit signed integer, with a range from -2^63 to 2^63 - 1.
+Overflow can occur if the result of a subtraction exceeds this range. So the if condition changes the behaviour of the program by throwing an error",1.7183E+12,1.7183E+12,1,0,2,3,yes,1/0/2
+126,725,2,SUBMITTED,yes,"Given the surrounding context to the right, the code snippet reveals that the method simply subtracts the given operand from the instance variable this.value and stores the result back into this.value.
+However,  to the right, the code snippet as its surrounding shows that the subtract method in its code block assigns the value of this.value to a local variable called temp. It the proceeds to check if this.value > temp is true in which case it throws an exception. ",1.71918E+12,1.71918E+12,1,0,2,3,yes,1/0/2
+11,730,2,SUBMITTED,yes,It calls the constructor that sets the class variable with different values (below variable),1.71915E+12,1.71915E+12,0,0,2,2,yes,0/0/2
+126,730,1,SUBMITTED,yes,"In the this() method,  the first parameter (0 in the first code snippet and -1 in the second code snippet) on each end is different thus leading to a difference in output.",1.71856E+12,1.71856E+12,0,0,2,2,yes,0/0/2
+11,737,6,SUBMITTED,no,Both return an empty array of ImmutablePair class,1.71914E+12,1.71914E+12,0,2,0,2,no,0/2/0
+97,737,1,SUBMITTED,no,both create an empty array,1.71883E+12,1.71883E+12,0,2,0,2,no,0/2/0
+109,741,1,SUBMITTED,no,"Abstracted via variable assignment, same functionality",1.71918E+12,1.71918E+12,0,2,0,2,no,0/2/0
+105,741,10,SUBMITTED,no,"The original 'of' method just calls 'ImmutablePair.of(pair)' and returns the result when generating an immutable pair from a map entry. This is a simple approach that gives back the formed pair right away.
+
+The method adds a step in the mutant version by first setting the output of ‘ImmutablePair.of(pair)’ to a local variable called result before returning it. The method's behavior and logical conclusion remain unchanged by this modification. The pair that was produced from the map entry remains the outcome.",1.71919E+12,1.71919E+12,0,2,0,2,no,0/2/0
+14,749,2,SUBMITTED,no,We don't need a null check when using an instanceof operator. If the object is null or not null same result is returned.,1.71914E+12,1.71914E+12,0,2,0,2,no,0/2/0
+113,749,1,SUBMITTED,no,outputs will be same,1.7193E+12,1.7193E+12,0,2,0,2,no,0/2/0
+63,752,3,SUBMITTED,yes,"The original code returns the system property corresponding to the value stored in a static final variable JAVA_LIBRARY_PATH. The value is ""java.library.path"". However, the mutant simply returns ""java.library.path"", instead of fetching the system property corresponding to it.",1.71908E+12,1.71909E+12,0,0,2,2,yes,0/0/2
+14,752,2,SUBMITTED,yes,does not return same string,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+127,753,1,SUBMITTED,no,"""=="" in the original code normally has the same functionality as the. "".equal()"" method in the mutant, so it is not a bug.",1.71897E+12,1.71897E+12,0,2,1,3,no,0/2/1
+125,753,2,SUBMITTED,yes,"This is because == and equals are not always the same, in java == is an operator that compares the reference or memory while the equals method compares the contents of a certain object.",1.71922E+12,1.71922E+12,0,2,1,3,no,0/2/1
+97,753,1,SUBMITTED,no,both are the same,1.71941E+12,1.71941E+12,0,2,1,3,no,0/2/1
+97,754,1,SUBMITTED,no,this mutant works the same ,1.71903E+12,1.71904E+12,0,2,0,2,no,0/2/0
+17,754,1,SUBMITTED,no,Expressions are equivalent,1.71934E+12,1.71935E+12,0,2,0,2,no,0/2/0
+133,755,12,SUBMITTED,yes,"In the mutated case, """" is not the property of the line separator. Thus, the behavior of the code has changed ",1.71941E+12,1.71941E+12,0,0,2,2,yes,0/0/2
+17,755,1,SUBMITTED,yes,Changes function output,1.7194E+12,1.7194E+12,0,0,2,2,yes,0/0/2
+126,760,2,SUBMITTED,yes,"Code snippet 1:
+The value of iterations.getMaximalCount() is directly returned.
+Code snippet 2:
+1 is subtracted from the value of  iterations.getMaximalCount() and the result is then stored in a variable called count and the count variable gets returned.
+Overall, the result that is returned on both code snippets will be different.",1.71918E+12,1.71918E+12,0,0,2,2,yes,0/0/2
+125,760,3,SUBMITTED,yes,"The code on the right subtracts the iterations.getMaximalCount() by one, which makes it different from the code on the left. Therefore, they are always going to return something different.",1.71886E+12,1.71886E+12,0,0,2,2,yes,0/0/2
+11,761,1,SUBMITTED,yes,The mutant return the row *2 not just the row ,1.71923E+12,1.71923E+12,0,1,2,3,yes,0/1/2
+116,761,6,SUBMITTED,no,"if the intent was to return the current row number multiplied by 2, then the mutant code is not buggy.",1.71927E+12,1.71927E+12,0,1,2,3,yes,0/1/2
+105,761,5,SUBMITTED,yes,"The 'row' index of the entry is returned by the original 'getRow' method. This is a simple implementation that gives the precise row index where the detected imbalance was found.
+
+Instead of returning the true row index in the mutant version, the method returns 'row * 2'. By giving an erroneous row index, this modification modifies the behavior of the procedure.",1.71935E+12,1.71935E+12,0,1,2,3,yes,0/1/2
+11,765,1,SUBMITTED,yes,The mutant will return double the return value of the main code except for 0,1.71915E+12,1.71915E+12,0,0,3,3,yes,0/0/3
+126,765,1,SUBMITTED,yes,"Code snippet 1:
+It directly returns the value of  maxEval
+In code snippet 2:
+It multiplies the value of maxEval by 2 before returning. ",1.71916E+12,1.71916E+12,0,0,3,3,yes,0/0/3
+14,765,1,SUBMITTED,yes,maxEval and maxEval + 2 is not same,1.71916E+12,1.71916E+12,0,0,3,3,yes,0/0/3
+97,767,2,SUBMITTED,yes,they both don't work the same. this is because the mutant never returns 'v.clone()',1.71908E+12,1.71908E+12,0,0,3,3,yes,0/0/3
+53,767,2,SUBMITTED,yes,"Although it gives the same output for all cases where v is not null, when v is null; the first snippet returns null while the second snippet throws an exception as the .clone method cannot be invoked on null objects",1.71899E+12,1.71899E+12,0,0,3,3,yes,0/0/3
+14,767,2,SUBMITTED,yes,object is returned instead of its clone,1.71823E+12,1.71823E+12,0,0,3,3,yes,0/0/3
+66,768,3,SUBMITTED,yes,it is buggy as it completely change output by doing increemant in point point++;,1.71897E+12,1.71897E+12,0,0,2,2,yes,0/0/2
+17,768,1,SUBMITTED,yes,Mutant changes the function logic by incrementing point,1.7194E+12,1.7194E+12,0,0,2,2,yes,0/0/2
+131,774,2,SUBMITTED,yes,"Instead of returning ""locale.US"", returning ""locale.France"" would change the output of the code. ",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+120,774,1,SUBMITTED,yes,variable call changed,1.71902E+12,1.71902E+12,0,0,2,2,yes,0/0/2
+14,775,2,SUBMITTED,yes,"if exact type and raw type does not match, code will give unexpected behaviour.",1.71883E+12,1.71883E+12,0,0,2,2,yes,0/0/2
+17,775,1,SUBMITTED,yes,Mutant changes code logic,1.7192E+12,1.7192E+12,0,0,2,2,yes,0/0/2
+116,779,8,SUBMITTED,no,"I think the comment in the code makes everything confusing because there was no, ""off by one error that I saw"", the difference between the code here is the use of parenthesis which are not changing the order or operations, so the mutant code is acting just like the first one.",1.71864E+12,1.71864E+12,0,2,1,3,no,0/2/1
+126,779,1,SUBMITTED,yes,"The expressions k - K_MIN << 1 in code snippet 1 and (k - K_MIN) << 1 code snippet 2 might look similar, but they are not equivalent due to operator precedence in Java.",1.71916E+12,1.71916E+12,0,2,1,3,no,0/2/1
+17,779,1,SUBMITTED,no,Both expressions are equivalent,1.71919E+12,1.71919E+12,0,2,1,3,no,0/2/1
+126,798,2,SUBMITTED,yes,The mutant code carries out null check and exception handling which is visibly absent in snippet code one to the left. Hence there's an obvious difference in code behavior.,1.71842E+12,1.71842E+12,0,0,2,2,yes,0/0/2
+11,798,4,SUBMITTED,yes,The mutant throws null if the value is null while the main doesn't handle null exception,1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+123,804,2,SUBMITTED,no,"The code has the same behavior by adding an extra if condition, as it would output true anyway if the node Equals jsontype, otherwise false",1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+17,804,1,SUBMITTED,no,Mutant is unnecessarily more verbose,1.71919E+12,1.7192E+12,0,2,0,2,no,0/2/0
+23,805,7,SUBMITTED,yes,"Suppose types.length = 3 and our index = 3. Now we know thar if an array length is 3 we can access only [0,2] therefore types[3] will through an error. In mutant code, the = relation is removed thus it'll return null if the index is greater than the types length. But earlier we have seen it should return null if the index = types.length as types[3] will through outofbound error. 
+
+Hence the mutant is buggy. ",1.71903E+12,1.71903E+12,0,0,2,2,yes,0/0/2
+17,805,1,SUBMITTED,yes,Mutant changes expression outcome,1.7192E+12,1.7192E+12,0,0,2,2,yes,0/0/2
+11,809,1,SUBMITTED,no,Return the same boolean value,1.71917E+12,1.71917E+12,0,2,0,2,no,0/2/0
+17,809,1,SUBMITTED,no,The expressions are identical,1.71881E+12,1.71881E+12,0,2,0,2,no,0/2/0
+97,812,1,SUBMITTED,no,no bugs. The mutant just takes longer to run,1.71876E+12,1.71876E+12,0,2,0,2,no,0/2/0
+132,812,13,SUBMITTED,no,it does not effect the logic of the loop and the subtypes are not equall to null,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+123,821,15,SUBMITTED,no,"Since the method _this() return value of type T, returning result here: T result = _this(); will maintain the same code functionality",1.71918E+12,1.71918E+12,0,2,0,2,no,0/2/0
+120,821,2,SUBMITTED,no,"temp created, same return",1.71861E+12,1.71861E+12,0,2,0,2,no,0/2/0
+63,824,5,SUBMITTED,no,"The mutant introduces a temporary variable tempClassName that holds the class name before calculating the hash code for that string, whereas the original code directly calculates the hash code value for the class name. In both cases, the functionality is the same because the hash code calculated and stored in the _hashCode variable is the same.",1.71909E+12,1.71909E+12,0,2,0,2,no,0/2/0
+133,824,2,SUBMITTED,no,"In the mutated case
+1. changing the line of the opening curly brackets does not affect the code functionality
+2.Assigning the variable ""_className"" to ""tempClassName"" to be used therein does not affect the behavior of the code but rather improves it readability.",1.71937E+12,1.71937E+12,0,2,0,2,no,0/2/0
+126,829,5,SUBMITTED,yes,"In code snippet 1:
+The method allows updating the value for existing keys and returns the old value, while 
+In code snippet 2:
+the second method avoids updating existing keys and always returns null for duplicate keys, only adding new key-value pairs.",1.71928E+12,1.71928E+12,0,0,2,2,yes,0/0/2
+14,829,2,SUBMITTED,yes,returns null instead of value if key is null,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+126,830,1,SUBMITTED,yes,"Code snippet 1:
+ptr += _dataLength; is same as ptr = ptr +  _dataLength; 
+Which means that the old value of ptr is added to the value of _dataLength and the resulting value gets stored in the ptr variable.
+Code snippet 2:
+ptr -= _dataLength; is same as ptr = ptr -  _dataLength;
+The code means that value of _dataLength is subtracted from the current value of ptr and the result gets stored in the ptr variable.
+
+Code snippet 1 does addition, while code snippet 2 does subtraction. 
+
+",1.71901E+12,1.71901E+12,0,0,2,2,yes,0/0/2
+27,830,12,SUBMITTED,yes,"The mutant introduces a bug by changing the assignment operator from '+= to -=' in the line 'ptr += _dataLength;'. The original code increments the pointer 'ptr' by '_dataLength' after copying the data, which is necessary to update the pointer correctly. The mutant code, however, decrements the pointer by '_dataLength', which leads to an incorrect pointer position. This change will cause the method to return a pointer value that is '_dataLength' units less than the correct value, potentially leading to incorrect behavior in any subsequent operations that depend on the updated pointer value. This alteration changes the method's logic and results, making the mutant buggy.",1.71903E+12,1.71903E+12,0,0,2,2,yes,0/0/2
+17,835,1,SUBMITTED,no,Expressions are equivalent,1.7194E+12,1.7194E+12,0,2,0,2,no,0/2/0
+125,835,4,SUBMITTED,no,"The mutant code makes the function more complicated since when the state is true, temp = 1, so the cfgDefaultUseWrapper is going true since temp == 1 is true since the state is true while the original code also returns true. When the state is false, temp = 0 since the if statement does not run temp = 1, so now temp == 1 is false for the mutant code, and the original code will return false as well. The behavior is the same, except the mutant code adds unnecessary code.",1.71914E+12,1.71919E+12,0,2,0,2,no,0/2/0
+133,836,30,SUBMITTED,yes,"Evaluating the four changes done in the mutated case
+For the first one, the conditional checks if obj is null and if so it returns false. This is a bug because in the original case, the condition that was checked and what was returned was different.
+For the second, one of the cases in the conditional has been removed and taken down. This is a bug because the conditional 
+now does only one check. 
+The third involves the conditional that was taken down. Taking it down introduces a bug into the code because the conditional case is no longer checked in the higher if condition.
+And for the 4th one, returning ""super.equals(obj)"" instead of ""false"" introduces a bug into the code.",1.71932E+12,1.71932E+12,0,0,2,2,yes,0/0/2
+123,836,10,SUBMITTED,yes,"superclass equality logic is taken into account in the original code as well as checking if the object is equal to itself which, without it, may cause unexpected behavior ",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+11,838,2,SUBMITTED,yes,The mutant return false while the main return true if the condition was correct,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+120,838,1,SUBMITTED,yes,changed from true to false,1.71895E+12,1.71895E+12,0,0,2,2,yes,0/0/2
+17,839,1,SUBMITTED,no,Order does not change meaning of expression,1.71891E+12,1.71891E+12,0,2,0,2,no,0/2/0
+105,839,5,SUBMITTED,no,"The conditions in the original equals method are verified first to see if super.equals(object) returns true, and then if object is an instance of MiddlePinNeedle. This preserves logical integrity by guaranteeing that both requirements must be met for the procedure to return true. The requirements in the mutant version are rearranged such that super.equals(object) returns true after determining whether object is an instance of MiddlePinNeedle. Since both requirements must be met for the method to return true, the logical result is unaffected by this change in the conditions' order. The method only returns true if both requirements are satisfied, regardless of whether the order is altered.",1.71901E+12,1.71901E+12,0,2,0,2,no,0/2/0
+125,841,5,SUBMITTED,yes,"The indexMap on the left has a HashMap that allows you to add certain objects to it, while on the right, it codes that the indexMap is null, and you will not be able to add anything to it.",1.71886E+12,1.71887E+12,0,0,2,2,yes,0/0/2
+63,841,1,SUBMITTED,yes,"The original code initializes the indexMap variable to a new HashMap object, however, the mutant assigns it to null. This results in different functionalities.",1.71891E+12,1.71896E+12,0,0,2,2,yes,0/0/2
+97,843,3,SUBMITTED,yes,wrong value returned,1.71941E+12,1.71941E+12,0,0,2,2,yes,0/0/2
+66,843,2,SUBMITTED,yes,it is clear buggy as it return true when obj == null it completely changes the outcome,1.71896E+12,1.71896E+12,0,0,2,2,yes,0/0/2
+11,849,2,SUBMITTED,yes,The mutant code calls the function add but passes different value(y/x not y),1.71899E+12,1.71899E+12,0,0,2,2,yes,0/0/2
+17,849,2,SUBMITTED,yes,Changes the logic of the code,1.71881E+12,1.71881E+12,0,0,2,2,yes,0/0/2
+14,852,4,SUBMITTED,no,adding long with string converts long to str.,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+132,852,7,SUBMITTED,no,the getvalue() returns an int ( i looked it up ) and it works either way ,1.71913E+12,1.71915E+12,0,2,0,2,no,0/2/0
+125,853,2,SUBMITTED,no,"The code is the same, except the if statement addresses another possibility when a year != 0 and returns years; if the if statement does not pass, then it will just return this. Thus, the code on the right will have the same functionality as the code on the left. Since the code on the left will return this if year == 0 and then return years if it doesn't.",1.71901E+12,1.71901E+12,0,2,0,2,no,0/2/0
+17,853,1,SUBMITTED,no,"Mutant changes order of evaluation, but the code is the same",1.71921E+12,1.71921E+12,0,2,0,2,no,0/2/0
+53,856,5,SUBMITTED,no,"The first for loop is counting up from zero up to result.length -1 while the second for loop is counting down from result.length -1 to zero, so the same value of 'i' gets assigned in result array",1.71919E+12,1.71919E+12,0,1,2,3,yes,0/1/2
+126,856,2,SUBMITTED,yes,"Code snippet 1:
+The loop iterates from the beginning of the array (0 index) to the end (result.length - 1 index) while 
+Code snippet 2:
+The loop iterates from the end of the array (result.length - 1 index) to the beginning (0 index).",1.71916E+12,1.71916E+12,0,1,2,3,yes,0/1/2
+97,856,2,SUBMITTED,yes,"Since nothing is added or subtracted form the array, this is not buggy. It just reveres the order of the for loop.(starts with last value of the list instead of the first) ",1.71876E+12,1.71876E+12,0,1,2,3,yes,0/1/2
+14,859,1,SUBMITTED,yes,null is passed in place of object,1.71898E+12,1.71898E+12,0,0,2,2,yes,0/0/2
+126,859,1,SUBMITTED,yes,Given that though both snippets call a constructor of the superclass with three arguments there's difference in the second arguments where for the first code snippet it is param and null for the second code snippet to the right. This leads to an overall change in output.,1.71856E+12,1.71857E+12,0,0,2,2,yes,0/0/2
+126,861,1,SUBMITTED,yes,"In both code snippets, the super() receives 3 arguments. 
+We noticed that the first and the third argument is same in both code snippets while the second argument differs. This will lead to a difference in output.",1.71928E+12,1.71928E+12,0,0,2,2,yes,0/0/2
+97,861,3,SUBMITTED,yes,"This would not work if 'minDaysInFirstWeek' is not overloaded. Even if it is, it would not return the same result",1.71876E+12,1.71876E+12,0,0,2,2,yes,0/0/2
+97,862,1,SUBMITTED,yes,they both return different results.,1.71876E+12,1.71876E+12,0,0,2,2,yes,0/0/2
+131,862,3,SUBMITTED,yes,"In the original code, the method returns the exact MAX_YEAR but in the mutant code, it returns MAX_YEAR+1 which can change the behavior of the code. ",1.71935E+12,1.71935E+12,0,0,2,2,yes,0/0/2
+97,863,1,SUBMITTED,yes,It does not divid by 2(as the name suggests),1.71856E+12,1.71856E+12,0,0,2,2,yes,0/0/2
+133,863,5,SUBMITTED,yes,"In the original case what is returned is halved. But in the mutated case, there is an addition of two to what is been returned. This alters the expected behavior of the code.  ",1.71936E+12,1.71936E+12,0,0,2,2,yes,0/0/2
+132,865,3,SUBMITTED,no,"the loop will just loop on the same i values in both cases , and the second change is just a comment ",1.71906E+12,1.71906E+12,0,2,0,2,no,0/2/0
+11,865,4,SUBMITTED,no,Both for loop conditions are equivalent,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+63,878,5,SUBMITTED,no,"The mutant adds redundant code with the if-condition. In any case, the method will return the same value as that in the original code.",1.71942E+12,1.71942E+12,0,2,0,2,no,0/2/0
+11,878,3,SUBMITTED,no,The if condition doesn't change the return value,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+126,879,1,SUBMITTED,no,"The arrangement in both code snippet is different however it's logic and output will be same.
+It's just Like 2+3 = 3+2. The arrangement of the terms are different,however, the logic as well as the output remains same.",1.71915E+12,1.71915E+12,0,2,0,2,no,0/2/0
+66,879,6,SUBMITTED,no,only formatting change,1.71896E+12,1.71896E+12,0,2,0,2,no,0/2/0
+125,880,6,SUBMITTED,no,The mutant code is not buggy because the order does not matter it will have the same behavior when trying to find the boolean between three statement when there is an && between the three statements.,1.7192E+12,1.71921E+12,0,2,0,2,no,0/2/0
+14,880,2,SUBMITTED,no,changing the order does not affect execution,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+133,882,2,SUBMITTED,yes,"Though the code runs in the mutated case, returning ""null"" changes the behavior of the code. For from the original case the function returns the ""second of minute property"" and not ""null"" as seen in the mutated case.",1.71936E+12,1.71936E+12,0,0,2,2,yes,0/0/2
+105,882,10,SUBMITTED,yes,"The 'secondOfMinute' field of the 'getChronology' can be accessed through the method's accurate return of a new 'Property' object in the original implementation. This guarantees that the'secondOfMinute' property can be used and manipulated by users in the intended manner.
+
+Instead of returning a new 'Property' object, the method in the mutant version returns 'null.' Because of this modification, the method can no longer access the ‘secondOfMinute’ property, which presents a serious issue. In place of the anticipated ‘Property’ object, users executing this method would obtain null, which could result in 'NullPointerException' failures and prevent the method from serving its intended purpose. This mutation results in probable runtime issues and a loss of functionality by failing to return the 'Property' object, which causes improper behavior. ",1.71909E+12,1.71909E+12,0,0,2,2,yes,0/0/2
+14,883,1,SUBMITTED,yes,returns wrong value,1.71932E+12,1.71932E+12,0,0,2,2,yes,0/0/2
+17,883,1,SUBMITTED,yes,Function expects day of the month,1.71933E+12,1.71933E+12,0,0,2,2,yes,0/0/2
+14,884,1,SUBMITTED,yes,fails for days == 0,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+97,884,2,SUBMITTED,yes,this is buggy as it does not work when 'days' is 0,1.71856E+12,1.71856E+12,0,0,2,2,yes,0/0/2
+14,888,1,SUBMITTED,yes,Sets value to null instead of object.,1.71839E+12,1.71839E+12,0,0,2,2,yes,0/0/2
+126,888,2,SUBMITTED,yes,"The output will be different as 
+doctypeNode.setPubSysKey(d.getPubSysKey()); in snippet one will not evaluate to doctypeNode.setPubSysKey(null); in snippet two leading to an overall change in output on both ends.",1.71843E+12,1.71843E+12,0,0,2,2,yes,0/0/2
+120,891,1,SUBMITTED,no,comment,1.71895E+12,1.71895E+12,0,3,0,3,no,0/3/0
+12,891,2,SUBMITTED,no,Mutant removes comment not affecting the execution,1.71896E+12,1.71896E+12,0,3,0,3,no,0/3/0
+17,891,1,SUBMITTED,no,No code changes,1.7194E+12,1.7194E+12,0,3,0,3,no,0/3/0
+122,895,1,SUBMITTED,yes,"The modification of >= from > can introduce an error when the size is zero, as the first() is null then. So it's a bug.",1.71892E+12,1.71892E+12,0,0,2,2,yes,0/0/2
+14,895,2,SUBMITTED,yes,fails when size == 0,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+105,898,5,SUBMITTED,no,"The only difference between the original and mutant versions of the code is a comment that has been included to suggest where potentially problematic code might be located. Nevertheless, the original and mutant versions do not work differently because just the comment has changed and the underlying code logic remains unchanged. This indicates that since the code itself does not change, the mutant version does not introduce any bugs.",1.71918E+12,1.71918E+12,0,2,0,2,no,0/2/0
+116,898,15,SUBMITTED,no,"I think the comment is the one that is confusing. Both code snippets are doing the same thing, ",1.71864E+12,1.71864E+12,0,2,0,2,no,0/2/0
+11,900,4,SUBMITTED,yes,The mutant will always return new object while main return the class object that might be modified,1.71915E+12,1.71915E+12,0,1,2,3,yes,0/1/2
+97,900,1,SUBMITTED,no,both return the same thing,1.71916E+12,1.71916E+12,0,1,2,3,yes,0/1/2
+14,900,1,SUBMITTED,yes,It returns new object each time instead of prev one.,1.71847E+12,1.71847E+12,0,1,2,3,yes,0/1/2
+23,902,5,SUBMITTED,no,the mutant is not buggy but has some repeated conditions or snippet.,1.7192E+12,1.71921E+12,0,2,0,2,no,0/2/0
+106,902,1,SUBMITTED,no,"adding the same equvelnece relation would always be true if the first one is true, so therefore the original and the mutant would result in the same boolean value at the end",1.71919E+12,1.7192E+12,0,2,0,2,no,0/2/0
+17,907,4,SUBMITTED,no,"Although the variable is not altered in the function, the final label is important to prevent accidental update",1.7194E+12,1.7194E+12,0,3,0,3,no,0/3/0
+11,907,3,SUBMITTED,no,Removing final won't change the code as final just prevent reassigning the variable,1.71923E+12,1.71923E+12,0,3,0,3,no,0/3/0
+97,907,2,SUBMITTED,no,its fine that 'props' is not mentioned as final. The mutant would still work the same,1.71903E+12,1.71903E+12,0,3,0,3,no,0/3/0
+132,915,10,SUBMITTED,no,"I was not familiar to the <?, ?> term , so i had to look it up( i searched the internet but didnt use chatgpt as instructed in the google doc)
+and i learned that it is a mapping without specifying the data type of the variables , and its not a bug since it works either way",1.71906E+12,1.71906E+12,0,2,0,2,no,0/2/0
+14,915,1,SUBMITTED,no,breaks design principal but no change in code,1.71925E+12,1.71925E+12,0,2,0,2,no,0/2/0
+123,918,1,SUBMITTED,no,Using this inside a class doesn't change the behavior ,1.71898E+12,1.71898E+12,0,2,0,2,no,0/2/0
+11,918,1,SUBMITTED,no,Adding this won't change the value,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+63,920,3,SUBMITTED,no,"The mutant does not alter the functionality of the original code. It just adds an additional pair of parentheses to the if-condition, which is redundant.",1.71909E+12,1.71909E+12,0,2,0,2,no,0/2/0
+120,920,1,SUBMITTED,no,parenthesis added,1.71902E+12,1.71902E+12,0,2,0,2,no,0/2/0
+17,922,1,SUBMITTED,no,Refactor without code change,1.71891E+12,1.71891E+12,0,3,0,3,no,0/3/0
+23,922,1,SUBMITTED,no,The changes is not visible in that PR. Based on the commit message it seems not to be Buggy,1.71919E+12,1.7192E+12,0,3,0,3,no,0/3/0
+14,922,1,SUBMITTED,no,only spacing is changed,1.71888E+12,1.71888E+12,0,3,0,3,no,0/3/0
+17,928,1,SUBMITTED,no,Reformat without code changes,1.71933E+12,1.71933E+12,0,2,0,2,no,0/2/0
+132,928,3,SUBMITTED,no,this mutation is identical to the original code.,1.71915E+12,1.71916E+12,0,2,0,2,no,0/2/0
+120,932,3,SUBMITTED,yes,no value in checker,1.71856E+12,1.71856E+12,0,0,2,2,yes,0/0/2
+127,932,1,SUBMITTED,yes,"The original code checks if ""first"" is null, but the mutant doesn't, which could behave differently depending on what ""checkNotNull"" function does if the input is null, so the mutant is a bug.",1.71905E+12,1.71905E+12,0,0,2,2,yes,0/0/2
+11,935,2,SUBMITTED,no,Using diamond operator will return the same object,1.71914E+12,1.71914E+12,0,2,0,2,no,0/2/0
+126,935,3,SUBMITTED,no,Both code snippets will create and return an instance of NonePredicate initialized with the same preds argument. The difference between using <preds> and omitting it does not affect the behavior or output of the instantiated object.,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+76,936,3,SUBMITTED,yes,"Because it returns a completely new empty object, while the return type is <T> Predicate<T>",1.71811E+12,1.71897E+12,0,0,3,3,yes,0/0/3
+125,936,15,SUBMITTED,yes,"They return two different things because they handle the preds.length differently, the code on the left returns a TruePredicate while the code on the right returns a NonePredicate.",1.71875E+12,1.71886E+12,0,0,3,3,yes,0/0/3
+132,936,9,SUBMITTED,yes,"there exist only one constructor in the class NonePredicate , which needs input to call the super constructor , the mutation uses a constructor without inputs/args.",1.71916E+12,1.71916E+12,0,0,3,3,yes,0/0/3
+97,943,5,SUBMITTED,yes,instant.getEpochSecond() does not always equal HUNDRED_NANOS_PER_SECOND,1.71941E+12,1.71941E+12,0,0,3,3,yes,0/0/3
+126,943,3,SUBMITTED,yes,The code snippet to the right does accurate time conversion while mutant code gives value that does not accurately represent time.,1.71848E+12,1.71848E+12,0,0,3,3,yes,0/0/3
+131,943,20,SUBMITTED,yes,"The mutant code is buggy because it multiplies HUNDRED_NANOS_PER_SECOND by itself resulting in incorrect conversion from ""instant"" to NTFS time.",1.71941E+12,1.71941E+12,0,0,3,3,yes,0/0/3
+11,950,1,SUBMITTED,no,Adding brackets will not change the code,1.71931E+12,1.71931E+12,0,2,0,2,no,0/2/0
+126,950,1,SUBMITTED,no,Both code snippets essentially does same thing and the optional or redundant parentheses in code snippet 2 does not impact the overall result in code snippet 2. ,1.71919E+12,1.71919E+12,0,2,0,2,no,0/2/0
+97,951,1,SUBMITTED,no,both are the same,1.71941E+12,1.71941E+12,0,2,0,2,no,0/2/0
+125,951,4,SUBMITTED,no,"The mutant code functions the same except that it accesses index using this. Since there is no local variable index within the function, this.index and index are the same values between the mutant and original code. Additionally, adding parentheses does not change the functionality within the mutant code.",1.71926E+12,1.71926E+12,0,2,0,2,no,0/2/0
+106,952,5,SUBMITTED,no,the only difference is the parenthesis and the placement of the curly braces ,1.71919E+12,1.71919E+12,0,2,0,2,no,0/2/0
+97,952,1,SUBMITTED,no,both are the same,1.71941E+12,1.71941E+12,0,2,0,2,no,0/2/0
+66,953,3,SUBMITTED,no,boolean return added in return not needed,1.71897E+12,1.71924E+12,0,2,0,2,no,0/2/0
+97,953,1,SUBMITTED,no,both have the same value returned,1.71878E+12,1.71878E+12,0,2,0,2,no,0/2/0
+116,955,6,SUBMITTED,no,The formating does not affect the functionality,1.71927E+12,1.71927E+12,0,2,0,2,no,0/2/0
+66,955,2,SUBMITTED,no,only styling got changed,1.71897E+12,1.71897E+12,0,2,0,2,no,0/2/0
+97,962,1,SUBMITTED,no,the mutant is just casting a 'long' as a 'long',1.71909E+12,1.71909E+12,0,2,0,2,no,0/2/0
+126,962,1,SUBMITTED,no,"for the mutant code to the right, casting value to be long is redundant and hence does not change the overall output or behavior of the code",1.71842E+12,1.71842E+12,0,2,0,2,no,0/2/0
+120,963,1,SUBMITTED,yes,subtracted value changed,1.71856E+12,1.71856E+12,0,0,2,2,yes,0/0/2
+126,963,2,SUBMITTED,yes,"In code snippet 1, this.value -= operand; is same as this.value= this.value - operand;
+In code snippet 2, this.value -= operand; is same as  this.value = this.value - value;
+So we can see clearly that there's difference in the value that will be assigned to this.value on both code snippet",1.71897E+12,1.71897E+12,0,0,2,2,yes,0/0/2
+14,967,2,SUBMITTED,yes,changes the range of random number,1.71923E+12,1.71923E+12,0,1,2,3,yes,0/1/2
+97,967,1,SUBMITTED,no,they both are identical in results and print out the same thig,1.71876E+12,1.71876E+12,0,1,2,3,yes,0/1/2
+53,967,1,SUBMITTED,yes,0 can not be gotten as an output in the new snippet while 0 can be gotten as an output in the original,1.71917E+12,1.71917E+12,0,1,2,3,yes,0/1/2
+120,968,1,SUBMITTED,no,casting is fine,1.71861E+12,1.71861E+12,0,2,0,2,no,0/2/0
+97,968,1,SUBMITTED,no,its juts unnecessary casting an int as an int,1.71903E+12,1.71903E+12,0,2,0,2,no,0/2/0
+14,971,2,SUBMITTED,no,redundant casting,1.71855E+12,1.71855E+12,0,2,0,2,no,0/2/0
+133,971,3,SUBMITTED,no,"Though not necessary, casting to string in the mutated cast will not alter behavior of the code. Thus, it is not a bug.",1.71936E+12,1.71936E+12,0,2,0,2,no,0/2/0
+66,974,3,SUBMITTED,no,only formatting difference ,1.71896E+12,1.71896E+12,0,2,0,2,no,0/2/0
+17,974,1,SUBMITTED,no,Mutant is a simple refactor,1.71891E+12,1.71891E+12,0,2,0,2,no,0/2/0
+106,976,1,SUBMITTED,no,based on the order of operation of the equation the stamens divided by the ampersand would be evaluated first and in the muted code the parenthesis do the same thing,1.71901E+12,1.71901E+12,0,2,0,2,no,0/2/0
+97,976,1,SUBMITTED,no,"adding an extra set of parenthesis, in this case, does not affect the code",1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+126,980,1,SUBMITTED,yes,"In the code snippet 1, the variable last is assigned the value of another variable called value while in code snippet 2, the variable last is assigned to a constant value of zero.",1.71898E+12,1.71898E+12,0,0,2,2,yes,0/0/2
+97,980,3,SUBMITTED,yes,'value' is not always 0,1.71941E+12,1.71941E+12,0,0,2,2,yes,0/0/2
+97,984,1,SUBMITTED,no,no mutant,1.71876E+12,1.71876E+12,0,2,0,2,no,0/2/0
+120,984,1,SUBMITTED,no,spacing change,1.71899E+12,1.71899E+12,0,2,0,2,no,0/2/0
+122,986,1,SUBMITTED,no,"The change should not cause problems as it simply accesses the method via a ""this"" keyword",1.71928E+12,1.71928E+12,0,2,0,2,no,0/2/0
+97,986,1,SUBMITTED,no,they both are correct. both work the same. the this is just implied,1.71903E+12,1.71903E+12,0,2,0,2,no,0/2/0
+105,989,5,SUBMITTED,yes,"To make sure that the 'set' parameter is not null, the original 'FluentBitSet' constructor used 'Objects.requireNonNull(set, ""set"")'. To protect against null input, this check throws a 'NullPointerException' if 'set' is null.
+
+The method assigns 'set' to 'this.bitSet' directly in the mutant version, eliminating the null check. Because 'null' can now be supplied as a 'set' parameter, this change may introduce a bug that causes a 'NullPointerException' when 'bitSet' is used later in the code.
+
+The change is problematic because it eliminates the null check and could result in runtime exceptions if a null set is supplied.",1.71935E+12,1.71935E+12,0,0,2,2,yes,0/0/2
+11,989,6,SUBMITTED,yes,If the variable set was null the main will throw an exception of null while the mutant will normally assign it ,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+52,995,2,SUBMITTED,no,"getProperty(PATH_SEPARATOR) returns string so casting in the mutant code is will not be important if it actually returns a string, but if the return type is not always a string, the cast in the mutant code will make it to be string and it will not be buggy one.",1.71897E+12,1.71898E+12,0,2,0,2,no,0/2/0
+11,995,2,SUBMITTED,no,Casting doesn't affect the return but ensures the return type ,1.71926E+12,1.71926E+12,0,2,0,2,no,0/2/0
+116,996,13,SUBMITTED,yes,"The mutant returns a hardcoded string null, which is not a valid path separator and breaks the intended functionality.",1.71926E+12,1.71926E+12,0,0,2,2,yes,0/0/2
+125,996,3,SUBMITTED,yes,"The code on the right returns ""null"" which the original code will only return if the property cannot be read. The original code is able to return different strings besides ""null"" since it only returns ""null"" when the property cannot be read.",1.71913E+12,1.71913E+12,0,0,2,2,yes,0/0/2
+17,997,2,SUBMITTED,no,Expressions are equivalent,1.71933E+12,1.71933E+12,0,2,0,2,no,0/2/0
+11,997,5,SUBMITTED,no,Both parse a string into double,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+97,1000,1,SUBMITTED,no,they both have the same results. it's like casting an int as an int: It does not do anything,1.71876E+12,1.71876E+12,0,3,0,3,no,0/3/0
+133,1000,9,SUBMITTED,no,"In the mutated case, though an unnecessary casting has been done, the code will run as expected.",1.71932E+12,1.71932E+12,0,3,0,3,no,0/3/0
+17,1000,1,SUBMITTED,no,Type cast and reformatting does not affect code,1.71934E+12,1.71934E+12,0,3,0,3,no,0/3/0
+17,1002,1,SUBMITTED,no,Expressions are equivalent,1.7194E+12,1.7194E+12,0,3,0,3,no,0/3/0
+14,1002,1,SUBMITTED,no,"some parenthesis and casting is added, but original code is same",1.71923E+12,1.71923E+12,0,3,0,3,no,0/3/0
+97,1002,1,SUBMITTED,no,both codes have the same output,1.71878E+12,1.71878E+12,0,3,0,3,no,0/3/0
+125,1003,3,SUBMITTED,no,Since there is no value within the method's scope value and this.value are going to be equivalent making the mutant code have the same behavior as the original code.,1.71913E+12,1.71913E+12,1,2,0,3,no,1/2/2000
+12,1003,2,SUBMITTED,maybe,Depends if this.value is changed during execution,1.71895E+12,1.71895E+12,1,2,0,3,no,1/2/2000
+97,1003,1,SUBMITTED,no,there is no other 'value' for the computer to get confused with,1.71893E+12,1.71893E+12,1,2,0,3,no,1/2/2000
+17,1007,1,SUBMITTED,yes,Mutant changes code logic,1.7192E+12,1.7192E+12,0,0,2,2,yes,0/0/2
+97,1007,3,SUBMITTED,yes,the both are not the same as 'value' is not always 0,1.71935E+12,1.71935E+12,0,0,2,2,yes,0/0/2
+116,1008,7,SUBMITTED,no,The code is the same only a slight difference in formatting which will not change the output,1.71864E+12,1.71864E+12,0,2,0,2,no,0/2/0
+17,1008,1,SUBMITTED,no,Just a refactor,1.71882E+12,1.71882E+12,0,2,0,2,no,0/2/0
+126,1009,1,SUBMITTED,yes,"Code snippet 1:
+The value of the variable value is assigned to the last variable
+Code snippet 2:
+The result from value + operand is assigned to the last variable.
+We can see that the variable last got two different values.",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+11,1009,2,SUBMITTED,yes,Adding operand to the variable last will change the output of the code,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+120,1011,1,SUBMITTED,no,only spacing changed,1.71858E+12,1.71858E+12,0,2,0,2,no,0/2/0
+17,1011,1,SUBMITTED,no,"Code reformatted, no logic change",1.71917E+12,1.71917E+12,0,2,0,2,no,0/2/0
+120,1016,1,SUBMITTED,no,formated,1.71902E+12,1.71902E+12,0,2,0,2,no,0/2/0
+126,1016,1,SUBMITTED,no,There is no difference in code behavior or output as both code snippets are exactly the same.,1.71918E+12,1.71918E+12,0,2,0,2,no,0/2/0
+133,1023,3,SUBMITTED,no,"In the mutated case, adding final to the date variable signifies that the variable cannot be reassigned. From a closer look at the code in SqlTimestampTypeAdapter.java the date variable was not later reassigned. The behavior of the code is thus not changed, and therefore no bug is added.",1.71937E+12,1.71937E+12,0,2,0,2,no,0/2/0
+116,1023,7,SUBMITTED,no,Mutant code functions even better than the first code,1.7191E+12,1.7191E+12,0,2,0,2,no,0/2/0
+126,1027,1,SUBMITTED,no,There's no difference in output. They both access values from the array g just that snippet 1 does it directly while snippet 2 does the redundant step of dividing by 1.,1.71902E+12,1.71902E+12,0,2,0,2,no,0/2/0
+17,1027,1,SUBMITTED,no,Mutations does not affect code logic,1.71921E+12,1.71921E+12,0,2,0,2,no,0/2/0
+125,1031,12,SUBMITTED,no,"It has the same functionality, except the code is a little redundant on the right since multiplying along with an int will result in a long. Multiplying by one also will not change the number.",1.71905E+12,1.7191E+12,0,2,0,2,no,0/2/0
+123,1031,2,SUBMITTED,no,The two codes are functionally equivalent,1.71908E+12,1.71908E+12,0,2,0,2,no,0/2/0
+97,1033,1,SUBMITTED,no,"adding extra parentheses, in this case, does not affect the code",1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+11,1033,1,SUBMITTED,no,Adding  extra brackets doesn't affect the code,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+11,1034,1,SUBMITTED,no,Adding extra brackets doesn't change the output,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+17,1034,1,SUBMITTED,no,No logic change,1.71882E+12,1.71882E+12,0,2,0,2,no,0/2/0
+66,1043,1,SUBMITTED,no,only a syntax error,1.71811E+12,1.71889E+12,0,2,0,2,no,0/2/0
+125,1043,2,SUBMITTED,no,"The code is the same; in Java, as long as the code within {} is the same, then the functionality is the same. The formatting of the code is different but has the same functionality.",1.71901E+12,1.71901E+12,0,2,0,2,no,0/2/0
+129,1054,2,SUBMITTED,no,Having double parenthesis is the same as having a single parenthesis.,1.71917E+12,1.71917E+12,0,2,0,2,no,0/2/0
+120,1054,1,SUBMITTED,no,parenthesis,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+122,1055,1,SUBMITTED,no,"This is definitely correct, as it simply accesses the static class member variable ""_from"" with a ""this"" keyword",1.71927E+12,1.71927E+12,0,3,0,3,no,0/3/0
+123,1055,3,SUBMITTED,no,"adding ""this"" wont make a difference if its a class attribute",1.71908E+12,1.71908E+12,0,3,0,3,no,0/3/0
+17,1055,1,SUBMITTED,no,"Since variable is protected, _from can be accessed as this._from",1.71917E+12,1.71917E+12,0,3,0,3,no,0/3/0
+11,1060,3,SUBMITTED,no,Add or removing This. doesn't change the code output ,1.7193E+12,1.7193E+12,0,2,0,2,no,0/2/0
+14,1060,1,SUBMITTED,no,returns same field.,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+133,1061,1,SUBMITTED,no,changing the closing curly bracket does not affect the code functionality. It only affects the code readability,1.71937E+12,1.71937E+12,0,2,0,2,no,0/2/0
+106,1061,1,SUBMITTED,no,"the only difference is the placement of the closing curly brace, and putting it after the semi colon of the last stamens is just a as valid as putting it on the preceding line ",1.71901E+12,1.71901E+12,0,2,0,2,no,0/2/0
+126,1070,1,SUBMITTED,yes,Code snippet 1 initializes an HashMap while code snippet 2 to the right assigns the value of the method to a variable.,1.71856E+12,1.71856E+12,0,0,2,2,yes,0/0/2
+97,1070,1,SUBMITTED,yes,the code dont work the same when 'this == EMPTY' is true,1.71902E+12,1.71902E+12,0,0,2,2,yes,0/0/2
+17,1075,1,SUBMITTED,no,Parenthesis does not affect the expression.,1.7192E+12,1.7192E+12,0,3,0,3,no,0/3/0
+120,1075,1,SUBMITTED,no,changed spacing,1.71861E+12,1.71861E+12,0,3,0,3,no,0/3/0
+11,1075,1,SUBMITTED,no,Adding bracket has no effect,1.7193E+12,1.7193E+12,0,3,0,3,no,0/3/0
+126,1077,1,SUBMITTED,no,"this._hashCode and _hashCode, both refer to the same member variable _hashCode. Hence output on both code snippets will be same.",1.71898E+12,1.71898E+12,0,2,0,2,no,0/2/0
+105,1077,10,SUBMITTED,no,"The '_hashCode' is immediately assigned from the hash code of '_className' in the original 'ClassKey' constructor, which is already accurate. The identical assignment is completed in the mutant version, but 'this' is explicitly used to refer to '_hashCode'. This is only a style alteration; it has no bearing on the constructor's operation or behavior. The original and modified versions ensure that '_hashCode' is initialized correctly according to '_className'.",1.71901E+12,1.71908E+12,0,2,0,2,no,0/2/0
+123,1080,1,SUBMITTED,no,Changing indentation doesnt change code functionality,1.71918E+12,1.71918E+12,0,2,0,2,no,0/2/0
+120,1080,1,SUBMITTED,no,formatted,1.71902E+12,1.71902E+12,0,2,0,2,no,0/2/0
+11,1083,1,SUBMITTED,no,Adding this.method() doesn't affect the output ,1.71916E+12,1.71916E+12,0,3,0,3,no,0/3/0
+120,1083,1,SUBMITTED,no,"""this"" reference makes no difference function call",1.71927E+12,1.71927E+12,0,3,0,3,no,0/3/0
+131,1083,4,SUBMITTED,no,"Not a buggy mutant since adding ""this"" just indicates the current instance of the class explicitly. ",1.71918E+12,1.71918E+12,0,3,0,3,no,0/3/0
+126,1084,1,SUBMITTED,no,"In code snippet 1, this is implicit while in code snippet 2, this is explicit.
+With that said,  the overall code, its behavior and output will be same for both snippets.",1.71919E+12,1.71919E+12,0,2,0,2,no,0/2/0
+11,1084,3,SUBMITTED,no,Both call the same method so the output is the same,1.71915E+12,1.71915E+12,0,2,0,2,no,0/2/0
+109,1087,1,SUBMITTED,no,Just added parentheses,1.71812E+12,1.71918E+12,0,3,0,3,no,0/3/0
+120,1087,1,SUBMITTED,no,parenthesis added,1.71895E+12,1.71895E+12,0,3,0,3,no,0/3/0
+97,1087,1,SUBMITTED,no,another set of brackets does not affect the code,1.71909E+12,1.71909E+12,0,3,0,3,no,0/3/0
+97,1093,2,SUBMITTED,yes,this is because (b == null) does not always evaluate to true,1.71901E+12,1.71901E+12,0,0,2,2,yes,0/0/2
+14,1093,1,SUBMITTED,yes,returns the wrong result when b is not null,1.71847E+12,1.71847E+12,0,0,2,2,yes,0/0/2
+120,1094,3,SUBMITTED,no,I think casting it twice wont cause issues,1.71902E+12,1.71902E+12,0,2,0,2,no,0/2/0
+97,1094,1,SUBMITTED,no,the mutant ois just casting a 'NumberFormat' as a 'NumberFormat',1.71907E+12,1.71908E+12,0,2,0,2,no,0/2/0
+120,1095,5,SUBMITTED,yes,one is new super one is new subclass,1.71895E+12,1.71895E+12,0,0,3,3,yes,0/0/3
+123,1095,20,SUBMITTED,yes,"In the mutant, the function creates a new instance of the LogFormat. But in the original, it clones an existing object (with its state and fields) and casts it to the same type. In some situations, the code would behave the same especially when cloning an object immediatly after initializing it. But the code would behave differently if you're dependant on some value fields you're expecting to based on the clone object. But since the engineers inteded to use cloning rather than simple initialization, then the code would most likely change in behavior when removing it.",1.71918E+12,1.71918E+12,0,0,3,3,yes,0/0/3
+105,1095,5,SUBMITTED,yes,"The original method creates a new LogFormat instance with the same state as the original instance by using super.clone(). The object's state is then preserved when it clones the formatter field to make sure the new instance has a copy of the formatter.
+
+However, in the mutant version, the default constructor is used to create a new instance of LogFormat and initializes the object with default values (base 10, base label ""10"", and showBase set to true). This indicates that there is no preservation of the original LogFormat object's state. Instead, regardless of the original object's state, the new instance will always have the default settings. When the clone method is used, the altered behavior will cause the cloned object to have erroneous and maybe unexpected values for its fields, producing different results. Since the mutant cannot reproduce the original object's state, it produces a bug.",1.71841E+12,1.71841E+12,0,0,3,3,yes,0/0/3
+97,1096,1,SUBMITTED,no,the mutant is just casting an object as an object,1.71904E+12,1.71904E+12,0,3,0,3,no,0/3/0
+23,1096,2,SUBMITTED,no,"The mutant code type cast the cloned instance in Object. I think its better to type cast the instance, else where we want to use that object, might mismatch with the type we expect. So its NOT a buggy mutant.",1.71921E+12,1.71921E+12,0,3,0,3,no,0/3/0
+126,1096,2,SUBMITTED,no,"Both code snippet essentially does same thing.  The slight difference is with the fact that in code snippet 2, the clone object is explicitly cast to Object before returning. We know that the method's return type is Object, therefore the explicit cast is redundant and does not change the behavior or output. ",1.71933E+12,1.71933E+12,0,3,0,3,no,0/3/0
+14,1099,2,SUBMITTED,no,this.bins and bins same field,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+126,1099,1,SUBMITTED,no,"There is no local variable called bins in the method,hence both code snippets will behave the same and provide same result.",1.71915E+12,1.71915E+12,0,2,0,2,no,0/2/0
+11,1104,1,SUBMITTED,no,Format doesn't chage code,1.7193E+12,1.7193E+12,0,2,0,2,no,0/2/0
+97,1104,1,SUBMITTED,no,same code,1.71908E+12,1.71908E+12,0,2,0,2,no,0/2/0
+17,1105,1,SUBMITTED,no,Type cast not needed. Code logic not changed,1.71921E+12,1.71921E+12,0,2,0,2,no,0/2/0
+14,1105,1,SUBMITTED,no,casting an object to same type does not change value,1.71839E+12,1.71839E+12,0,2,0,2,no,0/2/0
+14,1106,1,SUBMITTED,no,Unnecessary parenthesis added around expression.,1.71821E+12,1.71821E+12,0,3,0,3,no,0/3/0
+116,1106,12,SUBMITTED,no,The mutant functions the same way as the original code without introducing a bug,1.71937E+12,1.71937E+12,0,3,0,3,no,0/3/0
+125,1106,2,SUBMITTED,no,"The code format is different since they added parentheses for the if statement, though it functions the same, so the codes function the same, and thus, the mutant is not buggy.",1.71893E+12,1.71893E+12,0,3,0,3,no,0/3/0
+14,1112,2,SUBMITTED,no,Implicit typecasting is done explicitly.,1.71847E+12,1.71847E+12,0,2,0,2,no,0/2/0
+132,1112,20,SUBMITTED,no,"Integer works like int but its a class wrapper , after java 5 , we have auto boxing/unboxing of Integer to int , so it should work fine , although the mutated version returns Integer instead of int.",1.71913E+12,1.71913E+12,0,2,0,2,no,0/2/0
+105,1114,10,SUBMITTED,no,"Based on the supplied index, the eraValueToText method in the original method retrieves the string value from the iEras array. Since the contents of the iEras array are already of type String, the mutant version adds a superfluous cast to String, although this cast has no effect on the method's functionality or behavior. The behavior of the method is unaffected by this mutation; hence, it does not introduce a bug. The method's output and functionality are the same as those of the original version. Because the method's accuracy and performance are unaffected by the superfluous cast, it's not buggy",1.71892E+12,1.71892E+12,0,2,0,2,no,0/2/0
+97,1114,1,SUBMITTED,no,its not buggy because its just casting a string as a string,1.71898E+12,1.719E+12,0,2,0,2,no,0/2/0
+11,1118,1,SUBMITTED,no,Swaping operands in multiplication operation won't change the results,1.71917E+12,1.71917E+12,0,2,0,2,no,0/2/0
+97,1118,1,SUBMITTED,no,some code,1.71909E+12,1.7191E+12,0,2,0,2,no,0/2/0
+122,1119,1,SUBMITTED,no,"Referencing the specific member attribute using ""this"" keyword in Java is not wrong, rather appreciated for clarity. So this is not a bug. ",1.71901E+12,1.71927E+12,0,2,0,2,no,0/2/0
+105,1119,5,SUBMITTED,no,"The instance variable 'iUnitMillis' is returned directly in the original 'getUnitMillis' method. This keeps things simple and readable by giving the field's unit size in milliseconds as intended.
+
+The 'getUnitMillis' method yields 'this.iUnitMillis' in the mutant version. Since 'iUnitMillis' is already a class instance variable, adding 'this' is unnecessary, and doing so has no effect on the method's behavior or output.",1.71909E+12,1.71909E+12,0,2,0,2,no,0/2/0
+120,1121,1,SUBMITTED,no,"added parenthesis, no change",1.71856E+12,1.71856E+12,0,2,0,2,no,0/2/0
+116,1121,8,SUBMITTED,no,Adding parenthesis in the mutant code does not change the functionality or result of the division.,1.71863E+12,1.71864E+12,0,2,0,2,no,0/2/0
+11,1122,1,SUBMITTED,no,The formating doesn't change the code functionality,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+129,1122,1,SUBMITTED,no,"Indentation doesn't affect code behavior or functionality, nor does placing a closing parenthesis (curly brace) further away or closer to the ending statement.",1.71934E+12,1.71934E+12,0,2,0,2,no,0/2/0
+97,1123,1,SUBMITTED,no,they have the same output because casting an int as an int has no effect,1.71878E+12,1.71878E+12,0,2,0,2,no,0/2/0
+14,1123,1,SUBMITTED,no,"typecasting to int before putting it in int variable, does not change the value",1.71828E+12,1.71828E+12,0,2,0,2,no,0/2/0
+126,1133,1,SUBMITTED,no,There's no difference in behavior or output.  Both code snippets receive same parameters both in different order and that in itself doesn't impact the outcome. ,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+11,1133,3,SUBMITTED,no,swapping operands in the addition or multiplication operation doesn't change the code outputs,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+17,1135,1,SUBMITTED,yes,Function requires milliseconds value,1.71891E+12,1.71891E+12,0,0,2,2,yes,0/0/2
+126,1135,1,SUBMITTED,yes,"Code snippet 1:
+This snippet calls the method getWrappedField().getMillis(scaled) and returns its result.
+
+Code snippet 2:
+Simply returns the value of the scaled variable.",1.71901E+12,1.71901E+12,0,0,2,2,yes,0/0/2
+122,1138,1,SUBMITTED,yes,"The overridden public long getUnitMillis() function should return units in millis after multiplying with some scalar, while the mutant version only returns that scalar without acting on the getUnitMillis() functionality. Hence it's a clear bug.",1.71892E+12,1.71892E+12,0,0,3,3,yes,0/0/3
+106,1138,1,SUBMITTED,yes,"the original and mutant return completely different things because the original returns getWrappedField().getUnitMillis() * iScalar, while the mutant returns only iScalar.",1.71893E+12,1.71893E+12,0,0,3,3,yes,0/0/3
+11,1138,3,SUBMITTED,yes,Removing this getWrappedField().getUnitMillis() from the return value will affect the output of the return ,1.71923E+12,1.71923E+12,0,0,3,3,yes,0/0/3
+11,1139,5,SUBMITTED,yes,The main code checks if the object locale and the instance object are either have the same reference or the same vale while the mutant just checks is they have the same reference but they might have the same value,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+17,1139,4,SUBMITTED,yes,Mutant relaxes conditional strictness,1.71891E+12,1.71891E+12,0,0,2,2,yes,0/0/2
+97,1140,1,SUBMITTED,no,its the same code,1.71903E+12,1.71903E+12,0,2,0,2,no,0/2/0
+126,1140,1,SUBMITTED,no,There isn’t anything to compare.,1.71919E+12,1.71919E+12,0,2,0,2,no,0/2/0
+17,1143,1,SUBMITTED,no,Mutant is a reformat without code changes,1.71932E+12,1.71932E+12,0,3,0,3,no,0/3/0
+23,1143,2,SUBMITTED,no,The mutant is a formatted version of the actual code snippet. Hense its NOT buggy.,1.71925E+12,1.71925E+12,0,3,0,3,no,0/3/0
+120,1143,1,SUBMITTED,no,changed spacing,1.71861E+12,1.71861E+12,0,3,0,3,no,0/3/0
+116,1145,2,SUBMITTED,no,"There is nothing to compare, raised issue in Github",1.71926E+12,1.71926E+12,0,2,0,2,no,0/2/0
+63,1145,2,SUBMITTED,no,The mutant is just a reformatting of the original code.,1.71909E+12,1.71909E+12,0,2,0,2,no,0/2/0
+132,1149,12,SUBMITTED,no,"There is just an extra pair of brakets , it took me this time cause i was searching for the methods in their original  classes so i can understand the flow of this function , and i didnt notice that the mutation was this easy :)",1.71924E+12,1.71924E+12,0,2,0,2,no,0/2/0
+126,1149,1,SUBMITTED,no,"There's no difference in output or behavior in the Java code snippets. 
+ The extra parentheses in code snippet 2 is redundant and does not affect the output of its operation. ",1.71897E+12,1.71897E+12,0,2,0,2,no,0/2/0
+17,1156,1,SUBMITTED,no,The DateTime cast is not required since withMillis returns a DateTime object,1.71919E+12,1.71919E+12,0,2,0,2,no,0/2/0
+125,1156,3,SUBMITTED,no,"The mutant code casts the return statement to a DateTime, which it already is; this doesn't affect the behavior compared to the original code.",1.7192E+12,1.7192E+12,0,2,0,2,no,0/2/0
+97,1158,1,SUBMITTED,no,it is like casting an int as an int,1.71893E+12,1.71893E+12,0,2,0,2,no,0/2/0
+120,1158,1,SUBMITTED,no,formatting difference,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+126,1163,1,SUBMITTED,no,"There's difference in the formatting of the closing brace. However, both code snippets are valid and there's no overall change in behavior or output on both ends.",1.71856E+12,1.71856E+12,0,3,0,3,no,0/3/0
+14,1163,1,SUBMITTED,no,same code with spacing change,1.71916E+12,1.71916E+12,0,3,0,3,no,0/3/0
+122,1163,1,SUBMITTED,no,"This is clearly correct, as the change only introduces an unintended closing curly brace. The functionality remains exactly the same. ",1.71892E+12,1.71892E+12,0,3,0,3,no,0/3/0
+11,1165,2,SUBMITTED,no,Adding this. doesn't affect the code ,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+120,1165,1,SUBMITTED,no,no difference when this is not parameter in function,1.71926E+12,1.71927E+12,0,2,0,2,no,0/2/0
+11,1167,1,SUBMITTED,no,Adding extra brackets doesn't affect the code,1.7193E+12,1.7193E+12,0,2,0,2,no,0/2/0
+126,1167,1,SUBMITTED,no,"Both code snippets checks if thisMillis > otherMillis.
+The extra parentheses in code snippet two has no impact on the output of code snippet two.",1.71915E+12,1.71915E+12,0,2,0,2,no,0/2/0
+120,1169,1,SUBMITTED,no,changed spacing,1.71861E+12,1.71861E+12,0,3,0,3,no,0/3/0
+126,1169,1,SUBMITTED,no,"The behavior and output of both Java code snippets will be same.
+The parenthesis at the end of code snippet 2 (which is absent in code snippet 1) does not impact on the overall output code snippet 2.",1.71898E+12,1.71898E+12,0,3,0,3,no,0/3/0
+125,1169,2,SUBMITTED,no,"The code is the same. The only difference is the spacing and format; since the code is the same within the brackets, they have the same functionality despite the style or formatting of the code.",1.71904E+12,1.71904E+12,0,3,0,3,no,0/3/0
+14,1170,1,SUBMITTED,no,typecasting int to int,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+11,1170,3,SUBMITTED,no,Casting doesn't affect the return value,1.71917E+12,1.71917E+12,0,2,0,2,no,0/2/0
+105,1179,10,SUBMITTED,maybe,"Depending on how the parse function is implemented in the TreeBuilder class, the mutant version of the parseInput method introduces a potential change in behavior that might or might not result in a bug.
+
+The parseInput method in the original class is implemented as follows. Nevertheless, the second parseInput method in the mutant version has been altered to cast the parse method's output to Document.
+
+The explicit cast to Document is the primary distinction in this case. If TreeBuilder's parse method consistently yields an object of type Document, then the cast is unnecessary and has no effect on the behavior. Nevertheless, this cast might introduce a ClassCastException, leading to a runtime problem in any case where parse could return a different type (for example, a subclass of Document or another type entirely).",1.71875E+12,1.71875E+12,2,0,0,2,maybe,2/0/0
+106,1179,5,SUBMITTED,maybe,"if the statement without the casting isn't a Document data type then , it would be buggy and the mutant would differ from the original ode, but if it is then they are basically the same thing ",1.71901E+12,1.71901E+12,2,0,0,2,maybe,2/0/0
+66,1180,25,SUBMITTED,yes,"yes indeed buggy because it appends 2 times the valueinsertNode(doctypeNode, d)",1.71896E+12,1.71896E+12,0,0,2,2,yes,0/0/2
+17,1180,1,SUBMITTED,yes,Changes logic in function,1.71891E+12,1.71891E+12,0,0,2,2,yes,0/0/2
+116,1183,12,SUBMITTED,yes,The mutant does not perform a check on num before accessing the list,1.71937E+12,1.71937E+12,0,0,2,2,yes,0/0/2
+133,1183,7,SUBMITTED,yes,"In the mutated case, the condition that checks if num is positive has been removed and ( (Evaluator)evaluators.get((num - 1)) ) is always returned. For instance, whether num > 0 or num < 0, the evaluator always gets returned. Thus, the behavior of the code in the mutated case has been changed and a bug has been introduced.",1.71937E+12,1.71937E+12,0,0,2,2,yes,0/0/2
+17,1186,1,SUBMITTED,no,Mutant is a refactor without code changes.,1.7193E+12,1.71932E+12,0,2,0,2,no,0/2/0
+14,1186,1,SUBMITTED,no,returns same object.,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+14,1187,1,SUBMITTED,no,typecasted to same type,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+126,1187,1,SUBMITTED,no,"There is no change in behavior or output between the code snippets.
+The explicit type casting for code snippet 2 is redundant as the return type for the outputSettings() method is already defined to be of type outputSettings",1.71901E+12,1.71901E+12,0,2,0,2,no,0/2/0
+97,1188,1,SUBMITTED,no,they both work the same. using 'this' just specifies it,1.71898E+12,1.71898E+12,0,2,0,2,no,0/2/0
+126,1188,2,SUBMITTED,no,Both code snippets will  return the outputSettings instance variable. The only difference is the explicit use of this in code snippet 2  which is redundant or optional and does not impact the output.,1.71924E+12,1.71924E+12,0,2,0,2,no,0/2/0
+120,1189,1,SUBMITTED,no,formatting,1.71902E+12,1.71902E+12,0,2,0,2,no,0/2/0
+63,1189,1,SUBMITTED,no,The mutant is just a reformatting of the original code.,1.71896E+12,1.71896E+12,0,2,0,2,no,0/2/0
+14,1191,2,SUBMITTED,yes,Null is returned instead of object.,1.71822E+12,1.71822E+12,0,0,2,2,yes,0/0/2
+126,1191,1,SUBMITTED,yes,Both code snippets returns different values.,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+27,1195,10,SUBMITTED,no,"The change in the code is the addition of the 'final' keyword to the owner variable. The ‘final’ keyword in Java indicates that the variable ‘owner’ cannot be reassigned after its initial assignment. In this context, it ensures that the ‘owner’ variable will always refer to the same Document object throughout its scope. The behavior of the code does not change due to this modification. The value of ‘owner’ is set to node.ownerDocument() in both cases, and the subsequent logic (return owner != null ? owner.outputSettings() : (new Document("""")).outputSettings();) remains unaffected. The introduction of the ‘final’ keyword does not alter the functionality or the output of the code. Therefore, the mutant is not buggy.
+",1.71903E+12,1.71903E+12,0,2,0,2,no,0/2/0
+116,1195,10,SUBMITTED,no,"Using the ""final"" keyword does not make the code buggy, instead, it ensures that the value of the variable is not changed after its initial assignment.",1.71822E+12,1.71863E+12,0,2,0,2,no,0/2/0
+11,1196,1,SUBMITTED,no,Casting here wont affect the code result,1.71917E+12,1.71917E+12,0,2,0,2,no,0/2/0
+17,1196,1,SUBMITTED,no,Unnecessary object type cast,1.71917E+12,1.71917E+12,0,2,0,2,no,0/2/0
+126,1200,2,SUBMITTED,yes,"Code snippet 1 only returns a variable while in code snippet 2 you are accessing the class field, not a local variable or a parameter with the same name.",1.71915E+12,1.71915E+12,0,2,1,3,no,0/2/1
+14,1200,1,SUBMITTED,no,same attribute is returned,1.71898E+12,1.71898E+12,0,2,1,3,no,0/2/1
+17,1200,3,SUBMITTED,no,The expressions are identical,1.7194E+12,1.7194E+12,0,2,1,3,no,0/2/1
+14,1201,2,SUBMITTED,yes,"if valueSep is less than 10 it will return false, which is wrong. ",1.71925E+12,1.71925E+12,0,0,2,2,yes,0/0/2
+120,1201,1,SUBMITTED,yes,condition changed,1.71861E+12,1.71861E+12,0,0,2,2,yes,0/0/2
+17,1205,1,SUBMITTED,no,Expressions are identical,1.71933E+12,1.71933E+12,0,2,0,2,no,0/2/0
+129,1205,2,SUBMITTED,no,"The method's (where the line is mutated) parameter's doesn't include an ""array"" variable, so having and not having ""this"" won't make a difference.",1.71925E+12,1.71925E+12,0,2,0,2,no,0/2/0
+11,1206,6,SUBMITTED,yes,The return value will depend on nextCalled variable ,1.71931E+12,1.71931E+12,0,0,2,2,yes,0/0/2
+97,1206,5,SUBMITTED,yes,"It is sometimes buggy. if 'beforeFirst' is false, 'removed' is false, and 'nextCalled' is false, then both codes wont hae the same responce",1.71856E+12,1.71856E+12,0,0,2,2,yes,0/0/2
+126,1208,2,SUBMITTED,yes,"Let's  assume 
+beforeFirst = false and removed = false
+
+Code snippet 1:
+The code does logical AND on !beforeFirst and  !removed and the result will be true given our prior reference assumption.
+
+Code snippet 2:
+
+The Code does logical OR operation on two 'parent logical operations' I.e
+(!beforeFirst && !removed) || (!beforeFirst || removed
+From the above code, parent logical operation to the right will evaluates its AND operation to give true which will then be ORed with the true value gotten from the second parent logical operation to the right. We have True OR true which gives true.
+
+Summary, the overall conditions checks shows a clear difference in behavior which can lead to difference in output.",1.71901E+12,1.71901E+12,0,0,2,2,yes,0/0/2
+116,1208,15,SUBMITTED,yes,The mutant is buggy because it incorrectly allows conditions where beforeFirst is true and removed is true to return true,1.71929E+12,1.71929E+12,0,0,2,2,yes,0/0/2
+116,1209,10,SUBMITTED,no,It functions better than the first code,1.7191E+12,1.7191E+12,0,2,0,2,no,0/2/0
+23,1209,15,SUBMITTED,no,"The original code could be considered buggy if there are situations where this.composite could be EMPTY_MAP_ARRAY. In such cases, accessing this.composite[i] would be invalid and could lead to an ArrayIndexOutOfBoundsException or other logical errors.
+
+The change improves the robustness of the method by ensuring that it only attempts to access elements of this.composite if it is not EMPTY_MAP_ARRAY. Therefore, the modification appears to fix a potential bug and makes the code safer.
+
+So, the modified code is less likely to be buggy compared to the original code.",1.71812E+12,1.71855E+12,0,2,0,2,no,0/2/0
+97,1210,2,SUBMITTED,yes,they both don't work the same when 'this.composite[i]' is not empty but contains the key,1.71908E+12,1.71908E+12,0,0,2,2,yes,0/0/2
+14,1210,3,SUBMITTED,yes,"when  expression after && is false, and expression before && is true, returns wrong result",1.71839E+12,1.71839E+12,0,0,2,2,yes,0/0/2
+127,1211,3,SUBMITTED,yes,"The loop in the original code continues as long as ""i >= 0"", but the loop in the mutant only continues when ""i == 0"". These two loops have the same behavior only when ""this.composite.length"" is 1. So, the mutant is a bug.",1.71877E+12,1.71877E+12,0,0,2,2,yes,0/0/2
+14,1211,1,SUBMITTED,yes,Loop only works perferctly for 1.,1.71847E+12,1.71847E+12,0,0,2,2,yes,0/0/2
+126,1222,1,SUBMITTED,yes,"Code snippet 1 does a single if check while code snippet 2 does two if conditional checks.
+This results in difference in behavior as well as output in both code snippets.",1.71919E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+116,1222,12,SUBMITTED,yes, The double check of iterator instanceof ListIterator in the Mutant code is unnecessary and could lead to confusion or logical errors.,1.7191E+12,1.7191E+12,0,0,2,2,yes,0/0/2
+17,1223,3,SUBMITTED,yes,Mutant changes code logic,1.71921E+12,1.71921E+12,0,2,1,3,no,0/2/1
+132,1223,4,SUBMITTED,no,"the if condition will keep working the same , if True then it will just be True AND (anything OR True) which is True , and if False , then False AND anything is just False",1.71906E+12,1.71906E+12,0,2,1,3,no,0/2/1
+127,1223,3,SUBMITTED,no,"If ""iterator"" is an instance of ""ListIterator"", the ""if"" condition in the original code will be True. For the mutated code, the left side of the bitwise AND will be True, and so will the right side since no matter whether ""currentIndex == wrappedIteratorIndex"", the right side of the OR is already True, so the whole condition will evaluate to True. If ""iterator"" is not an instance of ""ListIterator"", the ""if"" conditions in both cases will be False. So, the mutant is not a bug.",1.71872E+12,1.71872E+12,0,2,1,3,no,0/2/1
+11,1224,5,SUBMITTED,no,This expression && (currentIndex == 0 || iterator instanceof ListIterator)) will always be the same as the main code result as the || iterator instanceof ListIterator will be the same as in the main code so the results depends only to that expression  iterator instanceof ListIterator like in the main code,1.7193E+12,1.7193E+12,0,2,0,2,no,0/2/0
+14,1224,2,SUBMITTED,no,if iterator instanceof ListIterator expression in mutant has same value .,1.71925E+12,1.71925E+12,0,2,0,2,no,0/2/0
+14,1228,3,SUBMITTED,no,"If the object is in array[1], then mutant will return false which is wrong",1.71916E+12,1.71916E+12,0,1,2,3,yes,0/1/2
+63,1228,15,SUBMITTED,yes,"The mutant introduces an extra OR condition with the expression (objectToFind.equals(array[ 0]). In case the array variable is null, indexOf method will return CollectionUtils.INDEX_NOT_FOUND, meaning the first condition will be false. When evaluating the second condition, it will look for the 0th object in an array that is null resulting in a NullPointerException. The original code does not have the extra condition is null-safe. Therefore, the mutant is buggy and has a different functionality.",1.71909E+12,1.71909E+12,0,1,2,3,yes,0/1/2
+120,1228,3,SUBMITTED,yes,additional condition,1.71899E+12,1.71899E+12,0,1,2,3,yes,0/1/2
+52,1232,2,SUBMITTED,no,I think it will do the same functionality but the addition of !(null == this) is somewhat confusing as this will not be null so I think it will not effect and will be unnecessary. ,1.71934E+12,1.71934E+12,0,2,0,2,no,0/2/0
+17,1232,3,SUBMITTED,no,The mutant addition will never evaluate to true because of earlier if statements in the function,1.7194E+12,1.7194E+12,0,2,0,2,no,0/2/0
+14,1233,2,SUBMITTED,no,"case by case analysis shows, mutant and source are equivalent",1.71925E+12,1.71925E+12,0,3,0,3,no,0/3/0
+120,1233,1,SUBMITTED,no,added condition same as old,1.71903E+12,1.71903E+12,0,3,0,3,no,0/3/0
+106,1233,2,SUBMITTED,no,"when the mutant's equvence equation is expanded out then it represents the original equivalence equation but just twice, so therefore they equal the same thing",1.7192E+12,1.7192E+12,0,3,0,3,no,0/3/0
+14,1237,2,SUBMITTED,no,"null!= object is always true at that line, so && null!= object will not change execution",1.71916E+12,1.71916E+12,0,2,1,3,no,0/2/1
+126,1237,2,SUBMITTED,yes,"Code snippet 1 checks only one condition i.e it checks if the class of object is equal to the class of this. Code snippet 2 checks two conditions:
+1) If the class of object is equal to the class of this.
+2) If object is not null.
+Given the above, there's a difference in behavior as well as output on both ends.",1.71857E+12,1.71857E+12,0,2,1,3,no,0/2/1
+123,1237,4,SUBMITTED,no,"The code behavior doesn't change as the object will never be null. The reason for this is because we check in a prior if statement, which returns false if the object is null",1.71915E+12,1.71915E+12,0,2,1,3,no,0/2/1
+14,1239,3,SUBMITTED,yes,"when get.containsValue(value) is true and get instanceof IterableGet is true, returns false instead of true",1.71839E+12,1.71839E+12,0,0,2,2,yes,0/0/2
+126,1239,2,SUBMITTED,yes,"code snippe 1 checks for the presence of the value only while code
+Snippet 2 checks for the presence of the value and ensures get is not an instance of IterableGet.",1.71898E+12,1.71898E+12,0,0,2,2,yes,0/0/2
+14,1241,3,SUBMITTED,yes,depends on the concrete class of get,1.71925E+12,1.71925E+12,0,0,2,2,yes,0/0/2
+11,1241,4,SUBMITTED,yes,"This expression && !(get instanceof IterableGet) will always be false as the variable get is instance of iterableGet, so the return value will always be false",1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+11,1243,2,SUBMITTED,yes,The mutant check if the arg is not null then clone the variable paramTypes that might be null,1.71915E+12,1.71915E+12,0,0,2,2,yes,0/0/2
+131,1243,4,SUBMITTED,yes,"Buggy because it can lead to iParamTypes being set to null even when paramTypes is provided, potentially causing unexpected behavior of the code.",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+14,1244,1,SUBMITTED,no,args has value on null,1.71932E+12,1.71932E+12,0,2,0,2,no,0/2/0
+11,1244,3,SUBMITTED,no,The main set the variable iArgs to null if arg was equal to null and in the mutant the iArgs is set to the arg which is null,1.7193E+12,1.7193E+12,0,2,0,2,no,0/2/0
+123,1255,3,SUBMITTED,yes,"Integer.minvalue isn't equivalent to 0, so code behavior may change",1.7191E+12,1.7191E+12,0,0,2,2,yes,0/0/2
+120,1255,1,SUBMITTED,yes,many changes to functionality,1.7191E+12,1.7191E+12,0,0,2,2,yes,0/0/2
+105,1258,10,SUBMITTED,yes,"When a carriage return ('CR') is followed by a line feed ('LF'), the original 'printComment' method handles line breaks by incrementing the index 'i' once. This guarantees that 'CRLF' sequences are handled appropriately and don't result in additional line breaks.
+
+The approach adds a while loop to the mutant version, which keeps increasing ""i"" as long as ‘LF"" comes after a ""CR."" This modification may cause the technique to behave differently by perhaps skipping several ‘LF’ characters, which could result in improper handling of line breaks in comments. As a result, because the mutation modifies how line breaks in comment strings are handled, it is flawed.",1.71935E+12,1.71935E+12,0,0,2,2,yes,0/0/2
+126,1258,2,SUBMITTED,yes,"Both codes check same thing but with different behaviors. I.e
+
+
+
+Code snippet 1:
+The If statement checks the condition once. If true, it executes the block of code once and then proceeds to the next statement after the if block.
+Code snippet 2: 
+The While loop checks the condition repeatedly. It executes the block of code repeatedly as long as the condition remains true. It only stops when the condition becomes false.",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+17,1264,1,SUBMITTED,yes,Mutant changes code functionality,1.7192E+12,1.7192E+12,0,0,2,2,yes,0/0/2
+14,1264,2,SUBMITTED,yes,"Instead of 800, 0 is returned",1.71925E+12,1.71925E+12,0,0,2,2,yes,0/0/2
+126,1267,1,SUBMITTED,yes,There's  difference in output or behavior as seen in the return value on both code snippets if/when baseValue == null,1.71842E+12,1.71842E+12,0,0,2,2,yes,0/0/2
+97,1267,2,SUBMITTED,yes,they both return different values when 'baseValue' is null,1.71876E+12,1.71876E+12,0,0,2,2,yes,0/0/2
+97,1271,1,SUBMITTED,no,they both are the same because 'DEFAULT_PROPERTY_COUNT' is equal to 16,1.71903E+12,1.71903E+12,0,2,0,2,no,0/2/0
+27,1271,8,SUBMITTED,no,"The mutant is not buggy because the change from using the 'DEFAULT_PROPERTY_COUNT' constant to the literal '16' when initializing the 'HashSet' does not alter the behavior or output of the method. This modification only affects the initial capacity of the 'HashSet', which impacts performance characteristics such as rehashing frequency but not the correctness or functionality of the code. Consequently, the overall behavior of the method 'getPropertyNames' remains the same, ensuring that the mutation does not introduce any bugs.",1.71903E+12,1.71903E+12,0,2,0,2,no,0/2/0
+97,1272,2,SUBMITTED,yes,they both dont check for the same thing,1.71908E+12,1.71908E+12,0,0,2,2,yes,0/0/2
+105,1272,15,SUBMITTED,yes,"The namespace URI is returned by the original method, getNamespaceURI, depending on the attribute prefix. It delegates to the parent to obtain the namespace URI associated with the prefix if the prefix is not null. By assuming that there is a legitimate parent node, the method guarantees that the namespace URI is correctly retrieved.
+The condition is changed in the mutant version to check if the parent is null rather than the prefix. Because it modifies the method's intended functionality, this change produces a logical mistake. In particular, it can return null erroneously if the parent is null, which might occur in situations where the parent node is null but the prefix is not. When XML processing requires the namespace, this modification may result in improper namespace resolution and possible problems.",1.71893E+12,1.71893E+12,0,0,2,2,yes,0/0/2
+120,1275,3,SUBMITTED,yes,parent change to null,1.71895E+12,1.71895E+12,0,0,2,2,yes,0/0/2
+24,1275,4,SUBMITTED,yes,"If LangAttributePointer relies on parent for proper operation, passing null brings error.",1.71894E+12,1.71894E+12,0,0,2,2,yes,0/0/2
+126,1277,2,SUBMITTED,yes,"Code snippet 1:
+It checks if two references point to the same object in memory while
+Code snippet 2: 
+ checks if a reference (obj) is null.",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+17,1277,1,SUBMITTED,yes,Mutant change will affect function correctness,1.71932E+12,1.71932E+12,0,0,2,2,yes,0/0/2
+120,1284,1,SUBMITTED,yes,different variable updated,1.71899E+12,1.71899E+12,0,0,2,2,yes,0/0/2
+14,1284,2,SUBMITTED,yes,hashcode is never assigned,1.71906E+12,1.71906E+12,0,0,2,2,yes,0/0/2
+120,1285,3,SUBMITTED,no,result overwritten after change,1.71861E+12,1.71861E+12,0,2,0,2,no,0/2/0
+129,1285,2,SUBMITTED,no,Line 388 (changed line) is redundant since line 390 (unchanged line) is the one that sets the value of the variable 'result' which means that the value of 'result' will be same for both codes.,1.71871E+12,1.71871E+12,0,2,0,2,no,0/2/0
+97,1286,2,SUBMITTED,yes,they both don't return the same thing as 'minimum' can have a value which is not 0.,1.71855E+12,1.71855E+12,0,0,2,2,yes,0/0/2
+123,1286,1,SUBMITTED,yes,"The + was changed to - in the mutant code, which may defy the Intended behavior ",1.71875E+12,1.71875E+12,0,0,2,2,yes,0/0/2
+126,1287,1,SUBMITTED,yes,The difference in output is due to the use of the logical OR operator in code snippet 1 and the bitwise OR  operator in code snippet 2. ,1.71918E+12,1.71918E+12,0,0,2,2,yes,0/0/2
+120,1287,1,SUBMITTED,yes,deleted 1 vertical bar,1.71902E+12,1.71902E+12,0,0,2,2,yes,0/0/2
+120,1289,1,SUBMITTED,no,spacing change,1.71899E+12,1.71899E+12,0,2,0,2,no,0/2/0
+17,1289,1,SUBMITTED,no,Expressions are identical,1.71935E+12,1.71935E+12,0,2,0,2,no,0/2/0
+105,1292,5,SUBMITTED,no,"The instance variable ""value"" is explicitly referred to by the ""this"" keyword in the initial ""add"" method, and the ""operand"" increments it after that. This is a standard procedure to improve readability and distinguish instance variables from local variables or arguments in the code.
+
+The 'operand' increments the 'value' variable directly in the mutant version, eliminating the need for the 'this' keyword. This particular context does not alter the behavior of the procedure when 'this' is omitted because there are no local variables or parameters called 'value' that could lead to confusion. The instance variable ""value"" is increased by the ""operand"" in both variants of the method.",1.71909E+12,1.71909E+12,0,2,0,2,no,0/2/0
+14,1292,1,SUBMITTED,no,this.value and value are same field,1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+23,1295,2,SUBMITTED,yes,"Im the actual code snippet, the operand is always added with the value. But in the mutant code just a constant value (1) is added instead of operand. So its a buggy code",1.71903E+12,1.71903E+12,0,0,2,2,yes,0/0/2
+11,1295,2,SUBMITTED,yes,The mutant increament the variable value by one always not by operand variable passed to the function,1.71915E+12,1.71915E+12,0,0,2,2,yes,0/0/2
+126,1296,2,SUBMITTED,yes,"Code snippet 1 does only one check I.e
+It checks if the current object (this) is exactly the same object as obj.
+
+Code snippet 2 does two checks I.e
+1. It checks if this is the same as obj (this == obj) and 
+2. It checks if obj is not an instance of ConstantInitializer<?>.",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+97,1296,1,SUBMITTED,yes,they both don't work the same because '!(!(obj instanceof ConstantInitializer<?>))' evaluates to false,1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+14,1297,2,SUBMITTED,no,"obj == this is false at that line, so || false will not change control flow",1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+97,1297,2,SUBMITTED,no,'(obj == this)' is always false because it's checked before. ,1.71929E+12,1.71929E+12,0,2,0,2,no,0/2/0
+23,1300,4,SUBMITTED,yes,"Without this.value, the program can't locate from where this value came from or which value is reffered by 'value'. ",1.71903E+12,1.71903E+12,0,1,2,3,yes,0/1/2
+126,1300,3,SUBMITTED,yes,"Code snippet 1:
+It  adds operand to the instance variable value of the current object (this)  and stores the result in this.value. 
+Code snippet 2: 
+It adds operand to the current value of the local variable called value and stores the result in the value variable.",1.71917E+12,1.71917E+12,0,1,2,3,yes,0/1/2
+17,1300,1,SUBMITTED,no,Expressions are identical,1.71934E+12,1.71934E+12,0,1,2,3,yes,0/1/2
+63,1312,7,SUBMITTED,yes,"The mutant sets shiftCount variable to 255 if the mask variable is 0, an incorrect value for a shift count, potentially causing errors in bit manipulation operations that rely on shiftCount. The original code sets the shiftCount variable to 0 if the mask is 0. Therefore, the mutant's functionality is different from the original code.",1.71909E+12,1.71909E+12,0,0,2,2,yes,0/0/2
+129,1312,3,SUBMITTED,yes,"In original code, this.shiftCount is set to 0 if mask is equal to 0, but in mutant code, this.shiftCount is set to 255 for the same condition. The mutant will behave differently from the original due to this.",1.71934E+12,1.71934E+12,0,0,2,2,yes,0/0/2
+14,1313,1,SUBMITTED,yes,differant output when value of mask is 0 or 31,1.71884E+12,1.71884E+12,0,0,2,2,yes,0/0/2
+97,1313,2,SUBMITTED,yes,different values are tested,1.71893E+12,1.71893E+12,0,0,2,2,yes,0/0/2
+123,1314,5,SUBMITTED,no,"In the context of this code, the mask wouldn't be lessa than 0. So the code behavior wouldn't change",1.71918E+12,1.71923E+12,0,2,0,2,no,0/2/0
+116,1314,8,SUBMITTED,no,The mutant code is actually more robust than the first code because it accounts for invalid or unintended values from mask,1.7191E+12,1.7191E+12,0,2,0,2,no,0/2/0
+120,1315,1,SUBMITTED,no,duplicate OR,1.71912E+12,1.71913E+12,0,2,0,2,no,0/2/0
+131,1315,15,SUBMITTED,no,str.isEmpty()) is redundant since StringUtils.isEmpty(str) already covers the case where str is empty but it does not change the behavior of the code.,1.71923E+12,1.71924E+12,0,2,0,2,no,0/2/0
+17,1316,11,SUBMITTED,no,Expression is more verbose but evaluates to the same thing,1.71916E+12,1.71916E+12,0,2,1,3,no,0/2/1
+14,1316,5,SUBMITTED,no,"for differant values of enumClass.isEnum(), mutant and source returns same value",1.71916E+12,1.71916E+12,0,2,1,3,no,0/2/1
+126,1316,2,SUBMITTED,yes,"Code snippet 1:
+returns true if the result of getEnumIgnoreCase(enumClass, enumName) is not null.
+Code snippet 2:
+It two conditions that must both be true for the return value to be true.
+Condition 1: getEnumIgnoreCase(enumClass, enumName) should not be null is true and
+Condition 2: !(!enumClass.isEnum()), which is same as  saying enumClass.isEnum() is true.
+From the above, there's clear difference in behavior and output of both code snippets.",1.71919E+12,1.71919E+12,0,2,1,3,no,0/2/1
+126,1317,2,SUBMITTED,yes,"Code snippet to the left checks if the getEnumIgnoreCase function returns a non-null value, indicating that the enumName exists within enumClass while code snippet 2 to the right adds an additional check to ensure that enumClass is indeed an enum type.",1.71848E+12,1.71848E+12,0,1,2,3,yes,0/1/2
+123,1317,10,SUBMITTED,no,the method already assumes enumClass is an enum due to the generic constraint <E extends Enum<E>>,1.71898E+12,1.71898E+12,0,1,2,3,yes,0/1/2
+17,1317,4,SUBMITTED,yes,Changes function logic,1.71891E+12,1.71892E+12,0,1,2,3,yes,0/1/2
+23,1323,2,SUBMITTED,no,"The updated snippet checks all the possible corner cases like below: 
+
+* If a is NaN and b is a number, return b (handled by the first condition).
+
+*If b is NaN and a is a number, return a (handled by the second condition).
+
+*If both a and b are numbers, return the smaller of the two (handled by Math.min).",1.7192E+12,1.7192E+12,0,2,1,3,no,0/2/1
+126,1323,2,SUBMITTED,yes,"Code snippet 1 only checks if a is not a number.
+Code snippet 2 does if check on two conditions with the AND logical operator.
+It first checks if b is greater than or equal to b then also checks if a is not a number.
+The two checks must return true based on AND operator for it to move to the next line of code to return b.",1.71919E+12,1.71919E+12,0,2,1,3,no,0/2/1
+120,1323,1,SUBMITTED,no,new condition has no effect,1.71902E+12,1.71902E+12,0,2,1,3,no,0/2/1
+11,1324,6,SUBMITTED,yes,The mutant has an extra expression that change the code,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+126,1324,2,SUBMITTED,yes,"Code snippet 1 only checks if b is not a number. 
+Code snippet 2 does 2 condition checks with the bitwise OR operator. Snippet 2 checks if b is less than a and if b is not a number.",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+120,1325,1,SUBMITTED,no,"""this"" is duplicate",1.71878E+12,1.71878E+12,0,2,0,2,no,0/2/0
+123,1325,2,SUBMITTED,no,this keyword is not needed if the function is written inside the class and there're no naming conflicts. So using/not using this gets the same output,1.71822E+12,1.71822E+12,0,2,0,2,no,0/2/0
+11,1326,1,SUBMITTED,yes,The value of result variable should be increamented with Arrays.hashCode(productsSums) not decreamented,1.719E+12,1.719E+12,0,0,3,3,yes,0/0/3
+97,1326,1,SUBMITTED,yes,insted of adding it subtracks,1.71829E+12,1.71831E+12,0,0,3,3,yes,0/0/3
+126,1326,1,SUBMITTED,yes,Code snippet one uses addition while code snippet two uses subtraction leading to a difference in output. ,1.71916E+12,1.71916E+12,0,0,3,3,yes,0/0/3
+11,1329,5,SUBMITTED,yes,The main code doesn't check for this condition (weights != HaltonSequenceGenerator.PRIMES) changes the whole condition result.,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+97,1329,2,SUBMITTED,yes,"when (weights != HaltonSequenceGenerator.PRIMES) is true, they dont work the same",1.71903E+12,1.71903E+12,0,0,2,2,yes,0/0/2
+130,1332,1,SUBMITTED,yes,No sy defined but it needed to be pixel.y,1.71873E+12,1.71927E+12,0,0,2,2,yes,0/0/2
+17,1332,1,SUBMITTED,yes,The edit breaks the code,1.71881E+12,1.71881E+12,0,0,2,2,yes,0/0/2
+116,1333,8,SUBMITTED,yes,format is initialized with 0 which is not a valid ImageFormat object. This will cause a compilation error or runtime exception.,1.71822E+12,1.71822E+12,0,0,3,3,yes,0/0/3
+11,1333,2,SUBMITTED,yes,Replacing ImageFormats.PNG with 0 will change the output,1.7193E+12,1.7193E+12,0,0,3,3,yes,0/0/3
+131,1333,25,SUBMITTED,yes,"The mutant code is buggy since it assigns 0 to ImageFormat, which will result in a compile-time error.  ",1.71935E+12,1.71941E+12,0,0,3,3,yes,0/0/3
+105,1335,5,SUBMITTED,yes,"New BufferedImage object is created using the width and height of the data raster and the image type BufferedImage.TYPE_INT_RGB. This correctly initializes the BufferedImage for further processing. In the mutant version, the second parameter of the BufferedImage constructor is mistakenly changed to data.get() instead of data.getHeight(). This mutation introduces a bug because the get() method is not valid in this context and likely does not exist for the Raster class, leading to a compilation error or incorrect object creation.",1.71901E+12,1.71901E+12,0,0,3,3,yes,0/0/3
+12,1335,2,SUBMITTED,yes,data.getHeight() has value different from data.get(),1.71895E+12,1.71895E+12,0,0,3,3,yes,0/0/3
+7,1335,8,SUBMITTED,yes,Because the mutant is calling an undefined function.,1.71821E+12,1.71821E+12,0,0,3,3,yes,0/0/3
+122,1336,1,SUBMITTED,yes,It's a clear bug as it introduces a completely different variable for array indexing,1.71927E+12,1.71927E+12,0,0,2,2,yes,0/0/2
+14,1336,2,SUBMITTED,yes,Index is not defined,1.71906E+12,1.71906E+12,0,0,2,2,yes,0/0/2
+11,1337,1,SUBMITTED,yes,The mutant return the weights not the points as the main,1.7193E+12,1.7193E+12,1,0,2,3,yes,1/0/2
+97,1337,1,SUBMITTED,yes,returns the wrong thing,1.71895E+12,1.71895E+12,1,0,2,3,yes,1/0/2
+116,1337,15,SUBMITTED,maybe,"It is not clear in this case, determining if the mutant code is buggy depends on the intended use of the getPoint method and the expectations regarding the data stored in the weights array",1.71926E+12,1.71926E+12,1,0,2,3,yes,1/0/2
+11,1339,2,SUBMITTED,yes,The argument of the method are different so the return value might be also different,1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+126,1339,1,SUBMITTED,yes,The second parameter received in both code snippets is same while the first parameter differs leading to difference in behavior and output on both code snippets.,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+126,1342,1,SUBMITTED,yes,"Fraction( )  on both code snippets recieves 2 parameters. However, the parameters are different on both ends and this will impact the overall value that gets assigned to b[3]",1.71919E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+133,1342,7,SUBMITTED,yes,"in the original case, b[3] is expected to pass -4, 3 to the function ""fraction"". Changing -4 to 3 has introduced a bug into the code in the mutated case. This is so because the expected behavior of the code has changed. ",1.71932E+12,1.71932E+12,0,0,2,2,yes,0/0/2
+11,1344,7,SUBMITTED,yes,The expression in the mutant code (begin == length) || can change the output of the code from the main code ,1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+126,1344,2,SUBMITTED,yes,"Code snippet 1:
+Does just one simple if conditional check
+Code snippet 2:
+Does if check on two conditions using the OR logical operator.
+Based on how the OR operator works, it's result will impact the overall output leading to difference in output in both code snippet.",1.71919E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+52,1350,1,SUBMITTED,yes,Replacing maxtime with 0 will produce a different value and this will cause error.,1.71934E+12,1.71934E+12,0,0,3,3,yes,0/0/3
+17,1350,1,SUBMITTED,yes,Alters thrown error message formatting,1.71891E+12,1.71891E+12,0,0,3,3,yes,0/0/3
+120,1350,10,SUBMITTED,yes,"values changed, might affect error",1.71857E+12,1.71857E+12,0,0,3,3,yes,0/0/3
+126,1351,2,SUBMITTED,yes,"Code snippet 1 does a simple if check if maxTime < 0.
+Code snippet 2 does if check on 2 conditions using the OR logical operator.
+Condition 1 - it checks if maxTime is greater than this.maxTimePeriod
+Condition 2 - is same as that in code snippet 1.
+The OR operator requires that atleast one is true before moving on to further execution. 
+This behavior impacts overall outcome.",1.71919E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+11,1351,3,SUBMITTED,yes,The return value of the condition is changed due to adding (maxTime>this.maxTimePeriod),1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+97,1352,5,SUBMITTED,no,This is because we know that the '(0 >= this.maxTimePeriod)' should not be true.,1.71941E+12,1.71941E+12,0,2,0,2,no,0/2/0
+23,1352,2,SUBMITTED,no,The mutant code imposes an extra layer of checking for errors which is code and it doesn't alter any logical changes. Hence the mutant is NOT buggy,1.71921E+12,1.71921E+12,0,2,0,2,no,0/2/0
+125,1353,6,SUBMITTED,yes,"The mutant code is buggy because the for-loop will never end because there is no condition that makes the for-loop stop, while in the original code, it stops when i < f.length.",1.71913E+12,1.71913E+12,0,0,2,2,yes,0/0/2
+126,1353,2,SUBMITTED,yes,"The key difference is in the relationship between the variable i and f.leng.
+In code snippet 1, i < f.leng while in code snippet 2, i=f.length.
+The difference in relationship will impact the for loop and its outcome on both ends.",1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+125,1357,4,SUBMITTED,yes,"The mutant code is buggy because it changes the boolean operator from || to | to a bitwise operator, which is incorrect because boolean logic should use logical operators instead of bitwise operators.",1.71922E+12,1.71922E+12,0,0,2,2,yes,0/0/2
+11,1357,1,SUBMITTED,yes,The mutant replaced the boolean operation || with bit wise operation | that will change the operation result,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+14,1359,2,SUBMITTED,yes,"_output and super are not same class, so will not give same result",1.71906E+12,1.71906E+12,0,1,2,3,yes,0/1/2
+97,1359,3,SUBMITTED,no,bith work the same,1.71902E+12,1.71902E+12,0,1,2,3,yes,0/1/2
+58,1359,15,SUBMITTED,yes,"By calling super.write instead of _output.write, the code tries to delegate the write operation to the parent class.",1.7182E+12,1.7182E+12,0,1,2,3,yes,0/1/2
+14,1373,2,SUBMITTED,yes,"if str == """", then defaulValue is sent instead of str",1.71898E+12,1.71898E+12,0,0,2,2,yes,0/0/2
+11,1373,3,SUBMITTED,yes,"str == """" and str == null are not equivalent",1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+14,1377,1,SUBMITTED,no,same expression at both side of || does not change value of expression from source,1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+17,1377,1,SUBMITTED,no,Expression evaluates to the same value.,1.71917E+12,1.71917E+12,0,2,0,2,no,0/2/0
+105,1380,10,SUBMITTED,no,"The condition in the original 'hasExplicitTimeZone' method just verifies if '_timeZone' is not null. If '_timeZone', which indicates that a certain time zone has been configured, is not null, then this simple check effectively returns true.
+
+The mutation now verifies whether '_timeZone' is not null as well as whether null is not equivalent to '_timeZone' in the mutant version, adding an extra redundant condition. This superfluous check adds needless complexity without changing the reasoning or result of the method. Since the additional check!(null == _timeZone) is logically unnecessary, the condition ((_timeZone!= null) &&!(null == _timeZone)) always produces the same result as (_timeZone!= null).",1.71908E+12,1.71909E+12,0,2,0,2,no,0/2/0
+133,1380,5,SUBMITTED,no,"In the mutated case, an extra condition has been added to the return statement. Let's analyze it, if _timeZone != null, that will be true. So automatically, !(null == _timeZone) will also be true, because null == _timeZone is false. This change in code maintains the behavior of the code and thus no bug is introduced.",1.71937E+12,1.71937E+12,0,2,0,2,no,0/2/0
+120,1383,3,SUBMITTED,yes,size of hashmap changed,1.71853E+12,1.71853E+12,0,0,2,2,yes,0/0/2
+126,1383,1,SUBMITTED,yes,"The key difference lies in the initial capacity of the HashMap.
+Code snippet 1 has a capacity of 8 while code snippet 2 has a capacity of 1.",1.71924E+12,1.71924E+12,0,0,2,2,yes,0/0/2
+11,1389,8,SUBMITTED,yes,The mutant will always return false as the expression !(this != _valueHandler) will always be false,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+123,1389,7,SUBMITTED,yes,"This additional condition !(this != _valueHandler) changes the behavior significantly, as the _valueHandler is of type object, so it's necessarily equal to the instance of this class ",1.71898E+12,1.71899E+12,0,0,2,2,yes,0/0/2
+122,1393,1,SUBMITTED,yes,"This mutant is buggy because instead of returning the appended/updated _additionalKeySerializers list, it always returns null as the list- which is pointless and wrong.",1.71892E+12,1.71892E+12,0,1,2,3,yes,0/1/2
+17,1393,1,SUBMITTED,yes,Changes function logic,1.71891E+12,1.71891E+12,0,1,2,3,yes,0/1/2
+97,1393,1,SUBMITTED,no,This is because '_additionalSerializers' is null,1.71883E+12,1.71883E+12,0,1,2,3,yes,0/1/2
+17,1394,2,SUBMITTED,yes,Changes created object,1.7189E+12,1.7189E+12,0,0,3,3,yes,0/0/3
+125,1394,15,SUBMITTED,yes,"You are returning a new SerializerFactoryConfig, but one has modifiers, and one has null modifiers, making it different, so they return different SerializerFactoryConfig, making the code function differently.",1.71904E+12,1.71905E+12,0,0,3,3,yes,0/0/3
+120,1394,10,SUBMITTED,yes,"modifiers is now null, originally could have value",1.71852E+12,1.71852E+12,0,0,3,3,yes,0/0/3
+106,1402,10,SUBMITTED,yes,"they don't produce the same out put, because one checks if this object is equal to null while the other checks if a variable is null",1.71919E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+14,1402,1,SUBMITTED,yes,this and required are not same object,1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+123,1403,3,SUBMITTED,no,Code behavior doesn't change as both statements in the OR are the same,1.71915E+12,1.71915E+12,0,2,0,2,no,0/2/0
+126,1403,1,SUBMITTED,no,"Code snippet to the left checks if b is null once while code snippet to the right checks if b is null twice using the logical OR operator. Ultimately, there's no difference in output on both ends.",1.71856E+12,1.71856E+12,0,2,0,2,no,0/2/0
+120,1405,3,SUBMITTED,yes,changes to always false,1.7191E+12,1.7191E+12,0,0,2,2,yes,0/0/2
+126,1405,2,SUBMITTED,yes,"Code snippet 1 simply checks if b == null is true.
+Code snippet 2 does if check on two conditions using the AND logical operator. 
+The AND operator requires necessarily for both conditions to be true before next execution.
+This behavior impacts overall output in code snippet 2.",1.71919E+12,1.71919E+12,0,0,2,2,yes,0/0/2
+132,1413,13,SUBMITTED,no,the condition (value != toInclude) should always be satisfied ,1.71915E+12,1.71915E+12,0,1,2,3,yes,0/1/2
+126,1413,3,SUBMITTED,yes,"Code snippet 1:
+It checks two conditions using the AND logical operator.
+Code snippet 2:
+It checks two compound conditions using the AND logical operator.  The first condition is if the value variable is not equal to toInclude and the second condition is same as that in code snippet 1.
+The number of conditions to be met before code block execution will direct impact the behavior as well as output on both code snippets.",1.71917E+12,1.71917E+12,0,1,2,3,yes,0/1/2
+116,1413,12,SUBMITTED,yes,"comparing value with toInclude doesn't seem logical, so I think the mutant code is buggy",1.71937E+12,1.71937E+12,0,1,2,3,yes,0/1/2
+125,1421,2,SUBMITTED,yes,"The mutant code is buggy because when isEnabled(MapperFeature.BLOCK_UNSAFE_POLYMORPHIC_BASE_TYPES) is True but (isEnabled(MapperFeature.USE_ANNOTATIONS is False the if statement would be False and then ptv will not be set to a new DefaultBase object, while in the original code ptv will be set to a new DefaultBase object.",1.71913E+12,1.71913E+12,0,1,2,3,yes,0/1/2
+97,1421,1,SUBMITTED,no,its the same because the mutant just has an extra set of pranthacies,1.7191E+12,1.71911E+12,0,1,2,3,yes,0/1/2
+120,1421,1,SUBMITTED,yes,new condition added,1.71899E+12,1.71902E+12,0,1,2,3,yes,0/1/2
+11,1426,2,SUBMITTED,yes,The main check if the object has the same reference of the instance while mutant checks if the instance is null ,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+23,1426,2,SUBMITTED,yes,"we are checking all the conditions concerning `Object`. But in the mutant code, we are checking (null == this) which is incorrect. Hense the code is Buggy.",1.71921E+12,1.71921E+12,0,0,2,2,yes,0/0/2
+120,1430,1,SUBMITTED,yes,function call changed,1.71899E+12,1.71899E+12,0,0,2,2,yes,0/0/2
+123,1430,3,SUBMITTED,yes,"in the mutant code, the input of createUsingDefault will always be null, which is not the intended behavior",1.71829E+12,1.71829E+12,0,0,2,2,yes,0/0/2
+97,1434,8,SUBMITTED,yes,"stream.defaultWriteObject() and stream.flush() are not the same
+
+",1.71941E+12,1.71941E+12,0,0,2,2,yes,0/0/2
+66,1434,4,SUBMITTED,yes,because buggy mutant calling different fiunctions,1.71924E+12,1.71924E+12,0,0,2,2,yes,0/0/2
+17,1436,2,SUBMITTED,no,Mutant change does not affect the code ,1.71921E+12,1.71921E+12,0,2,0,2,no,0/2/0
+11,1436,2,SUBMITTED,no,Adding final won't change anything as it will not allow any reassigning of the variable clone,1.71917E+12,1.71917E+12,0,2,0,2,no,0/2/0
+97,1437,1,SUBMITTED,no,the 'this' is unnecessary because there is no other parameter named 'entities',1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+106,1437,1,SUBMITTED,no,"since there isn't another variable with the same name as the global variable, using this isn't necessary or change the result",1.7192E+12,1.7192E+12,0,2,0,2,no,0/2/0
+97,1447,2,SUBMITTED,no,They both are the same as ther e is no difference between '-0' and '0',1.71941E+12,1.71941E+12,0,2,0,2,no,0/2/0
+131,1447,15,SUBMITTED,no,"Adding = to the condition statement does not change the returning value, as both versions of the code return 0 for a value of 0, and the returning values for both negative and positive values remain the same.",1.71923E+12,1.71923E+12,0,2,0,2,no,0/2/0
+17,1448,1,SUBMITTED,yes,Milliseconds per day is not 2,1.71932E+12,1.71932E+12,0,0,3,3,yes,0/0/3
+11,1448,2,SUBMITTED,yes,The mutant replaced MILLIS_PER_DAY constant with 2 which is not correct value of MILLIS_PER_DAY,1.71916E+12,1.71916E+12,0,0,3,3,yes,0/0/3
+97,1448,1,SUBMITTED,yes,they both dont work he same because DateTimeConstants.MILLIS_PER_DAY does not equal 2,1.71908E+12,1.71908E+12,0,0,3,3,yes,0/0/3
+125,1450,3,SUBMITTED,yes,"This is because assuming MILLIS_PER_DAY is higher than 12, making the computation different, so the return statement is going to return a different long for the function. There are 8.64e+7 milliseconds in a day which is higher than 12.",1.71922E+12,1.71922E+12,0,0,2,2,yes,0/0/2
+12,1450,2,SUBMITTED,yes,There are much more than 12 milliseconds in a day,1.71895E+12,1.71896E+12,0,0,2,2,yes,0/0/2
+126,1456,2,SUBMITTED,yes,"Code snippet 1:
+It checks only one condition  i.e it checks if thisMillis is less than otherMillis. If this is true, the code block inside the if statement will execute.
+Code snippet  2:
+It checks two conditions I.e
+1. it checks if otherMillis is not equal to 1.
+2. It checks if the first condition is true, it then checks if thisMillis is less than otherMillis.
+The above checks will lead to difference in output. ",1.71917E+12,1.71917E+12,0,0,2,2,yes,0/0/2
+97,1456,12,SUBMITTED,yes,When 'otherMillis' is 1 both codes wont work the same,1.71935E+12,1.71941E+12,0,0,2,2,yes,0/0/2
+97,1466,1,SUBMITTED,no,they both refer to 'iInstant',1.71916E+12,1.71916E+12,0,2,0,2,no,0/2/0
+127,1466,2,SUBMITTED,no,"Both codes access the millisecond value of ""iInstant"" directly or through ""this.getMillis()"". So, the mutant is not a bug.",1.71877E+12,1.71877E+12,0,2,0,2,no,0/2/0
+126,1468,2,SUBMITTED,yes,"Both code snippets will throw an IllegalArgumentException. However, the error message in the code block of the exception differ due to difference in the variable concatenated to the rest of the message. 
+In code snippet one, the variable type is used while in snippet 2, the variable field is used.
+Both variables could most likely have different values and this can lead to difference in output.",1.71924E+12,1.71924E+12,0,0,2,2,yes,0/0/2
+7,1468,5,SUBMITTED,yes,The mutant changes the output statement with same meaning.,1.71821E+12,1.71821E+12,0,0,2,2,yes,0/0/2
+133,1470,6,SUBMITTED,yes,"The exception thrown in the mutated case will not have the same error message as ""type"" has been changed to ""this"". ",1.71936E+12,1.71936E+12,0,0,3,3,yes,0/0/3
+132,1470,10,SUBMITTED,yes,"Type is a parameter to the function , while 'this' refers to the object from the class DateTime , they are not the same",1.71917E+12,1.71923E+12,0,0,3,3,yes,0/0/3
+14,1470,2,SUBMITTED,yes,type and this may not be same,1.71898E+12,1.71898E+12,0,0,3,3,yes,0/0/3
+120,1471,1,SUBMITTED,yes,changed equal to to less than equal to,1.71853E+12,1.71853E+12,0,0,3,3,yes,0/0/3
+97,1471,1,SUBMITTED,yes,"Since seconds may be negative, they both dont have the same results all the time",1.71895E+12,1.71895E+12,0,0,3,3,yes,0/0/3
+122,1471,1,SUBMITTED,yes,"This is a clear bug, as it changes the comparison logic completely. The ""seconds"" variable can hold negative values, and in those cases, the <= check will lead to a wrong decision.",1.71927E+12,1.71927E+12,0,0,3,3,yes,0/0/3
+105,1472,10,SUBMITTED,yes,"If the amount of seconds to be added is zero, the plusSeconds method in the original method appropriately returns the current object. Instead of checking if seconds == 0, the mutant version checks if seconds < 0. This produces a logical problem. This modification results in improper behavior where the method returns the current object when the number of seconds is negative. Adding the given number of seconds, whether positive or negative, is the expected functionality. This mutation may result in logical flaws in code that depend on precise time adjustments as well as inaccurate time computations.
+
+The original method's condition if (seconds == 0) returns the current DateTime instance and appropriately determines if no more seconds are required. The mutant version, on the other hand, does not handle the planned negative time changes correctly since it utilizes if (seconds < 0), which prevents negative seconds from being inserted.",1.71894E+12,1.71894E+12,0,0,2,2,yes,0/0/2
+14,1472,1,SUBMITTED,yes,== and < operators are no equivalent,1.71822E+12,1.71822E+12,0,0,2,2,yes,0/0/2
+106,1476,4,SUBMITTED,yes,the single ampersand means something completely different then the double ampersand ,1.71901E+12,1.7191E+12,0,0,2,2,yes,0/0/2
+97,1476,2,SUBMITTED,yes,'&&' is the right way to write the operator. '&' would result in a compile error,1.71909E+12,1.71909E+12,0,0,2,2,yes,0/0/2
+126,1477,1,SUBMITTED,yes,"The difference lies in the bitwise OR (|) used in code snippet 2 as opposed to the logical OR operator 
+used in code snippet 1.",1.71916E+12,1.71916E+12,0,0,2,2,yes,0/0/2
+11,1477,1,SUBMITTED,yes,Changing the or to bitwise or change the output,1.7193E+12,1.7193E+12,0,0,2,2,yes,0/0/2
+11,1478,2,SUBMITTED,yes,The mutant changed the && to & which is a bit wise instead of boolean comparator,1.71923E+12,1.71923E+12,0,0,2,2,yes,0/0/2
+126,1478,2,SUBMITTED,yes,"The key distinction which will lead to difference in output  lies in the logical operators used to combine the conditions in both code snippet.snippets 
+In code snippet 1, it combinee the conditions with the logical AND operator
+and in code snippet 2, it uses the bitwise AND operator.",1.71924E+12,1.71924E+12,0,0,2,2,yes,0/0/2
+97,1482,1,SUBMITTED,yes,they both don't work the same because (i > MonthDay.MONTH_OF_YEAR) is not always true when (index >= 0) is true,1.71898E+12,1.71898E+12,0,0,2,2,yes,0/0/2
+105,1482,10,SUBMITTED,yes,"If the field type is present in the current MonthDay instance, the original withPeriodAdded function iterates over the period fields and adds the relevant values to the new values array. The logic makes sure that the new MonthDay object is added to the period with all the pertinent fields added. The method adds a new condition (i > MonthDay.MONTH_OF_YEAR) to the if statement in the mutant version to determine whether to add the field value to the new values array. By limiting the fields that can be inserted in accordance with the period field's index i, this condition modifies the behavior. To be more precise, the field value is added only in the event that index i exceeds MonthDay.MONTH_OF_YEAR. Because it modifies the intended logic of adding all pertinent data from the period to the MonthDay instance, this new condition produces a problem. ",1.71901E+12,1.71901E+12,0,0,2,2,yes,0/0/2
+97,1492,1,SUBMITTED,no,No bug because tagName = Name,1.71876E+12,1.71876E+12,0,2,0,2,no,0/2/0
+14,1492,1,SUBMITTED,no,tagname and name contains same value,1.71822E+12,1.71823E+12,0,2,0,2,no,0/2/0
+105,1494,10,SUBMITTED,yes,"Method chaining is enabled in the original method by addElement, which adds a form control element to the form and then returns it. This design pattern, which enables several method calls to be connected together in a single phrase, is frequently used in fluid interfaces.
+This chaining mechanism is broken by the mutant by setting the return value to null. Consequently, a NullPointerException will be raised by any further method calls that are chained to addElement. This modification throws off the method's expected behavior, which reduces the API's dependability and increases the risk of runtime mistakes. Thus, by changing the return value and departing from the class's intended functionality and design, the mutant introduces a defect. ",1.71892E+12,1.71892E+12,0,0,2,2,yes,0/0/2
+126,1494,1,SUBMITTED,yes,First code snippet returns an object while the second code snippet returns null. That's a clear difference in output.,1.71915E+12,1.71915E+12,0,0,2,2,yes,0/0/2
+14,1500,2,SUBMITTED,yes,will give wrong results when key == value,1.71847E+12,1.71847E+12,0,0,3,3,yes,0/0/3
+105,1500,10,SUBMITTED,yes,"If the key matches the node name and there are no attributes, the attr method in the original method appropriately provides a value to the key. The condition in the mutant version is changed to key!= value && (!hasAttributes() && key.equals(nodeName())). Because it compares the key and value directly—which is not the intended logic for setting an attribute—this produces a logical mistake. This condition change adds an unnecessary comparison between key and value, which causes improper behavior and introduces a bug. Particularly, if the key and value are different objects but the key matches the node name, the mutation may hinder the proper set up of attributes. Code that depends on the attr method may exhibit unexpected or improper behavior as a result of this alteration, which might lead to incorrect attribute assignment.",1.71892E+12,1.71892E+12,0,0,3,3,yes,0/0/3
+116,1500,15,SUBMITTED,yes,There could be unintended behavior if key != value is not always true for valid cases.,1.71926E+12,1.71926E+12,0,0,3,3,yes,0/0/3

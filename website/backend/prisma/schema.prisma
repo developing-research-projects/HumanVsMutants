@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  user_id         Int            @id @default(autoincrement())
+  github_username String?        @unique
+  profile_picture String?
+  email           String         @unique
+  created_at      DateTime       @default(now())
+  userMutants     User_Mutant[]
+  RefreshToken    RefreshToken[]
+}
+
+model Mutant {
+  mutant_id   Int           @id @default(autoincrement())
+  name        String        @unique
+  address     String        @unique
+  tool        String?
+  project     String?
+  label_count Int           @default(0)
+  userMutants User_Mutant[]
+
+  @@index([name])
+  @@index([label_count])
+}
+
+model User_Mutant {
+  user_id     Int
+  mutant_id   Int
+  time_taken  Int      @default(0)
+  status      String   @default("ASSIGNED") // ASSIGNED, SUBMITTED (SQLITE does not support ENUM)
+  decision    String?
+  explanation String?
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  User   User   @relation(fields: [user_id], references: [user_id])
+  Mutant Mutant @relation(fields: [mutant_id], references: [mutant_id])
+
+  @@id([user_id, mutant_id])
+  @@index([status])
+  @@index([created_at])
+}
+
+model RefreshToken {
+  token     String   @id
+  userId    Int
+  user      User     @relation(fields: [userId], references: [user_id])
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([createdAt])
+}
